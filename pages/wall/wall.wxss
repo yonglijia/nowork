@@ -1,0 +1,99 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 22rpx;
+}
+
+.header {
+  padding: 24rpx;
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.10), rgba(34, 197, 94, 0.05));
+}
+
+.headerTop {
+  display: flex;
+  flex-direction: column;
+  gap: 10rpx;
+}
+
+.title {
+  font-size: 38rpx;
+  font-weight: 900;
+  color: #064e3b;
+}
+
+.sub {
+  font-size: 24rpx;
+  color: rgba(6, 95, 70, 0.75);
+}
+
+.composer {
+  margin-top: 18rpx;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 24rpx;
+  border: 2rpx solid rgba(16, 185, 129, 0.14);
+  padding: 18rpx;
+}
+
+.input {
+  width: 100%;
+  min-height: 160rpx;
+  font-size: 28rpx;
+  color: #064e3b;
+}
+
+.composerBottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 14rpx;
+}
+
+.count {
+  font-size: 22rpx;
+  color: rgba(6, 95, 70, 0.55);
+}
+
+.send {
+  background: #10b981;
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 26rpx;
+  padding: 18rpx 26rpx;
+  border-radius: 999rpx;
+  box-shadow: 0 14rpx 26rpx rgba(16, 185, 129, 0.25);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 18rpx;
+}
+
+.empty {
+  padding: 28rpx 24rpx;
+}
+
+.emptyText {
+  font-size: 26rpx;
+  color: rgba(6, 95, 70, 0.72);
+}
+
+.item {
+  padding: 22rpx 22rpx;
+}
+
+.itemText {
+  font-size: 30rpx;
+  line-height: 1.4;
+  color: #064e3b;
+  font-weight: 700;
+}
+
+.itemTime {
+  display: block;
+  margin-top: 12rpx;
+  font-size: 22rpx;
+  color: rgba(6, 95, 70, 0.55);
+}
+
+/* pages/wall/wall.wxss */

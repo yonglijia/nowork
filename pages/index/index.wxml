@@ -1,0 +1,77 @@
+<view class="safePage page">
+  <view class="hero cardSurface">
+    <view class="heroTop">
+      <view class="heroTitleRow">
+        <text class="heroTitle">今日嘴硬</text>
+        <text class="heroBadge pill">安全发泄区</text>
+      </view>
+      <text class="heroSub">幽默自嘲一下，心情就松一口气</text>
+    </view>
+  </view>
+
+  <view class="moodBar cardSurface">
+    <view class="row">
+      <text class="sectionTitle">今日情绪</text>
+      <text wx:if="{{selectedMood}}" class="picked">已标记：{{selectedMood}}</text>
+    </view>
+    <view class="tagRow">
+      <view
+        wx:for="{{moodTags}}"
+        wx:key="*this"
+        class="tag {{selectedMood === item ? 'active' : ''}}"
+        bindtap="onMoodTap"
+        data-tag="{{item}}"
+      >
+        {{item}}
+      </view>
+    </view>
+  </view>
+
+  <view class="section cardSurface">
+    <text class="sectionTitle">一键吐槽</text>
+    <view class="presetGrid">
+      <button
+        wx:for="{{presets}}"
+        wx:key="key"
+        class="presetBtn btnClean"
+        bindtap="onPresetTap"
+        data-key="{{item.key}}"
+      >
+        {{item.label}}
+      </button>
+    </view>
+  </view>
+
+  <view wx:if="{{card}}" class="cardWrap cardSurface">
+    <view class="card">
+      <view class="memeBox">
+        <image
+          wx:if="{{card.meme.type === 'image'}}"
+          class="memeImg"
+          src="{{card.meme.url}}"
+          mode="aspectFit"
+        />
+        <text wx:else class="memeEmoji">{{card.meme.value}}</text>
+      </view>
+      <text class="cardText">{{card.text}}</text>
+      <text class="cardFooter">今日嘴硬 · 安全发泄区</text>
+    </view>
+
+    <view class="actions">
+      <button class="actionBtn btnMintGhost btnClean" bindtap="onSaveImage">保存</button>
+      <button class="actionBtn btnMintPrimary btnClean" open-type="share">公开分享</button>
+      <button class="actionBtn btnMintGhost btnClean" bindtap="onPrivateShare">私密</button>
+    </view>
+  </view>
+
+  <view class="wallEntry cardSurface" bindtap="goWall">
+    <view class="wallText">
+      <text class="wallTitle">嘴硬墙</text>
+      <text class="wallSub">匿名吐槽列表 · 仅展示文本</text>
+    </view>
+    <text class="wallArrow">›</text>
+  </view>
+
+  <canvas type="2d" id="shareCanvas" class="hiddenCanvas"></canvas>
+</view>
+

@@ -1,0 +1,14 @@
+.DS_Store
+
+# WeChat devtool local config
+project.private.config.json
+
+# Cloud functions dependencies
+cloudfunctions/**/node_modules/
+
+# Common
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+

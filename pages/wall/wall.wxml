@@ -1,0 +1,40 @@
+<view class="safePage page">
+  <view class="header cardSurface">
+    <view class="headerTop">
+      <text class="title">嘴硬墙</text>
+      <text class="sub">匿名吐槽 · 只展示文本</text>
+    </view>
+
+    <view class="composer">
+      <textarea
+        class="input"
+        maxlength="120"
+        placeholder="匿名吐槽一下（最多120字）"
+        value="{{draft}}"
+        bindinput="onDraftInput"
+      />
+      <view class="composerBottom">
+        <text class="count">{{draft.length}}/120</text>
+        <button class="send btnClean" bindtap="onPost">匿名发布</button>
+      </view>
+    </view>
+  </view>
+
+  <view class="list">
+    <view wx:if="{{items.length === 0}}" class="empty cardSurface">
+      <text class="emptyText">还没人开口嘴硬，来当第一个。</text>
+    </view>
+
+    <view
+      wx:for="{{items}}"
+      wx:key="_id"
+      class="item cardSurface"
+    >
+      <text class="itemText">{{item.text}}</text>
+      <text class="itemTime">{{item.createdAtText}}</text>
+    </view>
+  </view>
+</view>
+
+<!--pages/wall/wall.wxml-->
+<text>pages/wall/wall.wxml</text>

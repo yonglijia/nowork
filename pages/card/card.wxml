@@ -1,0 +1,27 @@
+<view class="safePage page">
+  <view class="topBar">
+    <text class="title">吐槽卡片</text>
+    <text class="badge pill">{{modeText}}</text>
+  </view>
+
+  <view class="cardSurface wrap">
+    <view class="card">
+      <view class="memeBox">
+        <image
+          wx:if="{{meme.type === 'image'}}"
+          class="memeImg"
+          src="{{meme.url}}"
+          mode="aspectFit"
+        />
+        <text wx:else class="memeEmoji">{{meme.value}}</text>
+      </view>
+      <text class="cardText">{{text}}</text>
+      <text class="cardFooter">今日嘴硬 · 安全发泄区</text>
+    </view>
+  </view>
+
+  <view class="hint">
+    <text wx:if="{{isPrivate}}" class="hintText">这是私密分享：只发泄，不扩散。</text>
+    <text wx:else class="hintText">觉得好笑就转给朋友，一起“嘴硬”一下。</text>
+  </view>
+</view>

@@ -1,0 +1,15 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/card/card",
+    "pages/wall/wall"
+  ],
+  "window": {
+    "navigationBarTitleText": "今日嘴硬",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTextStyle": "black",
+    "backgroundTextStyle": "light"
+  },
+  "sitemapLocation": "sitemap.json"
+}
+

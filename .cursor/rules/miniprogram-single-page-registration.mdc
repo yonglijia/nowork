@@ -1,0 +1,45 @@
+---
+description: WeChat Mini Program pages must register Page() exactly once
+globs: pages/**/*.js
+alwaysApply: false
+---
+
+# Mini Program: Single Page() Registration
+
+## Rule
+
+- In any `pages/**/**.js`, **register `Page({ ... })` exactly once**.
+- Never leave behind template scaffolding that includes a second `Page({})` block.
+
+## Why
+
+Duplicate `Page()` registration triggers runtime errors such as:
+
+- `Please do not register multiple Pages in pages/xxx/xxx.js`
+
+## Checklist before saving
+
+- Search within the file for `Page(` and ensure it appears **only once**.
+- If the file contains a `// pages/xxx/xxx.js` template section, **delete it** unless it is the only `Page()` registration.
+- Keep shared logic in `utils/` (e.g. `utils/ventService.js`), **do not** `require()` another page script from a page.
+
+## Examples
+
+### ❌ Bad (two registrations)
+
+```js
+Page({ /* real page logic */ })
+
+// template residue
+Page({ /* empty skeleton */ })
+```
+
+### ✅ Good (single registration)
+
+```js
+Page({
+  data: {},
+  onLoad() {}
+})
+```
+
