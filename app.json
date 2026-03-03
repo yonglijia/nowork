@@ -2,13 +2,28 @@
   "pages": [
     "pages/index/index",
     "pages/card/card",
-    "pages/wall/wall"
+    "pages/wall/wall",
+    "pages/effort/effort",
+    "pages/effortCard/effortCard",
+    "pages/report/report",
+    "pages/me/me",
+    "pages/medals/medals",
+    "pages/refusalScripts/refusalScripts",
+    "pages/favoriteScripts/favoriteScripts"
   ],
   "window": {
     "navigationBarTitleText": "今日嘴硬",
     "navigationBarBackgroundColor": "#ffffff",
     "navigationBarTextStyle": "black",
     "backgroundTextStyle": "light"
+  },
+  "tabBar": {
+    "custom": true,
+    "list": [
+      { "pagePath": "pages/index/index", "text": "嘴硬" },
+      { "pagePath": "pages/effort/effort", "text": "实干" },
+      { "pagePath": "pages/me/me", "text": "我的" }
+    ]
   },
   "sitemapLocation": "sitemap.json"
 }

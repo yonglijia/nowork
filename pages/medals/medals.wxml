@@ -1,0 +1,22 @@
+<view class="safePage page">
+  <view class="top cardSurface">
+    <text class="title">勋章墙</text>
+    <text class="sub">每一枚勋章，都是你认真生活的证据</text>
+  </view>
+
+  <view wx:if="{{items.length === 0}}" class="empty cardSurface">
+    <text class="emptyText">暂未解锁勋章。先去“实干”记录一次吧。</text>
+  </view>
+
+  <view class="grid">
+    <view wx:for="{{items}}" wx:key="key" class="medal cardSurface">
+      <view class="medalTop">
+        <text class="medalName">{{item.name}}</text>
+        <text class="medalTag pill">已解锁</text>
+      </view>
+      <text class="medalDesc">{{item.desc}}</text>
+      <text class="medalTime">{{item.unlockedAtText}}</text>
+    </view>
+  </view>
+</view>
+

@@ -1,0 +1,52 @@
+<view class="safePage page">
+  <view class="topBar">
+    <text class="title">实干卡片</text>
+    <text class="badge pill">{{modeText}}</text>
+  </view>
+
+  <view class="cardSurface wrap">
+    <view class="card">
+      <view class="head">
+        <text class="cardTitle">今日实干</text>
+        <text class="date">{{dateText}}</text>
+      </view>
+
+      <view class="grid">
+        <view class="cell">
+          <text class="k">工作</text>
+          <text class="v">{{stats.workHours}}h</text>
+        </view>
+        <view class="cell">
+          <text class="k">加班</text>
+          <text class="v">{{stats.overtimeHours}}h</text>
+        </view>
+        <view class="cell">
+          <text class="k">任务</text>
+          <text class="v">{{stats.tasksDone}}项</text>
+        </view>
+        <view class="cell">
+          <text class="k">付出</text>
+          <text class="v">{{extras.length}}项</text>
+        </view>
+      </view>
+
+      <view class="line">
+        <text class="lk">额外付出</text>
+        <text class="lv">{{extrasText}}</text>
+      </view>
+
+      <view class="line">
+        <text class="lk">已解锁勋章</text>
+        <text class="lv">{{medalsText}}</text>
+      </view>
+
+      <text class="footer">今日实干 · 付出记录器</text>
+    </view>
+  </view>
+
+  <view class="hint">
+    <text wx:if="{{isPrivate}}" class="hintText">这是私密分享：只记录，不比较。</text>
+    <text wx:else class="hintText">把付出分享给在意的人，也是一种被看见。</text>
+  </view>
+</view>
+

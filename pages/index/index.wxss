@@ -216,3 +216,131 @@
   height: 1200px;
 }
 
+/* 快速减负模块 */
+.reduceSection {
+  padding: 24rpx;
+}
+
+.reduceGrid {
+  margin-top: 18rpx;
+  display: flex;
+  flex-direction: column;
+  gap: 16rpx;
+}
+
+.reduceItem {
+  display: flex;
+  align-items: center;
+  padding: 20rpx 24rpx;
+  background: rgba(45, 212, 191, 0.06);
+  border-radius: 18rpx;
+  gap: 16rpx;
+}
+
+.reduceIcon {
+  font-size: 40rpx;
+  width: 60rpx;
+  text-align: center;
+}
+
+.reduceContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6rpx;
+}
+
+.reduceTitle {
+  font-size: 28rpx;
+  font-weight: 700;
+  color: #064e3b;
+}
+
+.reduceDesc {
+  font-size: 24rpx;
+  color: rgba(17, 94, 89, 0.65);
+}
+
+.reduceArrow {
+  font-size: 36rpx;
+  color: rgba(17, 94, 89, 0.5);
+}
+
+/* 弹窗样式 */
+.modalMask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modalContent {
+  width: 600rpx;
+  background: #ffffff;
+  border-radius: 24rpx;
+  padding: 32rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 24rpx;
+  flex-shrink: 0;
+}
+
+.modalTitle {
+  font-size: 32rpx;
+  font-weight: 900;
+  color: #064e3b;
+  text-align: center;
+}
+
+.modalInput {
+  width: 100%;
+  height: 80rpx;
+  padding: 20rpx 24rpx;
+  font-size: 30rpx;
+  background: rgba(45, 212, 191, 0.08);
+  border-radius: 16rpx;
+  color: #0f172a;
+  box-sizing: border-box;
+}
+
+.modalInput::placeholder {
+  color: rgba(17, 94, 89, 0.5);
+}
+
+.modalActions {
+  display: flex;
+  gap: 16rpx;
+}
+
+.modalBtn {
+  flex: 1;
+  padding: 20rpx 0;
+  border-radius: 16rpx;
+  font-size: 28rpx;
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.4;
+}
+
+.cancelBtn {
+  background: rgba(45, 212, 191, 0.1);
+  color: #115e59;
+}
+
+.confirmBtn {
+  background: linear-gradient(135deg, #2dd4bf, #34d399);
+  color: #ffffff;
+}
+
+.deleteBtn {
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+}
+

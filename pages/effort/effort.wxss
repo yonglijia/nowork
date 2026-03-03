@@ -1,0 +1,383 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 22rpx;
+  padding-bottom: 170rpx; /* leave for custom tab bar */
+}
+
+.top {
+  padding: 24rpx;
+  background: radial-gradient(900rpx 360rpx at 10% 10%, rgba(45, 212, 191, 0.22), rgba(255,255,255,0) 60%),
+    linear-gradient(135deg, rgba(153, 246, 228, 0.35), rgba(236, 253, 245, 0.65));
+}
+
+.topRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16rpx;
+}
+
+.titleWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 10rpx;
+}
+
+.title {
+  font-size: 40rpx;
+  font-weight: 900;
+  color: #064e3b;
+}
+
+.sub {
+  font-size: 24rpx;
+  color: rgba(17, 94, 89, 0.78);
+}
+
+.statPill {
+  padding: 10rpx 16rpx;
+  background: rgba(45, 212, 191, 0.16);
+  border: 2rpx solid rgba(45, 212, 191, 0.22);
+}
+
+.statText {
+  font-size: 22rpx;
+  font-weight: 900;
+  color: #115e59;
+}
+
+.miniStats {
+  margin-top: 18rpx;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 14rpx;
+}
+
+.mini {
+  border-radius: 22rpx;
+  padding: 18rpx 18rpx;
+  background: rgba(255, 255, 255, 0.78);
+  border: 2rpx solid rgba(45, 212, 191, 0.14);
+}
+
+.miniLabel {
+  font-size: 22rpx;
+  color: rgba(17, 94, 89, 0.65);
+  font-weight: 800;
+}
+
+.miniValue {
+  display: block;
+  margin-top: 8rpx;
+  font-size: 34rpx;
+  font-weight: 900;
+  color: #0f766e;
+}
+
+.form {
+  padding: 24rpx;
+}
+
+.sectionTitle {
+  font-size: 30rpx;
+  font-weight: 900;
+  color: #064e3b;
+}
+
+.field {
+  margin-top: 18rpx;
+  display: flex;
+  flex-direction: column;
+  gap: 12rpx;
+}
+
+.label {
+  font-size: 24rpx;
+  color: rgba(17, 94, 89, 0.78);
+  font-weight: 900;
+}
+
+.picker {
+  padding: 18rpx 18rpx;
+  background: rgba(45, 212, 191, 0.10);
+  border: 2rpx solid rgba(45, 212, 191, 0.20);
+  color: #115e59;
+  font-weight: 900;
+}
+
+.inline {
+  display: flex;
+  align-items: center;
+  gap: 12rpx;
+}
+
+.input {
+  width: 220rpx;
+  padding: 18rpx 18rpx;
+  background: rgba(255, 255, 255, 0.85);
+  border: 2rpx solid rgba(45, 212, 191, 0.20);
+  color: #115e59;
+  font-weight: 900;
+}
+
+.unit {
+  font-size: 22rpx;
+  color: rgba(17, 94, 89, 0.62);
+  font-weight: 800;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12rpx;
+}
+
+.chip {
+  padding: 14rpx 18rpx;
+  background: rgba(255, 255, 255, 0.82);
+  border: 2rpx solid rgba(45, 212, 191, 0.18);
+  border-radius: 999rpx;
+  color: #115e59;
+  font-size: 24rpx;
+  font-weight: 900;
+}
+
+.chip.active {
+  background: rgba(45, 212, 191, 0.22);
+  border-color: rgba(45, 212, 191, 0.28);
+  color: #0f766e;
+}
+
+.submit {
+  margin-top: 22rpx;
+  height: 92rpx;
+  border-radius: 22rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cardWrap {
+  padding: 24rpx;
+}
+
+.card {
+  border-radius: 26rpx;
+  padding: 22rpx;
+  color: rgba(255, 255, 255, 0.98);
+  background: radial-gradient(900rpx 360rpx at 10% 0%, rgba(153, 246, 228, 0.28), rgba(255,255,255,0) 55%),
+    radial-gradient(900rpx 360rpx at 100% 40%, rgba(45, 212, 191, 0.28), rgba(255,255,255,0) 60%),
+    linear-gradient(135deg, #0f766e, #115e59);
+}
+
+.cardHead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 14rpx;
+}
+
+.cardTitle {
+  font-size: 32rpx;
+  font-weight: 900;
+}
+
+.cardDate {
+  font-size: 22rpx;
+  opacity: 0.8;
+}
+
+.rows {
+  margin-top: 16rpx;
+  display: flex;
+  flex-direction: column;
+  gap: 12rpx;
+}
+
+.r {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14rpx 16rpx;
+  border-radius: 18rpx;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.k {
+  font-size: 24rpx;
+  opacity: 0.86;
+  font-weight: 800;
+}
+
+.v {
+  font-size: 26rpx;
+  font-weight: 900;
+}
+
+.medals {
+  margin-top: 16rpx;
+  padding-top: 14rpx;
+  border-top: 2rpx solid rgba(255, 255, 255, 0.18);
+}
+
+.medalTitle {
+  font-size: 24rpx;
+  opacity: 0.86;
+  font-weight: 900;
+}
+
+.medalRow {
+  margin-top: 10rpx;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10rpx;
+}
+
+.medal {
+  padding: 10rpx 14rpx;
+  background: rgba(255, 255, 255, 0.16);
+  border: 2rpx solid rgba(255, 255, 255, 0.18);
+  font-size: 22rpx;
+  font-weight: 900;
+}
+
+.actions {
+  margin-top: 18rpx;
+  display: flex;
+  align-items: stretch;
+  gap: 16rpx;
+}
+
+.actionBtn {
+  flex: 1;
+  min-width: 0;
+  height: 86rpx;
+  border-radius: 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.calendar {
+  padding: 24rpx;
+}
+
+.calTop {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12rpx;
+}
+
+.calHint {
+  font-size: 22rpx;
+  color: rgba(17, 94, 89, 0.60);
+  font-weight: 900;
+}
+
+.weekRow {
+  margin-top: 14rpx;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10rpx;
+}
+
+.week {
+  text-align: center;
+  font-size: 22rpx;
+  color: rgba(17, 94, 89, 0.55);
+  font-weight: 900;
+}
+
+.grid {
+  margin-top: 10rpx;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10rpx;
+}
+
+.day {
+  height: 86rpx;
+  border-radius: 18rpx;
+  background: rgba(255, 255, 255, 0.75);
+  border: 2rpx solid rgba(45, 212, 191, 0.12);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6rpx;
+  color: rgba(17, 94, 89, 0.72);
+}
+
+.day.today {
+  border-color: rgba(45, 212, 191, 0.30);
+}
+
+.day.has {
+  background: rgba(45, 212, 191, 0.10);
+  border-color: rgba(45, 212, 191, 0.20);
+}
+
+.day.sel {
+  background: rgba(45, 212, 191, 0.22);
+  border-color: rgba(45, 212, 191, 0.32);
+  color: #0f766e;
+}
+
+.d {
+  font-size: 24rpx;
+  font-weight: 900;
+}
+
+.dot {
+  width: 10rpx;
+  height: 10rpx;
+  border-radius: 999rpx;
+  background: #2dd4bf;
+}
+
+.entryRow {
+  display: flex;
+  flex-direction: column;
+  gap: 16rpx;
+}
+
+.entry {
+  padding: 22rpx 22rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.entryText {
+  display: flex;
+  flex-direction: column;
+  gap: 8rpx;
+}
+
+.entryTitle {
+  font-size: 30rpx;
+  font-weight: 900;
+  color: #064e3b;
+}
+
+.entrySub {
+  font-size: 22rpx;
+  color: rgba(17, 94, 89, 0.70);
+  font-weight: 800;
+}
+
+.entryArrow {
+  font-size: 44rpx;
+  color: rgba(17, 94, 89, 0.55);
+}
+
+.hiddenCanvas {
+  position: fixed;
+  left: -99999px;
+  top: -99999px;
+  width: 900px;
+  height: 1200px;
+}
+

@@ -1,0 +1,54 @@
+<view class="safePage page">
+  <view class="hero cardSurface">
+    <text class="title">周/月报告</text>
+    <text class="sub">自动汇总你的努力：看见，才能更松弛</text>
+  </view>
+
+  <view class="block cardSurface">
+    <view class="blockTop">
+      <text class="blockTitle">本周</text>
+      <text class="blockHint">{{week.rangeText}}</text>
+    </view>
+    <view class="stats">
+      <view class="s">
+        <text class="k">工作总时长</text>
+        <text class="v">{{week.workHours}}h</text>
+      </view>
+      <view class="s">
+        <text class="k">加班总时长</text>
+        <text class="v">{{week.overtimeHours}}h</text>
+      </view>
+      <view class="s">
+        <text class="k">完成总任务</text>
+        <text class="v">{{week.tasksDone}}项</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="block cardSurface">
+    <view class="blockTop">
+      <text class="blockTitle">本月</text>
+      <text class="blockHint">{{month.rangeText}}</text>
+    </view>
+    <view class="stats">
+      <view class="s">
+        <text class="k">工作总时长</text>
+        <text class="v">{{month.workHours}}h</text>
+      </view>
+      <view class="s">
+        <text class="k">加班总时长</text>
+        <text class="v">{{month.overtimeHours}}h</text>
+      </view>
+      <view class="s">
+        <text class="k">完成总任务</text>
+        <text class="v">{{month.tasksDone}}项</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="note cardSurface">
+    <text class="noteTitle">小提示</text>
+    <text class="noteText">报告会随你的记录实时更新；每月1日会自然进入新月份统计。</text>
+  </view>
+</view>
+

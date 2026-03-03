@@ -1,0 +1,149 @@
+<view class="safePage page">
+  <view class="top cardSurface">
+    <view class="topRow">
+      <view class="titleWrap">
+        <text class="title">今日实干</text>
+        <text class="sub">把付出记下来，别让努力悄悄消失</text>
+      </view>
+      <view class="statPill pill">
+        <text class="statText">{{doneCount}}/{{totalCount}} 已完成</text>
+      </view>
+    </view>
+
+    <view class="miniStats">
+      <view class="mini">
+        <text class="miniLabel">工作</text>
+        <text class="miniValue">{{form.workHours}}h</text>
+      </view>
+      <view class="mini">
+        <text class="miniLabel">加班</text>
+        <text class="miniValue">{{form.overtimeHours}}h</text>
+      </view>
+      <view class="mini">
+        <text class="miniLabel">任务</text>
+        <text class="miniValue">{{form.tasksDone}}项</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="form cardSurface">
+    <text class="sectionTitle">点选记录（无需打字）</text>
+
+    <view class="field">
+      <text class="label">工作时长</text>
+      <picker mode="selector" range="{{workHoursOptions}}" value="{{workHoursIndex}}" bindchange="onWorkHoursChange">
+        <view class="picker pill">{{form.workHours}} 小时</view>
+      </picker>
+    </view>
+
+    <view class="field">
+      <text class="label">加班时长</text>
+      <view class="inline">
+        <input class="input pill" type="number" value="{{form.overtimeHours}}" maxlength="2" bindinput="onOvertimeInput" />
+        <text class="unit">小时（0-8）</text>
+      </view>
+    </view>
+
+    <view class="field">
+      <text class="label">完成任务数</text>
+      <picker mode="selector" range="{{taskCountOptions}}" value="{{taskIndex}}" bindchange="onTaskChange">
+        <view class="picker pill">{{form.tasksDone}} 项</view>
+      </picker>
+    </view>
+
+    <view class="field">
+      <text class="label">额外付出（多选）</text>
+      <view class="chips">
+        <view
+          wx:for="{{extraOptions}}"
+          wx:key="*this"
+          class="chip {{form.extras.includes(item) ? 'active' : ''}}"
+          bindtap="toggleExtra"
+          data-item="{{item}}"
+        >
+          {{item}}
+        </view>
+      </view>
+    </view>
+
+    <button class="submit btnClean btnMintPrimary" bindtap="onSubmit">生成实干卡片</button>
+  </view>
+
+  <view wx:if="{{card}}" class="cardWrap cardSurface">
+    <view class="card">
+      <view class="cardHead">
+        <text class="cardTitle">今日实干卡片</text>
+        <text class="cardDate">{{card.dateText}}</text>
+      </view>
+      <view class="rows">
+        <view class="r">
+          <text class="k">工作时长</text><text class="v">{{card.workHours}}h</text>
+        </view>
+        <view class="r">
+          <text class="k">加班时长</text><text class="v">{{card.overtimeHours}}h</text>
+        </view>
+        <view class="r">
+          <text class="k">完成任务</text><text class="v">{{card.tasksDone}}项</text>
+        </view>
+        <view class="r">
+          <text class="k">额外付出</text><text class="v">{{card.extrasText}}</text>
+        </view>
+      </view>
+
+      <view class="medals" wx:if="{{unlockedMedals.length}}">
+        <text class="medalTitle">新解锁</text>
+        <view class="medalRow">
+          <view wx:for="{{unlockedMedals}}" wx:key="key" class="medal pill">{{item.name}}</view>
+        </view>
+      </view>
+    </view>
+
+    <view class="actions">
+      <button class="actionBtn btnMintGhost btnClean" bindtap="onSaveImage">保存</button>
+      <button class="actionBtn btnMintPrimary btnClean" open-type="share">公开分享</button>
+      <button class="actionBtn btnMintGhost btnClean" bindtap="onPrivateShare">私密</button>
+    </view>
+  </view>
+
+  <view class="calendar cardSurface">
+    <view class="calTop">
+      <text class="sectionTitle">历史日历</text>
+      <text class="calHint">点日期查看</text>
+    </view>
+    <view class="weekRow">
+      <text wx:for="{{weekLabels}}" wx:key="*this" class="week">{{item}}</text>
+    </view>
+    <view class="grid">
+      <view
+        wx:for="{{calendarDays}}"
+        wx:key="key"
+        class="day {{item.isToday ? 'today' : ''}} {{item.hasData ? 'has' : ''}} {{selectedDateKey===item.dateKey ? 'sel' : ''}}"
+        bindtap="onDayTap"
+        data-datekey="{{item.dateKey}}"
+      >
+        <text class="d">{{item.label}}</text>
+        <view wx:if="{{item.hasData}}" class="dot"></view>
+      </view>
+    </view>
+  </view>
+
+  <view class="entryRow">
+    <view class="entry cardSurface" bindtap="goReport">
+      <view class="entryText">
+        <text class="entryTitle">周/月报告</text>
+        <text class="entrySub">自动统计你的实干数据</text>
+      </view>
+      <text class="entryArrow">›</text>
+    </view>
+    <view class="entry cardSurface" bindtap="goMedals">
+      <view class="entryText">
+        <text class="entryTitle">勋章墙</text>
+        <text class="entrySub">看看你解锁了哪些称号</text>
+      </view>
+      <text class="entryArrow">›</text>
+    </view>
+  </view>
+
+  <canvas type="2d" id="effortCanvas" class="hiddenCanvas"></canvas>
+</view>
+

@@ -1,0 +1,72 @@
+<view class="safePage page">
+  <view class="header cardSurface">
+    <view class="headerRow">
+      <text class="headerTitle">拒绝话术</text>
+      <view class="favEntry" bindtap="goFavorites">
+        <text class="favEntryText">我的收藏</text>
+        <text class="favEntryArrow">›</text>
+      </view>
+    </view>
+    
+    <view class="searchBar">
+      <input 
+        class="searchInput"
+        placeholder="搜索话术..."
+        value="{{searchValue}}"
+        bindinput="onSearchInput"
+      />
+      <text wx:if="{{searchValue}}" class="clearBtn" bindtap="onClearSearch">×</text>
+    </view>
+  </view>
+
+  <view class="categoryBar cardSurface">
+    <scroll-view scroll-x class="categoryScroll">
+      <view 
+        class="categoryItem {{activeCategory === '' ? 'active' : ''}}"
+        bindtap="onCategoryTap"
+        data-category=""
+      >全部</view>
+      <view 
+        wx:for="{{categories}}"
+        wx:key="category"
+        class="categoryItem {{activeCategory === item.category ? 'active' : ''}}"
+        bindtap="onCategoryTap"
+        data-category="{{item.category}}"
+      >{{item.categoryName}}</view>
+    </scroll-view>
+  </view>
+
+  <view wx:if="{{loading}}" class="loadingWrap">
+    <text class="loadingText">加载中...</text>
+  </view>
+
+  <view wx:elif="{{filteredScripts.length === 0}}" class="emptyWrap">
+    <text class="emptyText">暂无话术</text>
+  </view>
+
+  <view wx:else class="scriptList">
+    <view 
+      wx:for="{{filteredScripts}}" 
+      wx:key="id"
+      class="scriptItem cardSurface"
+    >
+      <view class="scriptCategory">{{item.categoryName}}</view>
+      <text class="scriptText">{{item.text}}</text>
+      <view class="scriptActions">
+        <button 
+          class="actionBtn copyBtn btnClean"
+          bindtap="onCopy"
+          data-text="{{item.text}}"
+        >复制</button>
+        <button 
+          class="actionBtn favBtn btnClean {{favoritedIds[item.id] ? 'favorited' : ''}}"
+          bindtap="onFavorite"
+          data-id="{{item.id}}"
+          data-text="{{item.text}}"
+          data-category="{{item.category}}"
+          data-categoryname="{{item.categoryName}}"
+        >{{favoritedIds[item.id] ? '已收藏' : '收藏'}}</button>
+      </view>
+    </view>
+  </view>
+</view>

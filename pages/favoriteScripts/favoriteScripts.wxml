@@ -1,0 +1,64 @@
+<view class="safePage page">
+  <view class="header cardSurface">
+    <view class="headerRow">
+      <text class="headerTitle">收藏话术</text>
+      <view class="editBtn" bindtap="toggleEditMode">
+        <text>{{editMode ? '取消' : '管理'}}</text>
+      </view>
+    </view>
+    <text class="headerSub">共 {{favorites.length}} 条收藏</text>
+  </view>
+
+  <view wx:if="{{editMode}}" class="batchBar cardSurface">
+    <view class="selectAllBtn" bindtap="onSelectAll">
+      <view class="checkbox {{selectedIds.length === favorites.length ? 'checked' : ''}}"></view>
+      <text>全选</text>
+    </view>
+    <button 
+      class="deleteBtn btnClean" 
+      bindtap="onRemoveBatch"
+      disabled="{{selectedIds.length === 0}}"
+    >删除选中 ({{selectedIds.length}})</button>
+  </view>
+
+  <view wx:if="{{loading}}" class="loadingWrap">
+    <text class="loadingText">加载中...</text>
+  </view>
+
+  <view wx:elif="{{favorites.length === 0}}" class="emptyWrap">
+    <text class="emptyText">暂无收藏的话术</text>
+    <text class="emptySub">去话术列表收藏一些吧</text>
+  </view>
+
+  <view wx:else class="favoriteList">
+    <view 
+      wx:for="{{favorites}}" 
+      wx:key="_id"
+      class="favItem cardSurface {{editMode && selectedIds.indexOf(item.scriptId) > -1 ? 'selected' : ''}}"
+      bindtap="{{editMode ? 'onSelect' : ''}}"
+      data-scriptid="{{item.scriptId}}"
+    >
+      <view wx:if="{{editMode}}" class="selectBox">
+        <view class="checkbox {{selectedIds.indexOf(item.scriptId) > -1 ? 'checked' : ''}}"></view>
+      </view>
+      
+      <view class="favContent">
+        <view wx:if="{{item.categoryName}}" class="favCategory">{{item.categoryName}}</view>
+        <text class="favText">{{item.scriptText}}</text>
+      </view>
+      
+      <view wx:if="{{!editMode}}" class="favActions">
+        <button 
+          class="copyBtn btnClean"
+          catchtap="onCopy"
+          data-text="{{item.scriptText}}"
+        >复制</button>
+        <button 
+          class="removeBtn btnClean"
+          catchtap="onRemove"
+          data-scriptid="{{item.scriptId}}"
+        >取消收藏</button>
+      </view>
+    </view>
+  </view>
+</view>

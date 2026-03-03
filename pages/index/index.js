@@ -1,5 +1,7 @@
 const { getVentConfig, saveMoodTag } = require("../../utils/ventService")
 const { renderShareCard } = require("../../utils/shareCard")
+const { setTabBarIndex } = require("../../utils/tabBar")
+const { getTopTask, setTopTask, deleteTopTask } = require("../../utils/refusalService")
 
 function randomPick(arr) {
   if (!Array.isArray(arr) || arr.length === 0) return null
@@ -24,7 +26,11 @@ Page({
     moodTags: [],
     selectedMood: "",
     presets: [],
-    card: null
+    card: null,
+    // 快速减负模块
+    topTask: null,
+    showTopTaskInput: false,
+    topTaskInputValue: ""
   },
 
   async onLoad() {
@@ -42,6 +48,11 @@ Page({
     if (savedMood) this.setData({ selectedMood: savedMood })
   },
 
+  onShow() {
+    setTabBarIndex(0)
+    this.loadTopTask()
+  },
+
   async onMoodTap(e) {
     const tag = e.currentTarget.dataset.tag
     if (!tag) return
@@ -51,6 +62,66 @@ Page({
     try {
       await saveMoodTag({ dateKey, tag })
     } catch (e) {}
+  },
+
+  // ========== 快速减负模块 ==========
+  async loadTopTask() {
+    try {
+      const item = await getTopTask()
+      this.setData({ topTask: item })
+    } catch (e) {}
+  },
+
+  goRefusalScripts() {
+    wx.navigateTo({ url: "/pages/refusalScripts/refusalScripts" })
+  },
+
+  showTopTaskEdit() {
+    const current = this.data.topTask ? this.data.topTask.text : ""
+    this.setData({ 
+      showTopTaskInput: true,
+      topTaskInputValue: current
+    })
+  },
+
+  hideTopTaskEdit() {
+    this.setData({ showTopTaskInput: false })
+  },
+
+  onTopTaskInput(e) {
+    this.setData({ topTaskInputValue: e.detail.value || "" })
+  },
+
+  async saveTopTask() {
+    const text = this.data.topTaskInputValue.trim()
+    if (!text) {
+      wx.showToast({ title: "请输入内容", icon: "none" })
+      return
+    }
+    if (text.length > 20) {
+      wx.showToast({ title: "最多20个字", icon: "none" })
+      return
+    }
+    try {
+      const item = await setTopTask(text)
+      this.setData({ 
+        topTask: item,
+        showTopTaskInput: false
+      })
+      wx.showToast({ title: "已保存", icon: "success" })
+    } catch (e) {
+      wx.showToast({ title: "保存失败", icon: "none" })
+    }
+  },
+
+  async removeTopTask() {
+    try {
+      await deleteTopTask()
+      this.setData({ topTask: null, showTopTaskInput: false })
+      wx.showToast({ title: "已删除", icon: "success" })
+    } catch (e) {
+      wx.showToast({ title: "删除失败", icon: "none" })
+    }
   },
 
   onPresetTap(e) {

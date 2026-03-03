@@ -1,0 +1,31 @@
+<view class="safePage page">
+  <view class="hero cardSurface">
+    <text class="title">我的</text>
+    <text class="sub">记录自己，也照顾自己</text>
+  </view>
+
+  <view class="entry cardSurface" bindtap="goMedals">
+    <view class="entryText">
+      <text class="entryTitle">勋章墙</text>
+      <text class="entrySub">已解锁 {{medalCount}} 枚</text>
+    </view>
+    <text class="entryArrow">›</text>
+  </view>
+
+  <view class="entry cardSurface" bindtap="goFavoriteScripts">
+    <view class="entryText">
+      <text class="entryTitle">收藏话术</text>
+      <text class="entrySub">已收藏 {{favoriteScriptCount}} 条</text>
+    </view>
+    <text class="entryArrow">›</text>
+  </view>
+
+  <view class="entry cardSurface" bindtap="goVent">
+    <view class="entryText">
+      <text class="entryTitle">回到嘴硬</text>
+      <text class="entrySub">安全发泄区</text>
+    </view>
+    <text class="entryArrow">›</text>
+  </view>
+</view>
+

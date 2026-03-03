@@ -1,0 +1,57 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 18rpx;
+  padding-bottom: 170rpx; /* leave for custom tab bar */
+}
+
+.hero {
+  padding: 26rpx 24rpx;
+  background: radial-gradient(1000rpx 420rpx at 10% 10%, rgba(45, 212, 191, 0.22), rgba(255,255,255,0) 60%),
+    linear-gradient(135deg, rgba(153, 246, 228, 0.35), rgba(236, 253, 245, 0.65));
+}
+
+.title {
+  font-size: 40rpx;
+  font-weight: 900;
+  color: #064e3b;
+}
+
+.sub {
+  display: block;
+  margin-top: 10rpx;
+  font-size: 24rpx;
+  color: rgba(17, 94, 89, 0.78);
+  font-weight: 800;
+}
+
+.entry {
+  padding: 22rpx 22rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.entryText {
+  display: flex;
+  flex-direction: column;
+  gap: 8rpx;
+}
+
+.entryTitle {
+  font-size: 30rpx;
+  font-weight: 900;
+  color: #064e3b;
+}
+
+.entrySub {
+  font-size: 22rpx;
+  color: rgba(17, 94, 89, 0.70);
+  font-weight: 800;
+}
+
+.entryArrow {
+  font-size: 44rpx;
+  color: rgba(17, 94, 89, 0.55);
+}
+
