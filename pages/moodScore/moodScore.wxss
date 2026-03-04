@@ -1,34 +1,46 @@
+/**
+ * 情绪打分页面样式
+ * 温暖、治愈、简洁
+ */
+
 .page {
   min-height: 100vh;
-  background: #ecfdf5;
+  background: linear-gradient(180deg, #FCE4EC 0%, #FFF0F5 30%, #F8FBFB 100%);
   display: flex;
   flex-direction: column;
   gap: 20rpx;
 }
 
+/* ==================== 顶部标题 ==================== */
 .header {
-  padding: 32rpx;
+  padding: 40rpx 32rpx;
   text-align: center;
 }
 
 .title {
   display: block;
   font-size: 40rpx;
-  font-weight: 900;
-  color: #064e3b;
+  font-weight: 700;
+  color: #3D5A5C;
   margin-bottom: 12rpx;
 }
 
 .subtitle {
   font-size: 26rpx;
-  color: rgba(17, 94, 89, 0.7);
+  color: #8AA0A2;
+  line-height: 1.5;
 }
 
+/* ==================== 分数区域 ==================== */
 .scoreArea {
   padding: 32rpx;
   display: flex;
   flex-direction: column;
   align-items: center;
+  background: #ffffff;
+  border-radius: 24rpx;
+  margin: 0 24rpx;
+  box-shadow: 0 4rpx 20rpx rgba(61, 90, 92, 0.05);
 }
 
 .scoreDisplay {
@@ -39,14 +51,14 @@
 
 .scoreNum {
   font-size: 100rpx;
-  font-weight: 900;
-  color: #0f766e;
+  font-weight: 700;
+  color: #7EBDB8;
   line-height: 1;
 }
 
 .scoreLabel {
-  font-size: 32rpx;
-  color: rgba(17, 94, 89, 0.6);
+  font-size: 30rpx;
+  color: #8AA0A2;
   margin-left: 8rpx;
 }
 
@@ -64,9 +76,10 @@
 
 .label {
   font-size: 24rpx;
-  color: rgba(17, 94, 89, 0.6);
+  color: #8AA0A2;
 }
 
+/* ==================== 快速选择分数 ==================== */
 .quickScore {
   display: flex;
   gap: 12rpx;
@@ -75,25 +88,26 @@
 }
 
 .scoreBtn {
-  width: 60rpx;
-  height: 60rpx;
+  width: 64rpx;
+  height: 64rpx;
   border-radius: 50%;
-  background: rgba(45, 212, 191, 0.1);
-  border: 2rpx solid rgba(45, 212, 191, 0.3);
+  background: rgba(126, 189, 184, 0.1);
+  border: 2rpx solid rgba(126, 189, 184, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 26rpx;
-  font-weight: 700;
-  color: #115e59;
+  font-weight: 600;
+  color: #5A8A8D;
 }
 
 .scoreBtn.active {
-  background: #2dd4bf;
-  border-color: #2dd4bf;
+  background: #7EBDB8;
+  border-color: #7EBDB8;
   color: #ffffff;
 }
 
+/* ==================== 操作按钮 ==================== */
 .actions {
   padding: 0 32rpx;
 }
@@ -102,41 +116,45 @@
   width: 100%;
   padding: 28rpx;
   border-radius: 20rpx;
-  font-size: 32rpx;
-  font-weight: 700;
+  font-size: 30rpx;
+  font-weight: 600;
   border: none;
 }
 
 .btn.primary {
-  background: linear-gradient(135deg, #2dd4bf, #34d399);
+  background: linear-gradient(135deg, #7EBDB8, #8FC4C0);
   color: #ffffff;
-  box-shadow: 0 8rpx 24rpx rgba(45, 212, 191, 0.3);
+  box-shadow: 0 8rpx 24rpx rgba(126, 189, 184, 0.25);
 }
 
 .btn.secondary {
-  background: rgba(45, 212, 191, 0.1);
-  color: #115e59;
-  border: 2rpx solid rgba(45, 212, 191, 0.3);
+  background: rgba(126, 189, 184, 0.1);
+  color: #5A8A8D;
+  border: 2rpx solid rgba(126, 189, 184, 0.2);
 }
 
+/* ==================== 疏导文案区域 ==================== */
 .guidance {
-  margin: 0 32rpx;
+  margin: 0 24rpx;
   padding: 32rpx;
+  background: #ffffff;
+  border-radius: 24rpx;
+  box-shadow: 0 4rpx 20rpx rgba(61, 90, 92, 0.05);
 }
 
 .guidanceTitle {
   display: block;
   font-size: 28rpx;
-  font-weight: 700;
-  color: #064e3b;
+  font-weight: 600;
+  color: #3D5A5C;
   margin-bottom: 16rpx;
 }
 
 .guidanceText {
   display: block;
-  font-size: 32rpx;
-  color: #0f172a;
-  line-height: 1.6;
+  font-size: 30rpx;
+  color: #4A6B6E;
+  line-height: 1.7;
   margin-bottom: 24rpx;
 }
 

@@ -1,21 +1,26 @@
+/**
+ * 首页样式
+ * 温暖、治愈、轻幽默
+ */
+
 .page {
   display: flex;
   flex-direction: column;
-  gap: 22rpx;
+  gap: 20rpx;
+  background: #F8FBFB;
 }
 
+/* ==================== 顶部英雄区域 ==================== */
 .hero {
-  padding: 26rpx 24rpx;
-  background: radial-gradient(1000rpx 400rpx at 10% 10%, rgba(45, 212, 191, 0.22), rgba(255,255,255,0) 60%),
-    radial-gradient(900rpx 360rpx at 90% 30%, rgba(167, 243, 208, 0.35), rgba(255,255,255,0) 55%),
-    linear-gradient(135deg, rgba(153, 246, 228, 0.35), rgba(236, 253, 245, 0.65));
-  border-color: rgba(45, 212, 191, 0.22);
+  padding: 32rpx 28rpx;
+  background: linear-gradient(135deg, #E0F2F1 0%, #F1F8F7 50%, #F8FBFB 100%);
+  border-radius: 0 0 32rpx 32rpx;
 }
 
 .heroTop {
   display: flex;
   flex-direction: column;
-  gap: 10rpx;
+  gap: 12rpx;
 }
 
 .heroTitleRow {
@@ -26,29 +31,32 @@
 }
 
 .heroTitle {
-  font-size: 40rpx;
-  font-weight: 900;
+  font-size: 44rpx;
+  font-weight: 700;
   letter-spacing: 1rpx;
-  color: #064e3b;
+  color: #3D5A5C;
 }
 
 .heroBadge {
-  padding: 10rpx 16rpx;
+  padding: 10rpx 20rpx;
   font-size: 22rpx;
-  background: rgba(45, 212, 191, 0.16);
-  color: #115e59;
-  border: 2rpx solid rgba(45, 212, 191, 0.22);
+  background: rgba(126, 189, 184, 0.15);
+  color: #5A8A8D;
+  border-radius: 999rpx;
+  border: none;
 }
 
 .heroSub {
-  font-size: 24rpx;
-  color: rgba(17, 94, 89, 0.78);
+  font-size: 26rpx;
+  color: #7A9A9D;
+  line-height: 1.5;
 }
 
+/* ==================== 区块标题 ==================== */
 .sectionTitle {
-  font-size: 30rpx;
+  font-size: 32rpx;
   font-weight: 700;
-  color: #064e3b;
+  color: #3D5A5C;
 }
 
 .row {
@@ -59,11 +67,16 @@
 
 .picked {
   font-size: 24rpx;
-  color: rgba(17, 94, 89, 0.65);
+  color: #8AA0A2;
 }
 
+/* ==================== 心情标签区域 ==================== */
 .moodBar {
-  padding: 24rpx;
+  padding: 28rpx;
+  background: #ffffff;
+  border-radius: 24rpx;
+  margin: 0 24rpx;
+  box-shadow: 0 4rpx 20rpx rgba(61, 90, 92, 0.05);
 }
 
 .tagRow {
@@ -74,59 +87,75 @@
 }
 
 .tag {
-  padding: 12rpx 20rpx;
+  padding: 14rpx 24rpx;
   border-radius: 999rpx;
-  background: rgba(45, 212, 191, 0.10);
-  border: 2rpx solid rgba(45, 212, 191, 0.20);
-  color: #115e59;
+  background: rgba(126, 189, 184, 0.1);
+  border: 2rpx solid rgba(126, 189, 184, 0.15);
+  color: #5A8A8D;
   font-size: 26rpx;
+  font-weight: 500;
 }
 
 .tag.active {
-  background: #2dd4bf;
-  border-color: #2dd4bf;
+  background: #7EBDB8;
+  border-color: #7EBDB8;
   color: #ffffff;
 }
 
+/* ==================== 区块容器 ==================== */
 .section {
-  padding: 24rpx;
+  padding: 28rpx;
+  background: #ffffff;
+  border-radius: 24rpx;
+  margin: 0 24rpx;
+  box-shadow: 0 4rpx 20rpx rgba(61, 90, 92, 0.05);
 }
 
+/* ==================== 预设按钮网格 ==================== */
 .presetGrid {
-  margin-top: 18rpx;
+  margin-top: 20rpx;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16rpx;
 }
 
 .presetBtn {
-  background: rgba(255, 255, 255, 0.95);
-  border: 2rpx solid rgba(45, 212, 191, 0.16);
-  border-radius: 22rpx;
-  padding: 26rpx 18rpx;
+  background: rgba(126, 189, 184, 0.06);
+  border: none;
+  border-radius: 20rpx;
+  padding: 28rpx 20rpx;
   font-size: 26rpx;
-  color: #115e59;
-  line-height: 1.2;
-  box-shadow: 0 10rpx 22rpx rgba(17, 94, 89, 0.06);
+  color: #4A6B6E;
+  line-height: 1.4;
+  text-align: left;
+  box-shadow: none;
 }
 
+.presetBtn:active {
+  background: rgba(126, 189, 184, 0.12);
+}
+
+/* ==================== 拒绝文案卡片 ==================== */
 .cardWrap {
-  padding: 24rpx;
+  padding: 28rpx;
+  background: #ffffff;
+  border-radius: 24rpx;
+  margin: 0 24rpx;
+  box-shadow: 0 4rpx 20rpx rgba(61, 90, 92, 0.05);
 }
 
 .card {
-  background: radial-gradient(900rpx 360rpx at 10% 0%, rgba(153, 246, 228, 0.28), rgba(255,255,255,0) 55%),
-    radial-gradient(900rpx 360rpx at 100% 40%, rgba(45, 212, 191, 0.28), rgba(255,255,255,0) 60%),
-    linear-gradient(135deg, #0f766e, #115e59);
-  border-radius: 26rpx;
-  padding: 22rpx;
-  color: rgba(255, 255, 255, 0.98);
+  background: linear-gradient(135deg, #7EBDB8, #8FC4C0);
+  border-radius: 20rpx;
+  padding: 28rpx;
+  color: #ffffff;
+  box-shadow: 0 8rpx 28rpx rgba(126, 189, 184, 0.25);
 }
 
 .memeBox {
   height: 320rpx;
-  border-radius: 22rpx;
-  background: rgba(255, 255, 255, 0.12);
+  border-radius: 16rpx;
+  background: rgba(255, 255, 255, 0.15);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -139,26 +168,27 @@
 }
 
 .memeEmoji {
-  font-size: 140rpx;
+  font-size: 120rpx;
 }
 
 .cardText {
   display: block;
-  margin-top: 22rpx;
-  font-size: 34rpx;
-  font-weight: 700;
-  line-height: 1.3;
+  margin-top: 24rpx;
+  font-size: 32rpx;
+  font-weight: 600;
+  line-height: 1.5;
 }
 
 .cardFooter {
   display: block;
-  margin-top: 18rpx;
+  margin-top: 16rpx;
   font-size: 24rpx;
-  opacity: 0.7;
+  opacity: 0.8;
 }
 
+/* ==================== 操作按钮 ==================== */
 .actions {
-  margin-top: 18rpx;
+  margin-top: 20rpx;
   display: flex;
   align-items: stretch;
   gap: 16rpx;
@@ -167,19 +197,30 @@
 .actionBtn {
   flex: 1;
   min-width: 0;
-  background: rgba(255, 255, 255, 0.92);
-  border-radius: 20rpx;
-  font-size: 26rpx;
-  color: #115e59;
-  padding: 22rpx 0;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16rpx;
+  font-size: 28rpx;
+  color: #5A8A8D;
+  padding: 24rpx 0;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-weight: 500;
   box-shadow: none;
+  border: none;
 }
 
+.actionBtn:active {
+  background: rgba(126, 189, 184, 0.1);
+}
+
+/* ==================== 吐槽墙入口 ==================== */
 .wallEntry {
-  padding: 26rpx 24rpx;
+  padding: 28rpx;
+  background: #ffffff;
+  border-radius: 24rpx;
+  margin: 0 24rpx;
+  box-shadow: 0 4rpx 20rpx rgba(61, 90, 92, 0.05);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -192,22 +233,23 @@
 }
 
 .wallTitle {
-  font-size: 30rpx;
+  font-size: 32rpx;
   font-weight: 700;
-  color: #064e3b;
+  color: #3D5A5C;
 }
 
 .wallSub {
   font-size: 24rpx;
-  color: rgba(17, 94, 89, 0.72);
+  color: #8AA0A2;
 }
 
 .wallArrow {
-  font-size: 44rpx;
-  color: rgba(17, 94, 89, 0.55);
+  font-size: 40rpx;
+  color: #A0B5B7;
   margin-left: 20rpx;
 }
 
+/* ==================== 隐藏画布 ==================== */
 .hiddenCanvas {
   position: fixed;
   left: -99999px;
@@ -216,13 +258,17 @@
   height: 1200px;
 }
 
-/* 快速减负模块 */
+/* ==================== 快速减负模块 ==================== */
 .reduceSection {
-  padding: 24rpx;
+  padding: 28rpx;
+  background: #ffffff;
+  border-radius: 24rpx;
+  margin: 0 24rpx;
+  box-shadow: 0 4rpx 20rpx rgba(61, 90, 92, 0.05);
 }
 
 .reduceGrid {
-  margin-top: 18rpx;
+  margin-top: 20rpx;
   display: flex;
   flex-direction: column;
   gap: 16rpx;
@@ -231,15 +277,15 @@
 .reduceItem {
   display: flex;
   align-items: center;
-  padding: 20rpx 24rpx;
-  background: rgba(45, 212, 191, 0.06);
-  border-radius: 18rpx;
+  padding: 24rpx;
+  background: rgba(126, 189, 184, 0.06);
+  border-radius: 16rpx;
   gap: 16rpx;
 }
 
 .reduceIcon {
-  font-size: 40rpx;
-  width: 60rpx;
+  font-size: 36rpx;
+  width: 56rpx;
   text-align: center;
 }
 
@@ -252,28 +298,28 @@
 
 .reduceTitle {
   font-size: 28rpx;
-  font-weight: 700;
-  color: #064e3b;
+  font-weight: 600;
+  color: #3D5A5C;
 }
 
 .reduceDesc {
   font-size: 24rpx;
-  color: rgba(17, 94, 89, 0.65);
+  color: #8AA0A2;
 }
 
 .reduceArrow {
-  font-size: 36rpx;
-  color: rgba(17, 94, 89, 0.5);
+  font-size: 32rpx;
+  color: #A0B5B7;
 }
 
-/* 弹窗样式 */
+/* ==================== 弹窗样式 ==================== */
 .modalMask {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(61, 90, 92, 0.4);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -283,8 +329,8 @@
 .modalContent {
   width: 600rpx;
   background: #ffffff;
-  border-radius: 24rpx;
-  padding: 32rpx;
+  border-radius: 28rpx;
+  padding: 40rpx 32rpx;
   display: flex;
   flex-direction: column;
   align-items: stretch;
@@ -293,25 +339,30 @@
 }
 
 .modalTitle {
-  font-size: 32rpx;
-  font-weight: 900;
-  color: #064e3b;
+  font-size: 36rpx;
+  font-weight: 700;
+  color: #3D5A5C;
   text-align: center;
 }
 
 .modalInput {
   width: 100%;
-  height: 80rpx;
-  padding: 20rpx 24rpx;
+  height: 96rpx;
+  padding: 24rpx 28rpx;
   font-size: 30rpx;
-  background: rgba(45, 212, 191, 0.08);
-  border-radius: 16rpx;
-  color: #0f172a;
+  background: rgba(126, 189, 184, 0.06);
+  border-radius: 20rpx;
+  color: #3D5A5C;
   box-sizing: border-box;
+  border: 2rpx solid transparent;
+}
+
+.modalInput:focus {
+  border-color: rgba(126, 189, 184, 0.3);
 }
 
 .modalInput::placeholder {
-  color: rgba(17, 94, 89, 0.5);
+  color: #A0B5B7;
 }
 
 .modalActions {
@@ -321,39 +372,44 @@
 
 .modalBtn {
   flex: 1;
-  padding: 20rpx 0;
-  border-radius: 16rpx;
-  font-size: 28rpx;
-  font-weight: 700;
+  padding: 24rpx 0;
+  border-radius: 20rpx;
+  font-size: 30rpx;
+  font-weight: 600;
   text-align: center;
   line-height: 1.4;
+  border: none;
 }
 
 .cancelBtn {
-  background: rgba(45, 212, 191, 0.1);
-  color: #115e59;
+  background: rgba(126, 189, 184, 0.1);
+  color: #5A8A8D;
 }
 
 .confirmBtn {
-  background: linear-gradient(135deg, #2dd4bf, #34d399);
+  background: linear-gradient(135deg, #7EBDB8, #8FC4C0);
   color: #ffffff;
 }
 
 .deleteBtn {
-  background: rgba(239, 68, 68, 0.1);
-  color: #ef4444;
+  background: rgba(235, 160, 160, 0.15);
+  color: #C87070;
 }
 
-/* 今日治愈模块 */
+/* ==================== 今日治愈模块 ==================== */
 .healingSection {
-  padding: 24rpx;
+  padding: 28rpx;
+  background: #ffffff;
+  border-radius: 24rpx;
+  margin: 0 24rpx;
+  box-shadow: 0 4rpx 20rpx rgba(61, 90, 92, 0.05);
 }
 
 .healingHeader {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 16rpx;
+  margin-bottom: 20rpx;
 }
 
 .healingAudioEntry {
@@ -364,24 +420,24 @@
 
 .healingAudioText {
   font-size: 24rpx;
-  color: rgba(17, 94, 89, 0.7);
+  color: #8AA0A2;
 }
 
 .healingAudioArrow {
-  font-size: 32rpx;
-  color: rgba(17, 94, 89, 0.55);
+  font-size: 28rpx;
+  color: #A0B5B7;
 }
 
 .healingQuote {
-  padding: 24rpx;
-  background: linear-gradient(135deg, rgba(45, 212, 191, 0.1), rgba(16, 185, 129, 0.08));
-  border-radius: 18rpx;
-  margin-bottom: 20rpx;
+  padding: 28rpx;
+  background: linear-gradient(135deg, rgba(227, 242, 253, 0.6), rgba(224, 242, 241, 0.4));
+  border-radius: 16rpx;
+  margin-bottom: 24rpx;
 }
 
 .quoteText {
   font-size: 30rpx;
-  color: #064e3b;
+  color: #4A6B6E;
   line-height: 1.6;
   font-weight: 500;
 }
@@ -398,18 +454,21 @@
   justify-content: center;
   gap: 12rpx;
   padding: 24rpx;
-  background: rgba(45, 212, 191, 0.12);
-  border-radius: 18rpx;
-  border: 2rpx solid rgba(45, 212, 191, 0.2);
+  background: rgba(126, 189, 184, 0.1);
+  border-radius: 16rpx;
+  border: none;
+}
+
+.healingBtn:active {
+  background: rgba(126, 189, 184, 0.18);
 }
 
 .healingBtnIcon {
-  font-size: 36rpx;
+  font-size: 32rpx;
 }
 
 .healingBtnText {
   font-size: 28rpx;
-  font-weight: 700;
-  color: #064e3b;
+  font-weight: 600;
+  color: #5A8A8D;
 }
-

@@ -1,43 +1,51 @@
+/**
+ * 我的页面样式
+ * 温暖、治愈、简洁
+ */
+
 .page {
   display: flex;
   flex-direction: column;
   gap: 16rpx;
   padding-bottom: 170rpx;
+  background: #F8FBFB;
 }
 
+/* ==================== 顶部英雄区域 ==================== */
 .hero {
-  padding: 26rpx 24rpx;
-  background: radial-gradient(1000rpx 420rpx at 10% 10%, rgba(45, 212, 191, 0.22), rgba(255,255,255,0) 60%),
-    linear-gradient(135deg, rgba(153, 246, 228, 0.35), rgba(236, 253, 245, 0.65));
+  padding: 32rpx 28rpx;
+  background: linear-gradient(135deg, #E0F2F1 0%, #F1F8F7 50%, #F8FBFB 100%);
+  border-radius: 0 0 32rpx 32rpx;
 }
 
 .title {
   font-size: 40rpx;
-  font-weight: 900;
-  color: #064e3b;
+  font-weight: 700;
+  color: #3D5A5C;
 }
 
 .sub {
   display: block;
   margin-top: 10rpx;
   font-size: 24rpx;
-  color: rgba(17, 94, 89, 0.78);
-  font-weight: 800;
+  color: #8AA0A2;
+  font-weight: 500;
 }
 
-/* 窝囊费入口（重点样式） */
+/* ==================== 窝囊费入口（重点样式） ==================== */
 .wageEntry {
   display: flex;
   align-items: center;
   padding: 28rpx 24rpx;
   gap: 16rpx;
-  background: linear-gradient(135deg, #0f766e, #115e59);
-  margin: 0 32rpx;
+  background: linear-gradient(135deg, #7EBDB8, #8FC4C0);
+  margin: 0 24rpx;
   border-radius: 24rpx;
+  box-shadow: 0 8rpx 28rpx rgba(126, 189, 184, 0.25);
 }
 
 .wageIcon {
-  font-size: 48rpx;
+  font-size: 44rpx;
 }
 
 .wageContent {
@@ -49,25 +57,30 @@
 
 .wageTitle {
   font-size: 32rpx;
-  font-weight: 900;
+  font-weight: 700;
   color: #ffffff;
 }
 
 .wageSub {
   font-size: 24rpx;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .wageEntry .entryArrow {
-  font-size: 44rpx;
-  color: rgba(255, 255, 255, 0.7);
+  font-size: 40rpx;
+  color: rgba(255, 255, 255, 0.8);
 }
 
+/* ==================== 列表入口 ==================== */
 .entry {
   padding: 22rpx 24rpx;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background: #ffffff;
+  border-radius: 20rpx;
+  margin: 0 24rpx;
+  box-shadow: 0 2rpx 12rpx rgba(61, 90, 92, 0.04);
 }
 
 .entryText {
@@ -78,17 +91,24 @@
 
 .entryTitle {
   font-size: 30rpx;
-  font-weight: 900;
-  color: #064e3b;
+  font-weight: 600;
+  color: #3D5A5C;
 }
 
 .entrySub {
   font-size: 22rpx;
-  color: rgba(17, 94, 89, 0.70);
-  font-weight: 800;
+  color: #8AA0A2;
 }
 
 .entryArrow {
-  font-size: 44rpx;
-  color: rgba(17, 94, 89, 0.55);
+  font-size: 40rpx;
+  color: #A0B5B7;
+}
+
+/* ==================== 分组标题 ==================== */
+.sectionHeader {
+  padding: 20rpx 24rpx 8rpx;
+  font-size: 24rpx;
+  color: #A0B5B7;
+  font-weight: 500;
 }

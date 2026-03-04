@@ -1,14 +1,21 @@
+/**
+ * 今日实干页面样式
+ * 温暖、治愈、简洁
+ */
+
 .page {
   display: flex;
   flex-direction: column;
-  gap: 22rpx;
-  padding-bottom: 170rpx; /* leave for custom tab bar */
+  gap: 20rpx;
+  padding-bottom: 170rpx;
+  background: #F8FBFB;
 }
 
+/* ==================== 顶部区域 ==================== */
 .top {
-  padding: 24rpx;
-  background: radial-gradient(900rpx 360rpx at 10% 10%, rgba(45, 212, 191, 0.22), rgba(255,255,255,0) 60%),
-    linear-gradient(135deg, rgba(153, 246, 228, 0.35), rgba(236, 253, 245, 0.65));
+  padding: 28rpx;
+  background: linear-gradient(135deg, #E0F2F1 0%, #F1F8F7 100%);
+  border-radius: 0 0 24rpx 24rpx;
 }
 
 .topRow {
@@ -26,27 +33,29 @@
 
 .title {
   font-size: 40rpx;
-  font-weight: 900;
-  color: #064e3b;
+  font-weight: 700;
+  color: #3D5A5C;
 }
 
 .sub {
   font-size: 24rpx;
-  color: rgba(17, 94, 89, 0.78);
+  color: #8AA0A2;
 }
 
 .statPill {
-  padding: 10rpx 16rpx;
-  background: rgba(45, 212, 191, 0.16);
-  border: 2rpx solid rgba(45, 212, 191, 0.22);
+  padding: 10rpx 18rpx;
+  background: rgba(126, 189, 184, 0.12);
+  border-radius: 999rpx;
+  border: none;
 }
 
 .statText {
   font-size: 22rpx;
-  font-weight: 900;
-  color: #115e59;
+  font-weight: 600;
+  color: #5A8A8D;
 }
 
+/* ==================== 迷你统计 ==================== */
 .miniStats {
   margin-top: 18rpx;
   display: grid;
@@ -55,34 +64,39 @@
 }
 
 .mini {
-  border-radius: 22rpx;
-  padding: 18rpx 18rpx;
-  background: rgba(255, 255, 255, 0.78);
-  border: 2rpx solid rgba(45, 212, 191, 0.14);
+  border-radius: 20rpx;
+  padding: 18rpx;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1rpx solid rgba(126, 189, 184, 0.1);
 }
 
 .miniLabel {
   font-size: 22rpx;
-  color: rgba(17, 94, 89, 0.65);
-  font-weight: 800;
+  color: #8AA0A2;
+  font-weight: 500;
 }
 
 .miniValue {
   display: block;
   margin-top: 8rpx;
   font-size: 34rpx;
-  font-weight: 900;
-  color: #0f766e;
+  font-weight: 700;
+  color: #7EBDB8;
 }
 
+/* ==================== 表单区域 ==================== */
 .form {
   padding: 24rpx;
+  background: #ffffff;
+  border-radius: 20rpx;
+  margin: 0 24rpx;
+  box-shadow: 0 2rpx 12rpx rgba(61, 90, 92, 0.04);
 }
 
 .sectionTitle {
   font-size: 30rpx;
-  font-weight: 900;
-  color: #064e3b;
+  font-weight: 600;
+  color: #3D5A5C;
 }
 
 .field {
@@ -94,16 +108,17 @@
 
 .label {
   font-size: 24rpx;
-  color: rgba(17, 94, 89, 0.78);
-  font-weight: 900;
+  color: #7A9A9D;
+  font-weight: 500;
 }
 
 .picker {
-  padding: 18rpx 18rpx;
-  background: rgba(45, 212, 191, 0.10);
-  border: 2rpx solid rgba(45, 212, 191, 0.20);
-  color: #115e59;
-  font-weight: 900;
+  padding: 20rpx;
+  background: rgba(126, 189, 184, 0.06);
+  border: 1rpx solid rgba(126, 189, 184, 0.15);
+  border-radius: 16rpx;
+  color: #4A6B6E;
+  font-weight: 500;
 }
 
 .inline {
@@ -114,19 +129,21 @@
 
 .input {
   width: 220rpx;
-  padding: 18rpx 18rpx;
-  background: rgba(255, 255, 255, 0.85);
-  border: 2rpx solid rgba(45, 212, 191, 0.20);
-  color: #115e59;
-  font-weight: 900;
+  padding: 18rpx;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1rpx solid rgba(126, 189, 184, 0.15);
+  border-radius: 16rpx;
+  color: #4A6B6E;
+  font-weight: 500;
 }
 
 .unit {
   font-size: 22rpx;
-  color: rgba(17, 94, 89, 0.62);
-  font-weight: 800;
+  color: #8AA0A2;
+  font-weight: 500;
 }
 
+/* ==================== 标签选择 ==================== */
 .chips {
   display: flex;
   flex-wrap: wrap;
@@ -134,41 +151,48 @@
 }
 
 .chip {
-  padding: 14rpx 18rpx;
-  background: rgba(255, 255, 255, 0.82);
-  border: 2rpx solid rgba(45, 212, 191, 0.18);
+  padding: 14rpx 20rpx;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1rpx solid rgba(126, 189, 184, 0.15);
   border-radius: 999rpx;
-  color: #115e59;
+  color: #5A8A8D;
   font-size: 24rpx;
-  font-weight: 900;
+  font-weight: 500;
 }
 
 .chip.active {
-  background: rgba(45, 212, 191, 0.22);
-  border-color: rgba(45, 212, 191, 0.28);
-  color: #0f766e;
+  background: rgba(126, 189, 184, 0.15);
+  border-color: rgba(126, 189, 184, 0.25);
+  color: #5A8A8D;
 }
 
+/* ==================== 提交按钮 ==================== */
 .submit {
   margin-top: 22rpx;
   height: 92rpx;
-  border-radius: 22rpx;
+  border-radius: 20rpx;
   display: flex;
   align-items: center;
   justify-content: center;
+  background: linear-gradient(135deg, #7EBDB8, #8FC4C0);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 30rpx;
+  box-shadow: 0 8rpx 24rpx rgba(126, 189, 184, 0.25);
 }
 
+/* ==================== 今日卡片 ==================== */
 .cardWrap {
   padding: 24rpx;
+  margin: 0 24rpx;
 }
 
 .card {
-  border-radius: 26rpx;
-  padding: 22rpx;
-  color: rgba(255, 255, 255, 0.98);
-  background: radial-gradient(900rpx 360rpx at 10% 0%, rgba(153, 246, 228, 0.28), rgba(255,255,255,0) 55%),
-    radial-gradient(900rpx 360rpx at 100% 40%, rgba(45, 212, 191, 0.28), rgba(255,255,255,0) 60%),
-    linear-gradient(135deg, #0f766e, #115e59);
+  border-radius: 24rpx;
+  padding: 24rpx;
+  color: #ffffff;
+  background: linear-gradient(135deg, #7EBDB8, #8FC4C0);
+  box-shadow: 0 8rpx 28rpx rgba(126, 189, 184, 0.25);
 }
 
 .cardHead {
@@ -180,7 +204,7 @@
 
 .cardTitle {
   font-size: 32rpx;
-  font-weight: 900;
+  font-weight: 600;
 }
 
 .cardDate {
@@ -200,31 +224,32 @@
   align-items: center;
   justify-content: space-between;
   padding: 14rpx 16rpx;
-  border-radius: 18rpx;
-  background: rgba(255, 255, 255, 0.12);
+  border-radius: 16rpx;
+  background: rgba(255, 255, 255, 0.15);
 }
 
 .k {
   font-size: 24rpx;
-  opacity: 0.86;
-  font-weight: 800;
+  opacity: 0.9;
+  font-weight: 500;
 }
 
 .v {
   font-size: 26rpx;
-  font-weight: 900;
+  font-weight: 600;
 }
 
+/* ==================== 勋章区域 ==================== */
 .medals {
   margin-top: 16rpx;
   padding-top: 14rpx;
-  border-top: 2rpx solid rgba(255, 255, 255, 0.18);
+  border-top: 1rpx solid rgba(255, 255, 255, 0.2);
 }
 
 .medalTitle {
   font-size: 24rpx;
-  opacity: 0.86;
-  font-weight: 900;
+  opacity: 0.9;
+  font-weight: 600;
 }
 
 .medalRow {
@@ -235,13 +260,14 @@
 }
 
 .medal {
-  padding: 10rpx 14rpx;
-  background: rgba(255, 255, 255, 0.16);
-  border: 2rpx solid rgba(255, 255, 255, 0.18);
+  padding: 10rpx 16rpx;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 999rpx;
   font-size: 22rpx;
-  font-weight: 900;
+  font-weight: 500;
 }
 
+/* ==================== 操作按钮 ==================== */
 .actions {
   margin-top: 18rpx;
   display: flex;
@@ -253,14 +279,23 @@
   flex: 1;
   min-width: 0;
   height: 86rpx;
-  border-radius: 20rpx;
+  border-radius: 16rpx;
   display: flex;
   align-items: center;
   justify-content: center;
+  background: rgba(255, 255, 255, 0.95);
+  color: #5A8A8D;
+  font-weight: 500;
+  border: 1rpx solid rgba(126, 189, 184, 0.15);
 }
 
+/* ==================== 日历区域 ==================== */
 .calendar {
   padding: 24rpx;
+  background: #ffffff;
+  border-radius: 20rpx;
+  margin: 0 24rpx;
+  box-shadow: 0 2rpx 12rpx rgba(61, 90, 92, 0.04);
 }
 
 .calTop {
@@ -272,8 +307,8 @@
 
 .calHint {
   font-size: 22rpx;
-  color: rgba(17, 94, 89, 0.60);
-  font-weight: 900;
+  color: #8AA0A2;
+  font-weight: 500;
 }
 
 .weekRow {
@@ -286,8 +321,8 @@
 .week {
   text-align: center;
   font-size: 22rpx;
-  color: rgba(17, 94, 89, 0.55);
-  font-weight: 900;
+  color: #A0B5B7;
+  font-weight: 500;
 }
 
 .grid {
@@ -299,55 +334,60 @@
 
 .day {
   height: 86rpx;
-  border-radius: 18rpx;
-  background: rgba(255, 255, 255, 0.75);
-  border: 2rpx solid rgba(45, 212, 191, 0.12);
+  border-radius: 16rpx;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1rpx solid rgba(126, 189, 184, 0.1);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 6rpx;
-  color: rgba(17, 94, 89, 0.72);
+  color: #8AA0A2;
 }
 
 .day.today {
-  border-color: rgba(45, 212, 191, 0.30);
+  border-color: rgba(126, 189, 184, 0.3);
 }
 
 .day.has {
-  background: rgba(45, 212, 191, 0.10);
-  border-color: rgba(45, 212, 191, 0.20);
+  background: rgba(126, 189, 184, 0.08);
+  border-color: rgba(126, 189, 184, 0.2);
 }
 
 .day.sel {
-  background: rgba(45, 212, 191, 0.22);
-  border-color: rgba(45, 212, 191, 0.32);
-  color: #0f766e;
+  background: rgba(126, 189, 184, 0.15);
+  border-color: rgba(126, 189, 184, 0.3);
+  color: #5A8A8D;
 }
 
 .d {
   font-size: 24rpx;
-  font-weight: 900;
+  font-weight: 600;
 }
 
 .dot {
   width: 10rpx;
   height: 10rpx;
   border-radius: 999rpx;
-  background: #2dd4bf;
+  background: #7EBDB8;
 }
 
+/* ==================== 入口列表 ==================== */
 .entryRow {
   display: flex;
   flex-direction: column;
-  gap: 16rpx;
+  gap: 12rpx;
+  padding: 0 24rpx;
 }
 
 .entry {
-  padding: 22rpx 22rpx;
+  padding: 22rpx;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background: #ffffff;
+  border-radius: 20rpx;
+  box-shadow: 0 2rpx 12rpx rgba(61, 90, 92, 0.04);
 }
 
 .entryText {
@@ -358,21 +398,21 @@
 
 .entryTitle {
   font-size: 30rpx;
-  font-weight: 900;
-  color: #064e3b;
+  font-weight: 600;
+  color: #3D5A5C;
 }
 
 .entrySub {
   font-size: 22rpx;
-  color: rgba(17, 94, 89, 0.70);
-  font-weight: 800;
+  color: #8AA0A2;
 }
 
 .entryArrow {
-  font-size: 44rpx;
-  color: rgba(17, 94, 89, 0.55);
+  font-size: 40rpx;
+  color: #A0B5B7;
 }
 
+/* ==================== 隐藏画布 ==================== */
 .hiddenCanvas {
   position: fixed;
   left: -99999px;
@@ -380,4 +420,3 @@
   width: 900px;
   height: 1200px;
 }
-

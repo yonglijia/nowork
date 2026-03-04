@@ -1,14 +1,22 @@
+/**
+ * 治愈音频页面样式
+ * 柔和、舒适、易操作
+ */
+
 .page {
   min-height: 100vh;
-  background: #ecfdf5;
+  background: #F8FBFB;
   display: flex;
   flex-direction: column;
   gap: 16rpx;
   padding-bottom: 200rpx;
 }
 
+/* ==================== 顶部区域 ==================== */
 .header {
-  padding: 24rpx;
+  padding: 24rpx 28rpx;
+  background: linear-gradient(135deg, #E3F2FD 0%, #F0F7FF 100%);
+  border-radius: 0 0 24rpx 24rpx;
 }
 
 .headerRow {
@@ -20,8 +28,8 @@
 
 .title {
   font-size: 36rpx;
-  font-weight: 900;
-  color: #064e3b;
+  font-weight: 700;
+  color: #3D5A5C;
 }
 
 .favEntry {
@@ -32,27 +40,34 @@
 
 .favEntryText {
   font-size: 24rpx;
-  color: rgba(17, 94, 89, 0.7);
+  color: #8AA0A2;
 }
 
 .favEntryArrow {
-  font-size: 32rpx;
-  color: rgba(17, 94, 89, 0.55);
+  font-size: 28rpx;
+  color: #A0B5B7;
 }
 
+/* ==================== 搜索栏 ==================== */
 .searchBar {
-  background: rgba(45, 212, 191, 0.08);
+  background: rgba(255, 255, 255, 0.8);
   border-radius: 999rpx;
   padding: 16rpx 24rpx;
+  border: 1rpx solid rgba(126, 189, 184, 0.15);
 }
 
 .searchInput {
   font-size: 28rpx;
-  color: #115e59;
+  color: #4A6B6E;
 }
 
+.searchInput::placeholder {
+  color: #A0B5B7;
+}
+
+/* ==================== 分类栏 ==================== */
 .categoryBar {
-  padding: 16rpx 0;
+  padding: 20rpx 0;
 }
 
 .categoryScroll {
@@ -62,24 +77,27 @@
 
 .categoryItem {
   display: inline-block;
-  padding: 12rpx 28rpx;
+  padding: 14rpx 28rpx;
   margin-right: 16rpx;
   border-radius: 999rpx;
   font-size: 26rpx;
-  color: #115e59;
-  background: rgba(45, 212, 191, 0.1);
-  border: 2rpx solid rgba(45, 212, 191, 0.2);
+  font-weight: 500;
+  color: #5A8A8D;
+  background: rgba(255, 255, 255, 0.9);
+  border: 2rpx solid rgba(126, 189, 184, 0.15);
 }
 
 .categoryItem.active {
-  background: #2dd4bf;
-  border-color: #2dd4bf;
+  background: #7EBDB8;
+  border-color: #7EBDB8;
   color: #ffffff;
 }
 
+/* ==================== 加载和空状态 ==================== */
 .loadingWrap,
 .emptyWrap {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 80rpx 0;
@@ -88,14 +106,21 @@
 .loadingText,
 .emptyText {
   font-size: 28rpx;
-  color: rgba(17, 94, 89, 0.6);
+  color: #8AA0A2;
 }
 
+.emptyIcon {
+  font-size: 80rpx;
+  margin-bottom: 16rpx;
+  opacity: 0.5;
+}
+
+/* ==================== 音频列表 ==================== */
 .audioList {
   display: flex;
   flex-direction: column;
   gap: 12rpx;
-  padding: 0 32rpx;
+  padding: 0 24rpx;
 }
 
 .audioItem {
@@ -103,26 +128,30 @@
   align-items: center;
   padding: 24rpx;
   gap: 16rpx;
+  background: #ffffff;
+  border-radius: 20rpx;
+  box-shadow: 0 2rpx 12rpx rgba(61, 90, 92, 0.04);
 }
 
 .audioItem.active {
-  background: rgba(45, 212, 191, 0.1);
+  background: rgba(126, 189, 184, 0.08);
+  border: 2rpx solid rgba(126, 189, 184, 0.2);
 }
 
 .audioIcon {
-  width: 60rpx;
-  height: 60rpx;
-  border-radius: 50%;
-  background: rgba(45, 212, 191, 0.15);
+  width: 72rpx;
+  height: 72rpx;
+  border-radius: 16rpx;
+  background: rgba(126, 189, 184, 0.12);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 24rpx;
-  color: #115e59;
+  font-size: 28rpx;
+  color: #5A8A8D;
 }
 
 .audioItem.active .audioIcon {
-  background: #2dd4bf;
+  background: #7EBDB8;
   color: #ffffff;
 }
 
@@ -135,30 +164,31 @@
 
 .audioTitle {
   font-size: 28rpx;
-  font-weight: 700;
-  color: #064e3b;
+  font-weight: 600;
+  color: #3D5A5C;
 }
 
 .audioDesc {
   font-size: 24rpx;
-  color: rgba(17, 94, 89, 0.65);
+  color: #8AA0A2;
 }
 
 .audioDuration {
   font-size: 22rpx;
-  color: rgba(17, 94, 89, 0.5);
+  color: #A0B5B7;
 }
 
 .audioFav {
   padding: 12rpx;
   font-size: 36rpx;
-  color: rgba(17, 94, 89, 0.4);
+  color: #C8D8D8;
 }
 
 .audioFav.favorited {
-  color: #ef4444;
+  color: #EBA0A0;
 }
 
+/* ==================== 播放器底栏 ==================== */
 .playerBar {
   position: fixed;
   bottom: 0;
@@ -170,8 +200,8 @@
   flex-wrap: wrap;
   align-items: center;
   gap: 16rpx;
-  background: rgba(255, 255, 255, 0.98);
-  box-shadow: 0 -4rpx 20rpx rgba(0, 0, 0, 0.1);
+  background: #ffffff;
+  box-shadow: 0 -4rpx 24rpx rgba(61, 90, 92, 0.08);
 }
 
 .playerInfo {
@@ -182,8 +212,8 @@
 .playerTitle {
   display: block;
   font-size: 26rpx;
-  font-weight: 700;
-  color: #064e3b;
+  font-weight: 600;
+  color: #3D5A5C;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -191,24 +221,29 @@
 
 .playerTime {
   font-size: 22rpx;
-  color: rgba(17, 94, 89, 0.6);
+  color: #8AA0A2;
 }
 
 .playerControls {
   display: flex;
-  gap: 16rpx;
+  gap: 12rpx;
 }
 
 .playerBtn {
-  width: 60rpx;
-  height: 60rpx;
+  width: 72rpx;
+  height: 72rpx;
   border-radius: 50%;
-  background: rgba(45, 212, 191, 0.15);
+  background: rgba(126, 189, 184, 0.12);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 24rpx;
-  color: #115e59;
+  font-size: 28rpx;
+  color: #5A8A8D;
+}
+
+.playerBtn.active {
+  background: #7EBDB8;
+  color: #ffffff;
 }
 
 .playerSlider {

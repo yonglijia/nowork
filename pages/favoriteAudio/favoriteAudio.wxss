@@ -1,14 +1,22 @@
+/**
+ * 收藏音频页面样式
+ * 温暖、治愈、简洁
+ */
+
 .page {
   min-height: 100vh;
-  background: #ecfdf5;
+  background: #F8FBFB;
   display: flex;
   flex-direction: column;
   gap: 16rpx;
   padding-bottom: 200rpx;
 }
 
+/* ==================== 顶部区域 ==================== */
 .header {
-  padding: 24rpx;
+  padding: 24rpx 28rpx;
+  background: linear-gradient(135deg, #E0F2F1 0%, #F1F8F7 100%);
+  border-radius: 0 0 24rpx 24rpx;
 }
 
 .headerRow {
@@ -19,25 +27,27 @@
 
 .title {
   font-size: 36rpx;
-  font-weight: 900;
-  color: #064e3b;
+  font-weight: 700;
+  color: #3D5A5C;
 }
 
 .editBtn {
-  padding: 10rpx 24rpx;
+  padding: 12rpx 24rpx;
   font-size: 26rpx;
-  color: #115e59;
-  background: rgba(45, 212, 191, 0.12);
+  color: #5A8A8D;
+  background: rgba(126, 189, 184, 0.1);
   border-radius: 999rpx;
+  border: none;
 }
 
 .headerSub {
   display: block;
   margin-top: 12rpx;
   font-size: 24rpx;
-  color: rgba(17, 94, 89, 0.65);
+  color: #8AA0A2;
 }
 
+/* ==================== 批量操作栏 ==================== */
 .batchBar {
   display: flex;
   align-items: center;
@@ -50,20 +60,20 @@
   align-items: center;
   gap: 12rpx;
   font-size: 26rpx;
-  color: #115e59;
+  color: #5A8A8D;
 }
 
 .checkbox {
-  width: 36rpx;
-  height: 36rpx;
+  width: 40rpx;
+  height: 40rpx;
   border-radius: 50%;
-  border: 3rpx solid rgba(45, 212, 191, 0.4);
+  border: 3rpx solid rgba(126, 189, 184, 0.3);
   background: #ffffff;
 }
 
 .checkbox.checked {
-  background: #2dd4bf;
-  border-color: #2dd4bf;
+  background: #7EBDB8;
+  border-color: #7EBDB8;
 }
 
 .checkbox.checked::after {
@@ -79,16 +89,18 @@
 .deleteBtn {
   padding: 14rpx 28rpx;
   font-size: 26rpx;
-  font-weight: 700;
+  font-weight: 600;
   color: #ffffff;
-  background: #ef4444;
+  background: #EBA0A0;
   border-radius: 999rpx;
+  border: none;
 }
 
 .deleteBtn[disabled] {
   opacity: 0.5;
 }
 
+/* ==================== 加载和空状态 ==================== */
 .loadingWrap,
 .emptyWrap {
   display: flex;
@@ -101,19 +113,20 @@
 .loadingText,
 .emptyText {
   font-size: 28rpx;
-  color: rgba(17, 94, 89, 0.6);
+  color: #8AA0A2;
 }
 
 .emptySub {
   font-size: 24rpx;
-  color: rgba(17, 94, 89, 0.45);
+  color: #A0B5B7;
 }
 
+/* ==================== 音频列表 ==================== */
 .audioList {
   display: flex;
   flex-direction: column;
   gap: 12rpx;
-  padding: 0 32rpx;
+  padding: 0 24rpx;
 }
 
 .audioItem {
@@ -121,10 +134,14 @@
   align-items: center;
   padding: 24rpx;
   gap: 16rpx;
+  background: #ffffff;
+  border-radius: 20rpx;
+  box-shadow: 0 2rpx 12rpx rgba(61, 90, 92, 0.04);
 }
 
 .audioItem.selected {
-  background: rgba(45, 212, 191, 0.08);
+  background: rgba(126, 189, 184, 0.08);
+  border: 2rpx solid rgba(126, 189, 184, 0.2);
 }
 
 .selectBox {
@@ -133,15 +150,15 @@
 }
 
 .audioIcon {
-  width: 60rpx;
-  height: 60rpx;
-  border-radius: 50%;
-  background: rgba(45, 212, 191, 0.15);
+  width: 72rpx;
+  height: 72rpx;
+  border-radius: 16rpx;
+  background: rgba(126, 189, 184, 0.12);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 24rpx;
-  color: #115e59;
+  font-size: 28rpx;
+  color: #5A8A8D;
 }
 
 .audioContent {
@@ -153,21 +170,26 @@
 
 .audioTitle {
   font-size: 28rpx;
-  font-weight: 700;
-  color: #064e3b;
+  font-weight: 600;
+  color: #3D5A5C;
 }
 
 .audioDesc {
   font-size: 24rpx;
-  color: rgba(17, 94, 89, 0.65);
+  color: #8AA0A2;
 }
 
 .audioFav {
   padding: 12rpx;
   font-size: 28rpx;
-  color: rgba(17, 94, 89, 0.5);
+  color: #C8D8D8;
 }
 
+.audioFav.favorited {
+  color: #EBA0A0;
+}
+
+/* ==================== 播放器底栏 ==================== */
 .playerBar {
   position: fixed;
   bottom: 0;
@@ -178,8 +200,8 @@
   display: flex;
   align-items: center;
   gap: 16rpx;
-  background: rgba(255, 255, 255, 0.98);
-  box-shadow: 0 -4rpx 20rpx rgba(0, 0, 0, 0.1);
+  background: #ffffff;
+  box-shadow: 0 -4rpx 24rpx rgba(61, 90, 92, 0.08);
 }
 
 .playerInfo {
@@ -188,23 +210,23 @@
 
 .playerTitle {
   font-size: 26rpx;
-  font-weight: 700;
-  color: #064e3b;
+  font-weight: 600;
+  color: #3D5A5C;
 }
 
 .playerControls {
   display: flex;
-  gap: 16rpx;
+  gap: 12rpx;
 }
 
 .playerBtn {
-  width: 60rpx;
-  height: 60rpx;
+  width: 72rpx;
+  height: 72rpx;
   border-radius: 50%;
-  background: rgba(45, 212, 191, 0.15);
+  background: rgba(126, 189, 184, 0.12);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 24rpx;
-  color: #115e59;
+  font-size: 28rpx;
+  color: #5A8A8D;
 }

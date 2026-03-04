@@ -1,29 +1,38 @@
+/**
+ * 窝囊费账单页面样式
+ * 幽默自嘲、温暖治愈
+ */
+
 .page {
   min-height: 100vh;
-  background: #ecfdf5;
+  background: #F8FBFB;
   display: flex;
   flex-direction: column;
   gap: 16rpx;
 }
 
+/* ==================== 顶部标题 ==================== */
 .header {
-  padding: 32rpx;
+  padding: 40rpx 32rpx;
   text-align: center;
+  background: linear-gradient(135deg, #FFF8E1 0%, #FFFBF0 100%);
+  border-radius: 0 0 24rpx 24rpx;
 }
 
 .title {
   display: block;
   font-size: 40rpx;
-  font-weight: 900;
-  color: #064e3b;
+  font-weight: 700;
+  color: #3D5A5C;
   margin-bottom: 8rpx;
 }
 
 .subtitle {
   font-size: 26rpx;
-  color: rgba(17, 94, 89, 0.7);
+  color: #8AA0A2;
 }
 
+/* ==================== 加载和空状态 ==================== */
 .loadingWrap,
 .emptyWrap {
   display: flex;
@@ -36,31 +45,36 @@
 
 .loadingText {
   font-size: 28rpx;
-  color: rgba(17, 94, 89, 0.6);
+  color: #8AA0A2;
 }
 
 .emptyIcon {
   font-size: 80rpx;
   margin-bottom: 20rpx;
+  opacity: 0.6;
 }
 
 .emptyText {
   font-size: 28rpx;
-  color: rgba(17, 94, 89, 0.7);
+  color: #8AA0A2;
   margin-bottom: 32rpx;
 }
 
+/* ==================== 内容区域 ==================== */
 .content {
   display: flex;
   flex-direction: column;
   gap: 16rpx;
-  padding: 0 32rpx 32rpx;
+  padding: 0 24rpx 32rpx;
 }
 
+/* ==================== 月度概览卡片 ==================== */
 .overview {
   padding: 32rpx;
-  background: linear-gradient(135deg, #0f766e, #115e59);
+  background: linear-gradient(135deg, #7EBDB8, #8FC4C0);
   color: #ffffff;
+  border-radius: 24rpx;
+  box-shadow: 0 8rpx 28rpx rgba(126, 189, 184, 0.25);
 }
 
 .overviewHeader {
@@ -77,9 +91,10 @@
 
 .modifyBtn {
   font-size: 24rpx;
-  padding: 8rpx 16rpx;
+  padding: 10rpx 20rpx;
   background: rgba(255, 255, 255, 0.2);
   border-radius: 999rpx;
+  border: none;
 }
 
 .overviewAmount {
@@ -90,13 +105,13 @@
 
 .currency {
   font-size: 36rpx;
-  font-weight: 700;
+  font-weight: 600;
   margin-right: 8rpx;
 }
 
 .amount {
   font-size: 64rpx;
-  font-weight: 900;
+  font-weight: 700;
 }
 
 .overviewStats {
@@ -113,19 +128,23 @@
 
 .statValue {
   font-size: 28rpx;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .statLabel {
   font-size: 22rpx;
-  opacity: 0.7;
+  opacity: 0.8;
 }
 
+/* ==================== 今日日报入口 ==================== */
 .todayEntry {
   display: flex;
   align-items: center;
   padding: 24rpx;
   gap: 16rpx;
+  background: #ffffff;
+  border-radius: 20rpx;
+  box-shadow: 0 2rpx 12rpx rgba(61, 90, 92, 0.04);
 }
 
 .entryIcon {
@@ -141,28 +160,32 @@
 
 .entryTitle {
   font-size: 28rpx;
-  font-weight: 700;
-  color: #064e3b;
+  font-weight: 600;
+  color: #3D5A5C;
 }
 
 .entrySub {
   font-size: 24rpx;
-  color: rgba(17, 94, 89, 0.65);
+  color: #8AA0A2;
 }
 
 .entryArrow {
-  font-size: 36rpx;
-  color: rgba(17, 94, 89, 0.5);
+  font-size: 32rpx;
+  color: #A0B5B7;
 }
 
+/* ==================== 信息区域 ==================== */
 .infoSection {
   padding: 24rpx;
+  background: #ffffff;
+  border-radius: 20rpx;
+  box-shadow: 0 2rpx 12rpx rgba(61, 90, 92, 0.04);
 }
 
 .sectionTitle {
   font-size: 28rpx;
-  font-weight: 700;
-  color: #064e3b;
+  font-weight: 600;
+  color: #3D5A5C;
   margin-bottom: 16rpx;
   display: block;
 }
@@ -177,7 +200,7 @@
   display: flex;
   justify-content: space-between;
   padding: 12rpx 0;
-  border-bottom: 1rpx solid rgba(45, 212, 191, 0.1);
+  border-bottom: 1rpx solid rgba(126, 189, 184, 0.1);
 }
 
 .infoItem:last-child {
@@ -186,28 +209,37 @@
 
 .infoLabel {
   font-size: 26rpx;
-  color: rgba(17, 94, 89, 0.7);
+  color: #8AA0A2;
 }
 
 .infoValue {
   font-size: 26rpx;
-  font-weight: 700;
-  color: #064e3b;
+  font-weight: 600;
+  color: #4A6B6E;
 }
 
+/* ==================== 总结文案 ==================== */
 .summary {
   padding: 24rpx;
   text-align: center;
+  background: #ffffff;
+  border-radius: 20rpx;
+  box-shadow: 0 2rpx 12rpx rgba(61, 90, 92, 0.04);
 }
 
 .summaryText {
   font-size: 28rpx;
-  color: #0f766e;
+  color: #5A8A8D;
   font-weight: 500;
+  line-height: 1.6;
 }
 
+/* ==================== 历史记录 ==================== */
 .historySection {
   padding: 24rpx;
+  background: #ffffff;
+  border-radius: 20rpx;
+  box-shadow: 0 2rpx 12rpx rgba(61, 90, 92, 0.04);
 }
 
 .historyHeader {
@@ -218,7 +250,7 @@
 
 .historyToggle {
   font-size: 24rpx;
-  color: rgba(17, 94, 89, 0.7);
+  color: #8AA0A2;
 }
 
 .historyList {
@@ -229,14 +261,14 @@
   padding: 32rpx;
   text-align: center;
   font-size: 26rpx;
-  color: rgba(17, 94, 89, 0.5);
+  color: #A0B5B7;
 }
 
 .historyItem {
   display: flex;
   align-items: center;
   padding: 16rpx 0;
-  border-bottom: 1rpx solid rgba(45, 212, 191, 0.1);
+  border-bottom: 1rpx solid rgba(126, 189, 184, 0.1);
 }
 
 .historyItem:last-child {
@@ -246,29 +278,29 @@
 .historyMonth {
   flex: 1;
   font-size: 26rpx;
-  color: #064e3b;
+  color: #3D5A5C;
 }
 
 .historyWage {
   font-size: 26rpx;
-  font-weight: 700;
-  color: #0f766e;
+  font-weight: 600;
+  color: #7EBDB8;
   margin-right: 12rpx;
 }
 
 .historyArrow {
   font-size: 28rpx;
-  color: rgba(17, 94, 89, 0.5);
+  color: #A0B5B7;
 }
 
-/* 弹窗 */
+/* ==================== 设置弹窗 ==================== */
 .modalMask {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(61, 90, 92, 0.4);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -278,7 +310,7 @@
 .modalContent {
   width: 600rpx;
   background: #ffffff;
-  border-radius: 24rpx;
+  border-radius: 28rpx;
   padding: 40rpx 32rpx;
   position: relative;
 }
@@ -291,38 +323,44 @@
 
 .modalTitle {
   font-size: 36rpx;
-  font-weight: 900;
-  color: #064e3b;
+  font-weight: 700;
+  color: #3D5A5C;
   margin-bottom: 12rpx;
 }
 
 .modalDesc {
   font-size: 26rpx;
-  color: rgba(17, 94, 89, 0.7);
+  color: #8AA0A2;
   margin-bottom: 32rpx;
+  text-align: center;
 }
 
 .inputWrap {
   width: 100%;
   display: flex;
   align-items: center;
-  background: rgba(45, 212, 191, 0.08);
-  border-radius: 16rpx;
-  padding: 20rpx 24rpx;
+  background: rgba(126, 189, 184, 0.06);
+  border-radius: 20rpx;
+  padding: 24rpx 28rpx;
   margin-bottom: 32rpx;
+  border: 2rpx solid transparent;
+}
+
+.inputWrap:focus-within {
+  border-color: rgba(126, 189, 184, 0.3);
 }
 
 .inputPrefix {
   font-size: 32rpx;
-  font-weight: 700;
-  color: #064e3b;
+  font-weight: 600;
+  color: #3D5A5C;
   margin-right: 8rpx;
 }
 
 .modalInput {
   flex: 1;
   font-size: 32rpx;
-  color: #0f172a;
+  color: #3D5A5C;
 }
 
 .pickerValue {
@@ -330,18 +368,19 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: rgba(45, 212, 191, 0.08);
-  border-radius: 16rpx;
-  padding: 24rpx;
+  background: rgba(126, 189, 184, 0.06);
+  border-radius: 20rpx;
+  padding: 24rpx 28rpx;
   margin-bottom: 32rpx;
   font-size: 32rpx;
-  font-weight: 700;
-  color: #064e3b;
+  font-weight: 600;
+  color: #3D5A5C;
+  border: 2rpx solid rgba(126, 189, 184, 0.1);
 }
 
 .pickerArrow {
   font-size: 20rpx;
-  color: rgba(17, 94, 89, 0.5);
+  color: #A0B5B7;
 }
 
 .stepBtns {
@@ -353,32 +392,34 @@
 .btn {
   flex: 1;
   padding: 24rpx;
-  border-radius: 16rpx;
+  border-radius: 20rpx;
   font-size: 30rpx;
-  font-weight: 700;
+  font-weight: 600;
   text-align: center;
   border: none;
 }
 
 .btn.primary {
-  background: linear-gradient(135deg, #2dd4bf, #34d399);
+  background: linear-gradient(135deg, #7EBDB8, #8FC4C0);
   color: #ffffff;
 }
 
 .btn.secondary {
-  background: rgba(45, 212, 191, 0.1);
-  color: #115e59;
+  background: rgba(126, 189, 184, 0.1);
+  color: #5A8A8D;
 }
 
 .closeBtn {
   position: absolute;
   top: 20rpx;
   right: 20rpx;
-  width: 48rpx;
-  height: 48rpx;
+  width: 56rpx;
+  height: 56rpx;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 28rpx;
-  color: rgba(17, 94, 89, 0.5);
+  color: #A0B5B7;
+  background: rgba(126, 189, 184, 0.1);
+  border-radius: 50%;
 }

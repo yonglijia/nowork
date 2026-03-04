@@ -1,12 +1,21 @@
+/**
+ * 收藏文案列表页面样式
+ * 温暖、治愈、简洁
+ */
+
 .page {
   display: flex;
   flex-direction: column;
   gap: 16rpx;
   padding-bottom: 40rpx;
+  background: #F8FBFB;
 }
 
+/* ==================== 顶部区域 ==================== */
 .header {
-  padding: 24rpx;
+  padding: 24rpx 28rpx;
+  background: linear-gradient(135deg, #E0F2F1 0%, #F1F8F7 100%);
+  border-radius: 0 0 24rpx 24rpx;
 }
 
 .headerRow {
@@ -17,25 +26,27 @@
 
 .headerTitle {
   font-size: 36rpx;
-  font-weight: 900;
-  color: #064e3b;
+  font-weight: 700;
+  color: #3D5A5C;
 }
 
 .editBtn {
-  padding: 10rpx 24rpx;
+  padding: 12rpx 24rpx;
   font-size: 26rpx;
-  color: #115e59;
-  background: rgba(45, 212, 191, 0.12);
+  color: #5A8A8D;
+  background: rgba(126, 189, 184, 0.1);
   border-radius: 999rpx;
+  border: none;
 }
 
 .headerSub {
   display: block;
   margin-top: 12rpx;
   font-size: 24rpx;
-  color: rgba(17, 94, 89, 0.65);
+  color: #8AA0A2;
 }
 
+/* ==================== 批量操作栏 ==================== */
 .batchBar {
   display: flex;
   align-items: center;
@@ -48,20 +59,20 @@
   align-items: center;
   gap: 12rpx;
   font-size: 26rpx;
-  color: #115e59;
+  color: #5A8A8D;
 }
 
 .checkbox {
-  width: 36rpx;
-  height: 36rpx;
+  width: 40rpx;
+  height: 40rpx;
   border-radius: 50%;
-  border: 3rpx solid rgba(45, 212, 191, 0.4);
+  border: 3rpx solid rgba(126, 189, 184, 0.3);
   background: #ffffff;
 }
 
 .checkbox.checked {
-  background: #2dd4bf;
-  border-color: #2dd4bf;
+  background: #7EBDB8;
+  border-color: #7EBDB8;
 }
 
 .checkbox.checked::after {
@@ -77,16 +88,18 @@
 .deleteBtn {
   padding: 14rpx 28rpx;
   font-size: 26rpx;
-  font-weight: 700;
+  font-weight: 600;
   color: #ffffff;
-  background: #ef4444;
+  background: #EBA0A0;
   border-radius: 999rpx;
+  border: none;
 }
 
 .deleteBtn[disabled] {
   opacity: 0.5;
 }
 
+/* ==================== 加载和空状态 ==================== */
 .loadingWrap,
 .emptyWrap {
   display: flex;
@@ -99,19 +112,20 @@
 .loadingText,
 .emptyText {
   font-size: 28rpx;
-  color: rgba(17, 94, 89, 0.6);
+  color: #8AA0A2;
 }
 
 .emptySub {
   font-size: 24rpx;
-  color: rgba(17, 94, 89, 0.45);
+  color: #A0B5B7;
 }
 
+/* ==================== 收藏列表 ==================== */
 .favoriteList {
   display: flex;
   flex-direction: column;
-  gap: 16rpx;
-  padding: 0 32rpx;
+  gap: 12rpx;
+  padding: 0 24rpx;
 }
 
 .favItem {
@@ -119,10 +133,13 @@
   align-items: flex-start;
   padding: 24rpx;
   gap: 16rpx;
+  background: #ffffff;
+  border-radius: 20rpx;
+  box-shadow: 0 2rpx 12rpx rgba(61, 90, 92, 0.04);
 }
 
 .favItem.selected {
-  background: rgba(45, 212, 191, 0.08);
+  background: rgba(126, 189, 184, 0.06);
 }
 
 .selectBox {
@@ -141,17 +158,17 @@
 .favCategory {
   display: inline-block;
   align-self: flex-start;
-  padding: 6rpx 16rpx;
+  padding: 8rpx 16rpx;
   font-size: 22rpx;
-  color: #115e59;
-  background: rgba(45, 212, 191, 0.12);
+  color: #5A8A8D;
+  background: rgba(126, 189, 184, 0.1);
   border-radius: 999rpx;
-  border: 1rpx solid rgba(45, 212, 191, 0.2);
+  border: none;
 }
 
 .favText {
   font-size: 30rpx;
-  color: #0f172a;
+  color: #3D5A5C;
   line-height: 1.5;
 }
 
@@ -166,18 +183,18 @@
 .removeBtn {
   padding: 12rpx 20rpx;
   font-size: 24rpx;
-  font-weight: 700;
+  font-weight: 600;
   border-radius: 12rpx;
+  border: none;
 }
 
 .copyBtn {
-  background: rgba(45, 212, 191, 0.12);
-  color: #115e59;
-  border: 2rpx solid rgba(45, 212, 191, 0.25);
+  background: rgba(126, 189, 184, 0.1);
+  color: #5A8A8D;
 }
 
 .removeBtn {
   background: #ffffff;
-  color: #ef4444;
-  border: 2rpx solid rgba(239, 68, 68, 0.3);
+  color: #C87070;
+  border: 1rpx solid rgba(200, 112, 112, 0.2);
 }
