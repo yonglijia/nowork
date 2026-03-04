@@ -1,25 +1,66 @@
 /**
- * 全局设计规范
- * 风格：温暖、治愈、轻幽默、不焦虑、不鸡血
- * 特点：简约、干净、柔和、圆角、透气、清晰
+ * 全局设计规范 - 升级版
+ * 风格：温暖治愈系 + 设计感
+ * 色彩：柔和蓝、温暖黄、甜蜜粉、薄荷绿
+ * 特点：精致渐变、丰富层级、韵律排版、微交互
  */
 
-/* ==================== 设计变量 ==================== */
-/* 色彩规范 */
-/* 主色：温柔蓝 #E3F2FD */
-/* 辅助色：浅粉 #FCE4EC、浅黄 #FFF8E1、浅灰 #F5F5F5 */
+/* ==================== CSS 变量系统 ==================== */
+:root {
+  /* 主色系 */
+  --color-primary-blue: #5C9BD6;
+  --color-primary-blue-light: #E3F2FD;
+  --color-primary-yellow: #FFD54F;
+  --color-primary-pink: #F48FB1;
+  --color-primary-mint: #80DEEA;
+  
+  /* 中性色 */
+  --color-text-primary: #2C3E50;
+  --color-text-secondary: #5D6D7E;
+  --color-text-tertiary: #85929E;
+  --color-text-light: #9AA5B1;
+  
+  /* 背景 */
+  --color-bg-base: #F5F8FA;
+  --color-bg-surface: #FFFFFF;
+  
+  /* 渐变 */
+  --gradient-blue: linear-gradient(135deg, #5C9BD6 0%, #6BA3DC 100%);
+  --gradient-yellow: linear-gradient(135deg, #FFE082 0%, #FFD54F 100%);
+  --gradient-pink: linear-gradient(135deg, #F48FB1 0%, #EC407A 100%);
+  --gradient-mint: linear-gradient(135deg, #80DEEA 0%, #4DD0E1 100%);
+  
+  /* 圆角 */
+  --radius-sm: 8rpx;
+  --radius-md: 12rpx;
+  --radius-lg: 16rpx;
+  --radius-xl: 20rpx;
+  --radius-pill: 999rpx;
+  
+  /* 间距 */
+  --spacing-xs: 4rpx;
+  --spacing-sm: 8rpx;
+  --spacing-md: 12rpx;
+  --spacing-lg: 16rpx;
+  --spacing-xl: 20rpx;
+  --spacing-2xl: 24rpx;
+  
+  /* 阴影 */
+  --shadow-sm: 0 2rpx 8rpx rgba(44, 62, 80, 0.04);
+  --shadow-md: 0 4rpx 12rpx rgba(44, 62, 80, 0.08);
+  --shadow-lg: 0 6rpx 20rpx rgba(92, 155, 214, 0.15);
+}
 
 /* ==================== 全局基础 ==================== */
 page {
   padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-  background: #F5F8FA;
-  color: #2C3E50;
+  background: var(--color-bg-base);
+  color: var(--color-text-primary);
   font-size: 28rpx;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
-/* 页面容器 - 不加padding，让各区块自己控制 */
 .safePage {
   display: flex;
   flex-direction: column;
@@ -28,167 +69,195 @@ page {
   box-sizing: border-box;
 }
 
-/* ==================== 卡片样式 ==================== */
+/* ==================== 卡片系统 ==================== */
 .cardSurface {
-  background: #ffffff;
-  border-radius: 20rpx;
-  box-shadow: 0 2rpx 12rpx rgba(44, 62, 80, 0.06);
+  background: var(--color-bg-surface);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* 药丸形状 */
+.cardSurface:active {
+  transform: translateY(2rpx);
+  box-shadow: var(--shadow-sm);
+}
+
 .pill {
-  border-radius: 999rpx;
+  border-radius: var(--radius-pill);
 }
 
-/* 按钮清除默认样式 */
+/* ==================== 按钮系统 ==================== */
 .btnClean::after {
   border: none;
 }
 
-/* ==================== 主按钮样式 ==================== */
-/* 主按钮：温柔蓝色 */
-.btnPrimary {
-  background: linear-gradient(135deg, #5C9BD6, #6BA3DC);
+/* 主按钮 */
+.btnPrimary,
+.btnMintPrimary {
+  background: var(--gradient-blue);
   color: #ffffff;
   font-weight: 600;
   letter-spacing: 0.5rpx;
-  border-radius: 20rpx;
-  box-shadow: 0 6rpx 20rpx rgba(92, 155, 214, 0.25);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 4rpx 16rpx rgba(92, 155, 214, 0.25);
   border: none;
-  font-size: 30rpx;
-  padding: 24rpx 48rpx;
-  min-height: 88rpx;
+  font-size: 28rpx;
+  padding: 16rpx 32rpx;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: all 0.2s ease;
 }
 
-/* 次要按钮：幽灵样式 */
-.btnGhost {
-  background: #ffffff;
-  border: 2rpx solid rgba(92, 155, 214, 0.25);
-  color: #5C9BD6;
+.btnPrimary:active {
+  transform: scale(0.96);
+  box-shadow: 0 2rpx 8rpx rgba(92, 155, 214, 0.15);
+}
+
+/* 幽灵按钮 */
+.btnGhost,
+.btnMintGhost {
+  background: rgba(92, 155, 214, 0.08);
+  border: 1.5rpx solid rgba(92, 155, 214, 0.2);
+  color: var(--color-primary-blue);
   font-weight: 600;
-  border-radius: 20rpx;
-  font-size: 30rpx;
-  padding: 24rpx 48rpx;
-  min-height: 88rpx;
+  border-radius: var(--radius-lg);
+  font-size: 26rpx;
+  padding: 14rpx 28rpx;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.btnGhost:active {
+  background: rgba(92, 155, 214, 0.15);
+  transform: scale(0.97);
 }
 
 /* 文字按钮 */
 .btnText {
   background: transparent;
-  color: #5C9BD6;
+  color: var(--color-primary-blue);
   font-weight: 500;
-  font-size: 28rpx;
-  padding: 16rpx 24rpx;
+  font-size: 26rpx;
+  padding: 12rpx 16rpx;
   border: none;
+  transition: opacity 0.2s ease;
 }
 
-/* ==================== 文字样式 ==================== */
-/* 大标题 */
+.btnText:active {
+  opacity: 0.7;
+}
+
+/* ==================== 排版系统 ==================== */
 .titleLarge {
   font-size: 40rpx;
   font-weight: 700;
-  color: #2C3E50;
-  letter-spacing: 0.5rpx;
+  color: var(--color-text-primary);
+  letter-spacing: -0.5rpx;
+  line-height: 1.3;
 }
 
-/* 标题 */
 .titleMedium {
-  font-size: 34rpx;
-  font-weight: 600;
-  color: #2C3E50;
+  font-size: 36rpx;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  letter-spacing: -0.5rpx;
+  line-height: 1.3;
 }
 
-/* 小标题 */
 .titleSmall {
-  font-size: 30rpx;
+  font-size: 32rpx;
   font-weight: 600;
-  color: #34495E;
+  color: var(--color-text-primary);
+  line-height: 1.4;
 }
 
-/* 正文 */
 .bodyText {
   font-size: 28rpx;
-  color: #5D6D7E;
+  color: var(--color-text-secondary);
   line-height: 1.6;
+  letter-spacing: 0.2rpx;
 }
 
-/* 辅助文字 */
 .hintText {
   font-size: 24rpx;
-  color: #85929E;
+  color: var(--color-text-tertiary);
+  line-height: 1.5;
 }
 
-/* ==================== 标签样式 ==================== */
+.captionText {
+  font-size: 22rpx;
+  color: var(--color-text-light);
+  line-height: 1.4;
+}
+
+/* ==================== 标签系统 ==================== */
 .tag {
-  padding: 12rpx 24rpx;
-  border-radius: 999rpx;
-  background: rgba(92, 155, 214, 0.1);
-  border: 2rpx solid rgba(92, 155, 214, 0.2);
-  color: #5C9BD6;
-  font-size: 24rpx;
+  padding: 8rpx 16rpx;
+  border-radius: var(--radius-pill);
+  background: rgba(92, 155, 214, 0.12);
+  border: 1.5rpx solid rgba(92, 155, 214, 0.25);
+  color: var(--color-primary-blue);
+  font-size: 22rpx;
   font-weight: 500;
+  transition: all 0.2s ease;
 }
 
 .tag.active {
-  background: #5C9BD6;
-  border-color: #5C9BD6;
+  background: var(--color-primary-blue);
+  border-color: var(--color-primary-blue);
   color: #ffffff;
+  box-shadow: 0 4rpx 12rpx rgba(92, 155, 214, 0.3);
 }
 
-/* 粉色标签 */
-.tagPink {
-  background: rgba(252, 228, 236, 0.8);
-  border-color: rgba(236, 178, 196, 0.3);
-  color: #C06172;
+.tag.pink {
+  background: rgba(244, 143, 177, 0.12);
+  border-color: rgba(244, 143, 177, 0.25);
+  color: var(--color-primary-pink);
 }
 
-/* 黄色标签 */
-.tagYellow {
-  background: rgba(255, 248, 225, 0.9);
-  border-color: rgba(255, 213, 79, 0.3);
-  color: #9A7B4F;
+.tag.yellow {
+  background: rgba(255, 208, 79, 0.15);
+  border-color: rgba(255, 208, 79, 0.3);
+  color: #F57F17;
 }
 
-/* 蓝色标签 */
-.tagBlue {
-  background: rgba(227, 242, 253, 0.9);
-  border-color: rgba(144, 202, 249, 0.3);
-  color: #4A7BA7;
+.tag.mint {
+  background: rgba(128, 222, 234, 0.12);
+  border-color: rgba(128, 222, 234, 0.25);
+  color: #00838F;
 }
 
-/* ==================== 输入框样式 ==================== */
-.inputField {
+/* ==================== 输入框系统 ==================== */
+.inputField,
+input {
   width: 100%;
-  height: 96rpx;
-  padding: 24rpx 28rpx;
-  font-size: 30rpx;
-  background: #F8FAFC;
-  border-radius: 16rpx;
-  color: #2C3E50;
+  padding: 14rpx 16rpx;
+  font-size: 26rpx;
+  background: rgba(92, 155, 214, 0.06);
+  border-radius: var(--radius-md);
+  color: var(--color-text-primary);
   box-sizing: border-box;
-  border: 2rpx solid transparent;
+  border: 1rpx solid rgba(92, 155, 214, 0.15);
+  transition: all 0.2s ease;
 }
 
-.inputField:focus {
-  border-color: rgba(92, 155, 214, 0.4);
-  background: #ffffff;
+input:focus {
+  border-color: var(--color-primary-blue);
+  background: rgba(92, 155, 214, 0.1);
 }
 
-.inputField::placeholder {
-  color: #9AA5B1;
+input::placeholder {
+  color: var(--color-text-light);
 }
 
 /* ==================== 分割线 ==================== */
 .divider {
   height: 1rpx;
-  background: rgba(92, 155, 214, 0.12);
-  margin: 16rpx 0;
+  background: linear-gradient(90deg, rgba(92, 155, 214, 0.1), rgba(92, 155, 214, 0.3), rgba(92, 155, 214, 0.1));
+  margin: var(--spacing-lg) 0;
 }
 
 /* ==================== 弹窗样式 ==================== */
@@ -198,113 +267,116 @@ page {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(44, 62, 80, 0.4);
+  background: rgba(44, 62, 80, 0.5);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 1000;
+  backdrop-filter: blur(2rpx);
 }
 
 .modalContent {
-  width: 600rpx;
-  background: #ffffff;
-  border-radius: 24rpx;
-  padding: 48rpx 32rpx;
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  gap: 24rpx;
-  flex-shrink: 0;
+  width: calc(100% - 48rpx);
+  max-width: 600rpx;
+  background: var(--color-bg-surface);
+  border-radius: var(--radius-xl);
+  padding: 32rpx;
+  box-shadow: 0 20rpx 60rpx rgba(44, 62, 80, 0.15);
 }
 
 .modalTitle {
-  font-size: 36rpx;
+  font-size: 32rpx;
   font-weight: 700;
-  color: #2C3E50;
+  color: var(--color-text-primary);
   text-align: center;
+  margin-bottom: 16rpx;
 }
 
 .modalDesc {
   font-size: 26rpx;
-  color: #5D6D7E;
+  color: var(--color-text-secondary);
   text-align: center;
   line-height: 1.5;
+  margin-bottom: 24rpx;
 }
 
 .modalActions {
   display: flex;
-  gap: 20rpx;
-  margin-top: 8rpx;
+  gap: var(--spacing-md);
+  margin-top: 24rpx;
 }
 
 .modalBtn {
   flex: 1;
-  padding: 24rpx 0;
-  border-radius: 16rpx;
-  font-size: 30rpx;
+  padding: 16rpx;
+  border-radius: var(--radius-md);
+  font-size: 26rpx;
   font-weight: 600;
   text-align: center;
-  line-height: 1.4;
   border: none;
-}
-
-.modalBtn.cancel {
-  background: #F8FAFC;
-  color: #5D6D7E;
+  transition: all 0.2s ease;
 }
 
 .modalBtn.confirm {
-  background: linear-gradient(135deg, #5C9BD6, #6BA3DC);
+  background: var(--gradient-blue);
   color: #ffffff;
+  box-shadow: 0 4rpx 12rpx rgba(92, 155, 214, 0.25);
 }
 
-.modalBtn.danger {
-  background: rgba(235, 160, 160, 0.15);
-  color: #B87070;
+.modalBtn.cancel {
+  background: rgba(92, 155, 214, 0.08);
+  color: var(--color-primary-blue);
 }
 
-/* ==================== 列表项样式 ==================== */
+/* ==================== 列表项系统 ==================== */
 .listItem {
   display: flex;
   align-items: center;
-  padding: 24rpx;
-  gap: 20rpx;
-  background: #ffffff;
-  border-radius: 16rpx;
+  padding: 16rpx;
+  gap: 12rpx;
+  background: var(--color-bg-surface);
+  border-radius: var(--radius-lg);
+  transition: all 0.2s ease;
+}
+
+.listItem:active {
+  background: rgba(92, 155, 214, 0.08);
 }
 
 .listItemIcon {
-  width: 80rpx;
-  height: 80rpx;
-  border-radius: 16rpx;
+  width: 64rpx;
+  height: 64rpx;
+  border-radius: 12rpx;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 36rpx;
-  background: rgba(92, 155, 214, 0.1);
+  font-size: 28rpx;
+  background: rgba(92, 155, 214, 0.12);
+  flex-shrink: 0;
 }
 
 .listItemContent {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 6rpx;
+  gap: 4rpx;
 }
 
 .listItemTitle {
-  font-size: 30rpx;
+  font-size: 28rpx;
   font-weight: 600;
-  color: #2C3E50;
+  color: var(--color-text-primary);
 }
 
 .listItemSub {
-  font-size: 24rpx;
-  color: #85929E;
+  font-size: 22rpx;
+  color: var(--color-text-tertiary);
 }
 
 .listItemArrow {
-  font-size: 32rpx;
-  color: #9AA5B1;
+  font-size: 28rpx;
+  color: var(--color-text-light);
+  flex-shrink: 0;
 }
 
 /* ==================== 空状态样式 ==================== */
@@ -314,17 +386,20 @@ page {
   align-items: center;
   justify-content: center;
   padding: 80rpx 40rpx;
+  background: linear-gradient(180deg, rgba(227, 242, 253, 0.5), rgba(255, 224, 178, 0.3));
+  border-radius: var(--radius-xl);
 }
 
 .emptyIcon {
   font-size: 120rpx;
   margin-bottom: 24rpx;
-  opacity: 0.6;
+  opacity: 0.4;
+  animation: float 3s ease-in-out infinite;
 }
 
 .emptyText {
   font-size: 28rpx;
-  color: #85929E;
+  color: var(--color-text-secondary);
   text-align: center;
   line-height: 1.6;
 }
@@ -339,43 +414,10 @@ page {
 }
 
 .loadingText {
-  font-size: 26rpx;
-  color: #85929E;
+  font-size: 24rpx;
+  color: var(--color-text-tertiary);
   margin-top: 16rpx;
-}
-
-/* ==================== 渐变背景 ==================== */
-/* 温柔蓝渐变 */
-.bgBlue {
-  background: linear-gradient(135deg, #E3F2FD 0%, #F0F7FF 100%);
-}
-
-/* 浅粉渐变 */
-.bgPink {
-  background: linear-gradient(135deg, #FCE4EC 0%, #FFF0F5 100%);
-}
-
-/* 浅黄渐变 */
-.bgYellow {
-  background: linear-gradient(135deg, #FFF8E1 0%, #FFFBF0 100%);
-}
-
-/* ==================== 卡片特殊样式 ==================== */
-/* 强调卡片 - 用于重点内容 */
-.cardHighlight {
-  background: linear-gradient(135deg, #5C9BD6, #6BA3DC);
-  color: #ffffff;
-  border-radius: 20rpx;
-  padding: 28rpx;
-  box-shadow: 0 6rpx 24rpx rgba(92, 155, 214, 0.25);
-}
-
-/* 柔和卡片 */
-.cardSoft {
-  background: #ffffff;
-  border-radius: 16rpx;
-  padding: 24rpx;
-  border: 1rpx solid rgba(92, 155, 214, 0.1);
+  animation: pulse 1.5s ease-in-out infinite;
 }
 
 /* ==================== 工具类 ==================== */
@@ -402,8 +444,65 @@ page {
   align-items: center;
 }
 
-.gap-8 { gap: 8rpx; }
-.gap-12 { gap: 12rpx; }
-.gap-16 { gap: 16rpx; }
-.gap-20 { gap: 20rpx; }
-.gap-24 { gap: 24rpx; }
+.gap-xs { gap: var(--spacing-xs); }
+.gap-sm { gap: var(--spacing-sm); }
+.gap-md { gap: var(--spacing-md); }
+.gap-lg { gap: var(--spacing-lg); }
+.gap-xl { gap: var(--spacing-xl); }
+.gap-2xl { gap: var(--spacing-2xl); }
+
+/* ==================== 背景渐变 ==================== */
+.bg-gradient-blue {
+  background: linear-gradient(135deg, rgba(92, 155, 214, 0.08), rgba(107, 163, 220, 0.04));
+}
+
+.bg-gradient-yellow {
+  background: linear-gradient(135deg, rgba(255, 224, 130, 0.12), rgba(255, 208, 79, 0.06));
+}
+
+.bg-gradient-pink {
+  background: linear-gradient(135deg, rgba(244, 143, 177, 0.12), rgba(236, 64, 122, 0.06));
+}
+
+.bg-gradient-mint {
+  background: linear-gradient(135deg, rgba(128, 222, 234, 0.12), rgba(77, 208, 225, 0.06));
+}
+
+/* ==================== 动画 ==================== */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20rpx);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20rpx);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

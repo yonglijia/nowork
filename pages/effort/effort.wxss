@@ -1,13 +1,12 @@
 /**
- * 今日实干页面样式
- * 温暖、治愈、简洁
+ * 今日实干页面样式 - 设计感升级版
  */
 
 .page {
   display: flex;
   flex-direction: column;
   gap: 16rpx;
-  background: #F5F8FA;
+  background: linear-gradient(180deg, #F5F8FA 0%, #F9FBFC 100%);
   padding: 24rpx;
   padding-top: calc(env(safe-area-inset-top) + 80rpx);
   padding-bottom: calc(env(safe-area-inset-bottom) + 120rpx);
@@ -16,8 +15,10 @@
 /* ==================== 顶部区域 ==================== */
 .top {
   padding: 24rpx;
-  background: linear-gradient(135deg, #E3F2FD 0%, #F5F9FF 100%);
+  background: linear-gradient(135deg, rgba(227, 242, 253, 0.9) 0%, rgba(245, 249, 255, 0.95) 100%);
   border-radius: 20rpx;
+  border: 1rpx solid rgba(92, 155, 214, 0.15);
+  box-shadow: 0 4rpx 12rpx rgba(92, 155, 214, 0.08);
 }
 
 .topRow {
@@ -37,18 +38,20 @@
   font-size: 36rpx;
   font-weight: 700;
   color: #2C3E50;
+  letter-spacing: -0.5rpx;
 }
 
 .sub {
   font-size: 24rpx;
-  color: #5D6D7E;
+  color: #85929E;
 }
 
 .statPill {
   padding: 8rpx 16rpx;
-  background: rgba(92, 155, 214, 0.15);
+  background: linear-gradient(135deg, rgba(92, 155, 214, 0.12), rgba(92, 155, 214, 0.08));
   border-radius: 999rpx;
-  border: none;
+  border: 1.5rpx solid rgba(92, 155, 214, 0.2);
+  box-shadow: 0 2rpx 8rpx rgba(92, 155, 214, 0.1);
 }
 
 .statText {
@@ -59,21 +62,27 @@
 
 /* ==================== 迷你统计 ==================== */
 .miniStats {
-  margin-top: 16rpx;
+  margin-top: 14rpx;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 12rpx;
+  gap: 10rpx;
 }
 
 .mini {
-  border-radius: 16rpx;
-  padding: 16rpx;
-  background: rgba(255, 255, 255, 0.9);
-  border: none;
+  border-radius: 12rpx;
+  padding: 14rpx;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(227, 242, 253, 0.3));
+  border: 1.5rpx solid rgba(92, 155, 214, 0.12);
+  transition: all 0.2s ease;
+}
+
+.mini:active {
+  transform: scale(0.96);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 1), rgba(227, 242, 253, 0.5));
 }
 
 .miniLabel {
-  font-size: 22rpx;
+  font-size: 20rpx;
   color: #85929E;
   font-weight: 500;
 }
@@ -84,6 +93,7 @@
   font-size: 32rpx;
   font-weight: 700;
   color: #5C9BD6;
+  letter-spacing: -0.5rpx;
 }
 
 /* ==================== 表单区域 ==================== */
@@ -91,14 +101,16 @@
   padding: 16rpx;
   background: #ffffff;
   border-radius: 16rpx;
-  box-shadow: 0 2rpx 12rpx rgba(44, 62, 80, 0.05);
+  border: 1rpx solid rgba(92, 155, 214, 0.08);
+  box-shadow: 0 2rpx 8rpx rgba(44, 62, 80, 0.04);
 }
 
 .formTitle {
   font-size: 26rpx;
-  font-weight: 600;
+  font-weight: 700;
   color: #2C3E50;
   margin-bottom: 12rpx;
+  letter-spacing: -0.3rpx;
 }
 
 .formRow {
@@ -116,29 +128,41 @@
 .formLabel {
   font-size: 20rpx;
   color: #85929E;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .formPicker {
   padding: 12rpx;
-  background: #F8FAFC;
-  border: 1rpx solid rgba(92, 155, 214, 0.12);
+  background: linear-gradient(135deg, rgba(92, 155, 214, 0.08), rgba(92, 155, 214, 0.04));
+  border: 1.5rpx solid rgba(92, 155, 214, 0.15);
   border-radius: 10rpx;
   color: #34495E;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 26rpx;
   text-align: center;
+  transition: all 0.2s ease;
+}
+
+.formPicker:active {
+  background: rgba(92, 155, 214, 0.12);
+  border-color: #5C9BD6;
 }
 
 .formInput {
   padding: 12rpx;
-  background: #F8FAFC;
-  border: 1rpx solid rgba(92, 155, 214, 0.12);
+  background: linear-gradient(135deg, rgba(92, 155, 214, 0.08), rgba(92, 155, 214, 0.04));
+  border: 1.5rpx solid rgba(92, 155, 214, 0.15);
   border-radius: 10rpx;
   color: #34495E;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 26rpx;
   text-align: center;
+  transition: all 0.2s ease;
+}
+
+.formInput:focus {
+  background: rgba(92, 155, 214, 0.12);
+  border-color: #5C9BD6;
 }
 
 .extraRow {
@@ -157,18 +181,24 @@
 
 .chip {
   padding: 10rpx 14rpx;
-  background: #F8FAFC;
-  border: 1rpx solid rgba(92, 155, 214, 0.12);
+  background: #ffffff;
+  border: 1.5rpx solid rgba(92, 155, 214, 0.15);
   border-radius: 999rpx;
   color: #5D6D7E;
   font-size: 22rpx;
-  font-weight: 500;
+  font-weight: 600;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.chip:active {
+  transform: scale(0.95);
 }
 
 .chip.active {
-  background: #E3F2FD;
-  border-color: rgba(92, 155, 214, 0.3);
+  background: linear-gradient(135deg, rgba(92, 155, 214, 0.2), rgba(92, 155, 214, 0.1));
+  border-color: #5C9BD6;
   color: #5C9BD6;
+  box-shadow: 0 2rpx 8rpx rgba(92, 155, 214, 0.15);
 }
 
 /* ==================== 提交按钮 ==================== */
@@ -181,10 +211,17 @@
   justify-content: center;
   background: linear-gradient(135deg, #5C9BD6, #6BA3DC);
   color: #ffffff;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 28rpx;
   box-shadow: 0 4rpx 16rpx rgba(92, 155, 214, 0.2);
   border: none;
+  transition: all 0.2s ease;
+  letter-spacing: -0.3rpx;
+}
+
+.submit:active {
+  transform: scale(0.96);
+  box-shadow: 0 2rpx 8rpx rgba(92, 155, 214, 0.15);
 }
 
 /* ==================== 今日卡片 ==================== */
@@ -192,7 +229,8 @@
   padding: 16rpx;
   background: #ffffff;
   border-radius: 16rpx;
-  box-shadow: 0 2rpx 12rpx rgba(44, 62, 80, 0.05);
+  border: 1rpx solid rgba(92, 155, 214, 0.08);
+  box-shadow: 0 2rpx 8rpx rgba(44, 62, 80, 0.04);
 }
 
 .card {
@@ -212,7 +250,8 @@
 
 .cardTitle {
   font-size: 26rpx;
-  font-weight: 600;
+  font-weight: 700;
+  letter-spacing: -0.3rpx;
 }
 
 .cardDate {
@@ -233,18 +272,19 @@
   justify-content: space-between;
   padding: 8rpx 12rpx;
   border-radius: 10rpx;
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.12);
+  border: 1rpx solid rgba(255, 255, 255, 0.15);
 }
 
 .k {
   font-size: 22rpx;
   opacity: 0.9;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .v {
   font-size: 24rpx;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 /* ==================== 勋章区域 ==================== */
@@ -257,7 +297,7 @@
 .medalTitle {
   font-size: 22rpx;
   opacity: 0.9;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .medalRow {
@@ -272,7 +312,8 @@
   background: rgba(255, 255, 255, 0.2);
   border-radius: 999rpx;
   font-size: 20rpx;
-  font-weight: 500;
+  font-weight: 600;
+  border: 1rpx solid rgba(255, 255, 255, 0.15);
 }
 
 /* ==================== 操作按钮 ==================== */
@@ -293,9 +334,16 @@
   justify-content: center;
   background: #ffffff;
   color: #5C9BD6;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 24rpx;
   border: 2rpx solid rgba(92, 155, 214, 0.2);
+  transition: all 0.2s ease;
+  letter-spacing: -0.2rpx;
+}
+
+.actionBtn:active {
+  transform: scale(0.96);
+  background: rgba(92, 155, 214, 0.05);
 }
 
 /* ==================== 日历区域 ==================== */
@@ -303,7 +351,8 @@
   padding: 16rpx;
   background: #ffffff;
   border-radius: 16rpx;
-  box-shadow: 0 2rpx 12rpx rgba(44, 62, 80, 0.05);
+  border: 1rpx solid rgba(92, 155, 214, 0.08);
+  box-shadow: 0 2rpx 8rpx rgba(44, 62, 80, 0.04);
 }
 
 .calTop {
@@ -311,6 +360,13 @@
   align-items: baseline;
   justify-content: space-between;
   gap: 12rpx;
+}
+
+.sectionTitle {
+  font-size: 26rpx;
+  font-weight: 700;
+  color: #2C3E50;
+  letter-spacing: -0.3rpx;
 }
 
 .calHint {
@@ -330,7 +386,7 @@
   text-align: center;
   font-size: 20rpx;
   color: #9AA5B1;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .grid {
@@ -351,25 +407,32 @@
   justify-content: center;
   gap: 2rpx;
   color: #85929E;
+  transition: all 0.2s ease;
+}
+
+.day:active {
+  transform: scale(0.95);
 }
 
 .day.today {
   border-color: rgba(92, 155, 214, 0.3);
+  background: rgba(227, 242, 253, 0.3);
 }
 
 .day.has {
-  background: #E3F2FD;
+  background: linear-gradient(135deg, rgba(227, 242, 253, 0.6), rgba(227, 242, 253, 0.3));
   border-color: rgba(92, 155, 214, 0.2);
 }
 
 .day.sel {
-  background: #5C9BD6;
+  background: linear-gradient(135deg, #5C9BD6, #6BA3DC);
   color: #ffffff;
+  box-shadow: 0 2rpx 8rpx rgba(92, 155, 214, 0.2);
 }
 
 .d {
   font-size: 22rpx;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .dot {
@@ -391,13 +454,20 @@
 }
 
 .entry {
-  padding: 20rpx;
+  padding: 18rpx;
   display: flex;
   align-items: center;
   justify-content: space-between;
   background: #ffffff;
   border-radius: 16rpx;
-  box-shadow: 0 2rpx 12rpx rgba(44, 62, 80, 0.05);
+  border: 1rpx solid rgba(92, 155, 214, 0.08);
+  box-shadow: 0 2rpx 8rpx rgba(44, 62, 80, 0.04);
+  transition: all 0.2s ease;
+}
+
+.entry:active {
+  transform: translateY(2rpx);
+  box-shadow: 0 4rpx 12rpx rgba(44, 62, 80, 0.08);
 }
 
 .entryText {
@@ -408,8 +478,9 @@
 
 .entryTitle {
   font-size: 28rpx;
-  font-weight: 600;
+  font-weight: 700;
   color: #2C3E50;
+  letter-spacing: -0.3rpx;
 }
 
 .entrySub {
@@ -418,8 +489,13 @@
 }
 
 .entryArrow {
-  font-size: 36rpx;
+  font-size: 28rpx;
   color: #9AA5B1;
+  transition: transform 0.2s ease;
+}
+
+.entry:active .entryArrow {
+  transform: translateX(4rpx);
 }
 
 /* ==================== 隐藏画布 ==================== */
