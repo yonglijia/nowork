@@ -5,31 +5,31 @@
 
 .page {
   min-height: 100vh;
-  background: #F8FBFB;
+  background: #F5F8FA;
   display: flex;
   flex-direction: column;
-  gap: 16rpx;
+  gap: 14rpx;
 }
 
 /* ==================== 顶部标题 ==================== */
 .header {
-  padding: 40rpx 32rpx;
+  padding: 36rpx 24rpx;
   text-align: center;
-  background: linear-gradient(135deg, #FFF8E1 0%, #FFFBF0 100%);
-  border-radius: 0 0 24rpx 24rpx;
+  background: linear-gradient(135deg, #FFF8E1 0%, #FFFCF0 100%);
+  border-radius: 0 0 20rpx 20rpx;
 }
 
 .title {
   display: block;
-  font-size: 40rpx;
+  font-size: 38rpx;
   font-weight: 700;
-  color: #3D5A5C;
-  margin-bottom: 8rpx;
+  color: #2C3E50;
+  margin-bottom: 6rpx;
 }
 
 .subtitle {
   font-size: 26rpx;
-  color: #8AA0A2;
+  color: #5D6D7E;
 }
 
 /* ==================== 加载和空状态 ==================== */
@@ -39,59 +39,59 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 80rpx;
-  margin: 32rpx;
+  padding: 60rpx;
+  margin: 24rpx;
 }
 
 .loadingText {
-  font-size: 28rpx;
-  color: #8AA0A2;
+  font-size: 26rpx;
+  color: #85929E;
 }
 
 .emptyIcon {
-  font-size: 80rpx;
-  margin-bottom: 20rpx;
-  opacity: 0.6;
+  font-size: 72rpx;
+  margin-bottom: 16rpx;
+  opacity: 0.5;
 }
 
 .emptyText {
-  font-size: 28rpx;
-  color: #8AA0A2;
-  margin-bottom: 32rpx;
+  font-size: 26rpx;
+  color: #85929E;
+  margin-bottom: 24rpx;
 }
 
 /* ==================== 内容区域 ==================== */
 .content {
   display: flex;
   flex-direction: column;
-  gap: 16rpx;
-  padding: 0 24rpx 32rpx;
+  gap: 14rpx;
+  padding: 0 24rpx 24rpx;
 }
 
 /* ==================== 月度概览卡片 ==================== */
 .overview {
-  padding: 32rpx;
-  background: linear-gradient(135deg, #7EBDB8, #8FC4C0);
+  padding: 28rpx;
+  background: linear-gradient(135deg, #5C9BD6, #6BA3DC);
   color: #ffffff;
-  border-radius: 24rpx;
-  box-shadow: 0 8rpx 28rpx rgba(126, 189, 184, 0.25);
+  border-radius: 20rpx;
+  box-shadow: 0 6rpx 24rpx rgba(92, 155, 214, 0.25);
 }
 
 .overviewHeader {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 16rpx;
+  margin-bottom: 14rpx;
 }
 
 .overviewTitle {
-  font-size: 28rpx;
+  font-size: 26rpx;
   opacity: 0.9;
 }
 
 .modifyBtn {
-  font-size: 24rpx;
-  padding: 10rpx 20rpx;
+  font-size: 22rpx;
+  padding: 8rpx 16rpx;
   background: rgba(255, 255, 255, 0.2);
   border-radius: 999rpx;
   border: none;
@@ -100,17 +100,17 @@
 .overviewAmount {
   display: flex;
   align-items: baseline;
-  margin-bottom: 32rpx;
+  margin-bottom: 28rpx;
 }
 
 .currency {
-  font-size: 36rpx;
+  font-size: 32rpx;
   font-weight: 600;
-  margin-right: 8rpx;
+  margin-right: 6rpx;
 }
 
 .amount {
-  font-size: 64rpx;
+  font-size: 60rpx;
   font-weight: 700;
 }
 
@@ -123,16 +123,16 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8rpx;
+  gap: 6rpx;
 }
 
 .statValue {
-  font-size: 28rpx;
+  font-size: 26rpx;
   font-weight: 600;
 }
 
 .statLabel {
-  font-size: 22rpx;
+  font-size: 20rpx;
   opacity: 0.8;
 }
 
@@ -140,67 +140,67 @@
 .todayEntry {
   display: flex;
   align-items: center;
-  padding: 24rpx;
-  gap: 16rpx;
+  padding: 20rpx;
+  gap: 14rpx;
   background: #ffffff;
-  border-radius: 20rpx;
-  box-shadow: 0 2rpx 12rpx rgba(61, 90, 92, 0.04);
+  border-radius: 16rpx;
+  box-shadow: 0 2rpx 8rpx rgba(44, 62, 80, 0.04);
 }
 
 .entryIcon {
-  font-size: 40rpx;
+  font-size: 36rpx;
 }
 
 .entryContent {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 6rpx;
+  gap: 4rpx;
 }
 
 .entryTitle {
-  font-size: 28rpx;
+  font-size: 26rpx;
   font-weight: 600;
-  color: #3D5A5C;
+  color: #2C3E50;
 }
 
 .entrySub {
-  font-size: 24rpx;
-  color: #8AA0A2;
+  font-size: 22rpx;
+  color: #85929E;
 }
 
 .entryArrow {
-  font-size: 32rpx;
-  color: #A0B5B7;
+  font-size: 30rpx;
+  color: #9AA5B1;
 }
 
 /* ==================== 信息区域 ==================== */
 .infoSection {
-  padding: 24rpx;
+  padding: 20rpx;
   background: #ffffff;
-  border-radius: 20rpx;
-  box-shadow: 0 2rpx 12rpx rgba(61, 90, 92, 0.04);
+  border-radius: 16rpx;
+  box-shadow: 0 2rpx 8rpx rgba(44, 62, 80, 0.04);
 }
 
 .sectionTitle {
-  font-size: 28rpx;
+  font-size: 26rpx;
   font-weight: 600;
-  color: #3D5A5C;
-  margin-bottom: 16rpx;
+  color: #2C3E50;
+  margin-bottom: 14rpx;
   display: block;
 }
 
 .infoList {
   display: flex;
   flex-direction: column;
-  gap: 12rpx;
+  gap: 10rpx;
 }
 
 .infoItem {
   display: flex;
   justify-content: space-between;
-  padding: 12rpx 0;
-  border-bottom: 1rpx solid rgba(126, 189, 184, 0.1);
+  padding: 10rpx 0;
+  border-bottom: 1rpx solid rgba(92, 155, 214, 0.08);
 }
 
 .infoItem:last-child {
@@ -208,38 +208,38 @@
 }
 
 .infoLabel {
-  font-size: 26rpx;
-  color: #8AA0A2;
+  font-size: 24rpx;
+  color: #85929E;
 }
 
 .infoValue {
-  font-size: 26rpx;
+  font-size: 24rpx;
   font-weight: 600;
-  color: #4A6B6E;
+  color: #34495E;
 }
 
 /* ==================== 总结文案 ==================== */
 .summary {
-  padding: 24rpx;
+  padding: 20rpx;
   text-align: center;
   background: #ffffff;
-  border-radius: 20rpx;
-  box-shadow: 0 2rpx 12rpx rgba(61, 90, 92, 0.04);
+  border-radius: 16rpx;
+  box-shadow: 0 2rpx 8rpx rgba(44, 62, 80, 0.04);
 }
 
 .summaryText {
-  font-size: 28rpx;
-  color: #5A8A8D;
+  font-size: 26rpx;
+  color: #5D6D7E;
   font-weight: 500;
   line-height: 1.6;
 }
 
 /* ==================== 历史记录 ==================== */
 .historySection {
-  padding: 24rpx;
+  padding: 20rpx;
   background: #ffffff;
-  border-radius: 20rpx;
-  box-shadow: 0 2rpx 12rpx rgba(61, 90, 92, 0.04);
+  border-radius: 16rpx;
+  box-shadow: 0 2rpx 8rpx rgba(44, 62, 80, 0.04);
 }
 
 .historyHeader {
@@ -249,26 +249,26 @@
 }
 
 .historyToggle {
-  font-size: 24rpx;
-  color: #8AA0A2;
+  font-size: 22rpx;
+  color: #85929E;
 }
 
 .historyList {
-  margin-top: 16rpx;
+  margin-top: 14rpx;
 }
 
 .historyEmpty {
-  padding: 32rpx;
+  padding: 24rpx;
   text-align: center;
-  font-size: 26rpx;
-  color: #A0B5B7;
+  font-size: 24rpx;
+  color: #9AA5B1;
 }
 
 .historyItem {
   display: flex;
   align-items: center;
-  padding: 16rpx 0;
-  border-bottom: 1rpx solid rgba(126, 189, 184, 0.1);
+  padding: 14rpx 0;
+  border-bottom: 1rpx solid rgba(92, 155, 214, 0.08);
 }
 
 .historyItem:last-child {
@@ -277,20 +277,20 @@
 
 .historyMonth {
   flex: 1;
-  font-size: 26rpx;
-  color: #3D5A5C;
+  font-size: 24rpx;
+  color: #2C3E50;
 }
 
 .historyWage {
-  font-size: 26rpx;
+  font-size: 24rpx;
   font-weight: 600;
-  color: #7EBDB8;
-  margin-right: 12rpx;
+  color: #5C9BD6;
+  margin-right: 10rpx;
 }
 
 .historyArrow {
-  font-size: 28rpx;
-  color: #A0B5B7;
+  font-size: 26rpx;
+  color: #9AA5B1;
 }
 
 /* ==================== 设置弹窗 ==================== */
@@ -300,7 +300,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(61, 90, 92, 0.4);
+  background: rgba(44, 62, 80, 0.4);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -308,10 +308,10 @@
 }
 
 .modalContent {
-  width: 600rpx;
+  width: 580rpx;
   background: #ffffff;
-  border-radius: 28rpx;
-  padding: 40rpx 32rpx;
+  border-radius: 24rpx;
+  padding: 36rpx 28rpx;
   position: relative;
 }
 
@@ -322,16 +322,16 @@
 }
 
 .modalTitle {
-  font-size: 36rpx;
+  font-size: 34rpx;
   font-weight: 700;
-  color: #3D5A5C;
-  margin-bottom: 12rpx;
+  color: #2C3E50;
+  margin-bottom: 10rpx;
 }
 
 .modalDesc {
-  font-size: 26rpx;
-  color: #8AA0A2;
-  margin-bottom: 32rpx;
+  font-size: 24rpx;
+  color: #5D6D7E;
+  margin-bottom: 28rpx;
   text-align: center;
 }
 
@@ -339,28 +339,28 @@
   width: 100%;
   display: flex;
   align-items: center;
-  background: rgba(126, 189, 184, 0.06);
-  border-radius: 20rpx;
-  padding: 24rpx 28rpx;
-  margin-bottom: 32rpx;
+  background: #F8FAFC;
+  border-radius: 14rpx;
+  padding: 20rpx 24rpx;
+  margin-bottom: 28rpx;
   border: 2rpx solid transparent;
 }
 
 .inputWrap:focus-within {
-  border-color: rgba(126, 189, 184, 0.3);
+  border-color: rgba(92, 155, 214, 0.3);
 }
 
 .inputPrefix {
-  font-size: 32rpx;
+  font-size: 30rpx;
   font-weight: 600;
-  color: #3D5A5C;
-  margin-right: 8rpx;
+  color: #2C3E50;
+  margin-right: 6rpx;
 }
 
 .modalInput {
   flex: 1;
-  font-size: 32rpx;
-  color: #3D5A5C;
+  font-size: 30rpx;
+  color: #2C3E50;
 }
 
 .pickerValue {
@@ -368,58 +368,58 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: rgba(126, 189, 184, 0.06);
-  border-radius: 20rpx;
-  padding: 24rpx 28rpx;
-  margin-bottom: 32rpx;
-  font-size: 32rpx;
+  background: #F8FAFC;
+  border-radius: 14rpx;
+  padding: 20rpx 24rpx;
+  margin-bottom: 28rpx;
+  font-size: 30rpx;
   font-weight: 600;
-  color: #3D5A5C;
-  border: 2rpx solid rgba(126, 189, 184, 0.1);
+  color: #2C3E50;
+  border: 1rpx solid rgba(92, 155, 214, 0.1);
 }
 
 .pickerArrow {
-  font-size: 20rpx;
-  color: #A0B5B7;
+  font-size: 18rpx;
+  color: #9AA5B1;
 }
 
 .stepBtns {
   width: 100%;
   display: flex;
-  gap: 16rpx;
+  gap: 14rpx;
 }
 
 .btn {
   flex: 1;
-  padding: 24rpx;
-  border-radius: 20rpx;
-  font-size: 30rpx;
+  padding: 22rpx;
+  border-radius: 14rpx;
+  font-size: 28rpx;
   font-weight: 600;
   text-align: center;
   border: none;
 }
 
 .btn.primary {
-  background: linear-gradient(135deg, #7EBDB8, #8FC4C0);
+  background: linear-gradient(135deg, #5C9BD6, #6BA3DC);
   color: #ffffff;
 }
 
 .btn.secondary {
-  background: rgba(126, 189, 184, 0.1);
-  color: #5A8A8D;
+  background: #F8FAFC;
+  color: #5D6D7E;
 }
 
 .closeBtn {
   position: absolute;
-  top: 20rpx;
-  right: 20rpx;
-  width: 56rpx;
-  height: 56rpx;
+  top: 16rpx;
+  right: 16rpx;
+  width: 52rpx;
+  height: 52rpx;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 28rpx;
-  color: #A0B5B7;
-  background: rgba(126, 189, 184, 0.1);
+  font-size: 26rpx;
+  color: #9AA5B1;
+  background: #F8FAFC;
   border-radius: 50%;
 }

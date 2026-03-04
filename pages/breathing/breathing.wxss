@@ -1,11 +1,11 @@
 /**
  * 呼吸放松页面样式
- * 柔和、治愈、放松
+ * 清晰、治愈、放松
  */
 
 .page {
   min-height: 100vh;
-  background: linear-gradient(180deg, #E0F2F1 0%, #F1F8F7 50%, #F8FBFB 100%);
+  background: linear-gradient(180deg, #E3F2FD 0%, #F5F9FF 50%, #F5F8FA 100%);
   display: flex;
   flex-direction: column;
 }
@@ -15,26 +15,26 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 60rpx 40rpx;
+  padding: 48rpx 32rpx;
 }
 
 /* ==================== 顶部标题 ==================== */
 .header {
   text-align: center;
-  margin-bottom: 48rpx;
+  margin-bottom: 40rpx;
 }
 
 .title {
   display: block;
-  font-size: 40rpx;
+  font-size: 38rpx;
   font-weight: 700;
-  color: #3D5A5C;
-  margin-bottom: 12rpx;
+  color: #2C3E50;
+  margin-bottom: 10rpx;
 }
 
 .subtitle {
   font-size: 26rpx;
-  color: #8AA0A2;
+  color: #5D6D7E;
   line-height: 1.5;
 }
 
@@ -48,14 +48,14 @@
   position: relative;
 }
 
-/* 外发光效果 - 柔和的治愈青色 */
+/* 外发光效果 */
 .glowRing {
   position: absolute;
-  width: 500rpx;
-  height: 500rpx;
+  width: 480rpx;
+  height: 480rpx;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(126, 189, 184, 0.25) 0%, rgba(126, 189, 184, 0.08) 40%, transparent 70%);
-  filter: blur(40rpx);
+  background: radial-gradient(circle, rgba(92, 155, 214, 0.2) 0%, rgba(92, 155, 214, 0.05) 40%, transparent 70%);
+  filter: blur(30rpx);
 }
 
 /* 粒子容器 */
@@ -72,45 +72,45 @@
 .particle {
   position: absolute;
   border-radius: 50%;
-  background: radial-gradient(circle at 30% 30%, #A5D4D0, #7EBDB8);
-  box-shadow: 0 0 16rpx rgba(126, 189, 184, 0.5);
+  background: radial-gradient(circle at 30% 30%, #8BB8E0, #5C9BD6);
+  box-shadow: 0 0 12rpx rgba(92, 155, 214, 0.5);
   will-change: transform, opacity;
 }
 
 /* 主圆圈 */
 .circleOuter {
-  width: 400rpx;
-  height: 400rpx;
+  width: 380rpx;
+  height: 380rpx;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.8);
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
   z-index: 10;
-  box-shadow: 0 8rpx 40rpx rgba(126, 189, 184, 0.15);
+  box-shadow: 0 4rpx 24rpx rgba(92, 155, 214, 0.15);
 }
 
 .circleInner {
-  width: 300rpx;
-  height: 300rpx;
+  width: 280rpx;
+  height: 280rpx;
   border-radius: 50%;
-  background: linear-gradient(135deg, #7EBDB8, #8FC4C0);
+  background: linear-gradient(135deg, #5C9BD6, #6BA3DC);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   box-shadow: 
-    0 8rpx 32rpx rgba(126, 189, 184, 0.3),
-    inset 0 2rpx 20rpx rgba(255, 255, 255, 0.3);
+    0 6rpx 24rpx rgba(92, 155, 214, 0.3),
+    inset 0 2rpx 16rpx rgba(255, 255, 255, 0.3);
   transition: transform 0.15s ease-out;
 }
 
 .circleInner.idle {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
+  background: linear-gradient(135deg, #E3F2FD, #F5F9FF);
   box-shadow: 
-    0 4rpx 20rpx rgba(126, 189, 184, 0.1),
-    inset 0 2rpx 10rpx rgba(255, 255, 255, 0.5);
+    0 4rpx 16rpx rgba(92, 155, 214, 0.1),
+    inset 0 2rpx 8rpx rgba(255, 255, 255, 0.5);
 }
 
 .circleInner.paused {
@@ -118,88 +118,87 @@
 }
 
 .breathText {
-  font-size: 32rpx;
+  font-size: 30rpx;
   font-weight: 600;
   color: #ffffff;
 }
 
 .circleInner.idle .breathText {
-  color: #7EBDB8;
+  color: #5C9BD6;
 }
 
 .timeText {
-  font-size: 52rpx;
+  font-size: 48rpx;
   font-weight: 700;
   color: #ffffff;
-  margin-top: 8rpx;
+  margin-top: 6rpx;
 }
 
 .circleInner.idle .timeText {
-  color: #5A8A8D;
+  color: #5C9BD6;
 }
 
 /* ==================== 进度条 ==================== */
 .progressBar {
   width: 80%;
   height: 8rpx;
-  background: rgba(126, 189, 184, 0.15);
+  background: rgba(92, 155, 214, 0.15);
   border-radius: 4rpx;
-  margin: 40rpx 0;
+  margin: 32rpx 0;
   overflow: hidden;
 }
 
 .progressFill {
   height: 100%;
-  background: linear-gradient(90deg, #7EBDB8, #8FC4C0, #A5D4D0);
+  background: linear-gradient(90deg, #5C9BD6, #6BA3DC, #8BB8E0);
   border-radius: 4rpx;
-  box-shadow: 0 0 12rpx rgba(126, 189, 184, 0.4);
 }
 
 /* ==================== 控制按钮 ==================== */
 .controls {
   display: flex;
-  gap: 24rpx;
-  margin-bottom: 40rpx;
+  gap: 20rpx;
+  margin-bottom: 32rpx;
 }
 
 .btn {
-  min-width: 200rpx;
-  padding: 24rpx 48rpx;
+  min-width: 180rpx;
+  padding: 22rpx 40rpx;
   border-radius: 999rpx;
-  font-size: 30rpx;
+  font-size: 28rpx;
   font-weight: 600;
   border: none;
 }
 
 .btn.primary {
-  background: linear-gradient(135deg, #7EBDB8, #8FC4C0);
+  background: linear-gradient(135deg, #5C9BD6, #6BA3DC);
   color: #ffffff;
-  box-shadow: 0 8rpx 24rpx rgba(126, 189, 184, 0.3);
+  box-shadow: 0 6rpx 20rpx rgba(92, 155, 214, 0.3);
 }
 
 .btn.secondary {
-  background: rgba(255, 255, 255, 0.9);
-  color: #5A8A8D;
-  border: 2rpx solid rgba(126, 189, 184, 0.2);
+  background: #ffffff;
+  color: #5C9BD6;
+  border: 2rpx solid rgba(92, 155, 214, 0.25);
 }
 
 /* ==================== 情绪打分入口 ==================== */
 .moodEntry {
   width: 90%;
-  padding: 32rpx;
-  border-radius: 24rpx;
+  padding: 28rpx;
+  border-radius: 20rpx;
   background: #ffffff;
   text-align: center;
-  margin-top: 20rpx;
-  box-shadow: 0 4rpx 20rpx rgba(61, 90, 92, 0.06);
+  margin-top: 16rpx;
+  box-shadow: 0 2rpx 12rpx rgba(44, 62, 80, 0.05);
 }
 
 .moodEntryTitle {
   display: block;
-  font-size: 30rpx;
+  font-size: 28rpx;
   font-weight: 600;
-  color: #3D5A5C;
-  margin-bottom: 20rpx;
+  color: #2C3E50;
+  margin-bottom: 16rpx;
 }
 
 .moodEntry .btn {

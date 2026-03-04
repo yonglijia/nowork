@@ -6,16 +6,17 @@
 .page {
   display: flex;
   flex-direction: column;
-  gap: 16rpx;
+  gap: 14rpx;
+  background: #F5F8FA;
+  padding: 24rpx;
   padding-bottom: 40rpx;
-  background: #F8FBFB;
 }
 
 /* ==================== 顶部区域 ==================== */
 .header {
-  padding: 24rpx 28rpx;
-  background: linear-gradient(135deg, #E0F2F1 0%, #F1F8F7 100%);
-  border-radius: 0 0 24rpx 24rpx;
+  padding: 24rpx;
+  background: linear-gradient(135deg, #E3F2FD 0%, #F5F9FF 100%);
+  border-radius: 20rpx;
 }
 
 .headerRow {
@@ -25,25 +26,25 @@
 }
 
 .headerTitle {
-  font-size: 36rpx;
+  font-size: 34rpx;
   font-weight: 700;
-  color: #3D5A5C;
+  color: #2C3E50;
 }
 
 .editBtn {
-  padding: 12rpx 24rpx;
-  font-size: 26rpx;
-  color: #5A8A8D;
-  background: rgba(126, 189, 184, 0.1);
+  padding: 10rpx 20rpx;
+  font-size: 24rpx;
+  color: #5C9BD6;
+  background: rgba(92, 155, 214, 0.1);
   border-radius: 999rpx;
   border: none;
 }
 
 .headerSub {
   display: block;
-  margin-top: 12rpx;
-  font-size: 24rpx;
-  color: #8AA0A2;
+  margin-top: 10rpx;
+  font-size: 22rpx;
+  color: #85929E;
 }
 
 /* ==================== 批量操作栏 ==================== */
@@ -51,28 +52,28 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 16rpx 24rpx;
+  padding: 14rpx 0;
 }
 
 .selectAllBtn {
   display: flex;
   align-items: center;
-  gap: 12rpx;
-  font-size: 26rpx;
-  color: #5A8A8D;
+  gap: 10rpx;
+  font-size: 24rpx;
+  color: #5D6D7E;
 }
 
 .checkbox {
-  width: 40rpx;
-  height: 40rpx;
+  width: 36rpx;
+  height: 36rpx;
   border-radius: 50%;
-  border: 3rpx solid rgba(126, 189, 184, 0.3);
+  border: 2rpx solid rgba(92, 155, 214, 0.3);
   background: #ffffff;
 }
 
 .checkbox.checked {
-  background: #7EBDB8;
-  border-color: #7EBDB8;
+  background: #5C9BD6;
+  border-color: #5C9BD6;
 }
 
 .checkbox.checked::after {
@@ -81,13 +82,13 @@
   justify-content: center;
   align-items: center;
   color: #ffffff;
-  font-size: 22rpx;
+  font-size: 20rpx;
   font-weight: bold;
 }
 
 .deleteBtn {
-  padding: 14rpx 28rpx;
-  font-size: 26rpx;
+  padding: 12rpx 24rpx;
+  font-size: 24rpx;
   font-weight: 600;
   color: #ffffff;
   background: #EBA0A0;
@@ -105,96 +106,95 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 80rpx 0;
-  gap: 12rpx;
+  padding: 60rpx 0;
+  gap: 10rpx;
 }
 
 .loadingText,
 .emptyText {
-  font-size: 28rpx;
-  color: #8AA0A2;
+  font-size: 26rpx;
+  color: #85929E;
 }
 
 .emptySub {
-  font-size: 24rpx;
-  color: #A0B5B7;
+  font-size: 22rpx;
+  color: #9AA5B1;
 }
 
 /* ==================== 收藏列表 ==================== */
 .favoriteList {
   display: flex;
   flex-direction: column;
-  gap: 12rpx;
-  padding: 0 24rpx;
+  gap: 10rpx;
 }
 
 .favItem {
   display: flex;
   align-items: flex-start;
-  padding: 24rpx;
-  gap: 16rpx;
+  padding: 20rpx;
+  gap: 14rpx;
   background: #ffffff;
-  border-radius: 20rpx;
-  box-shadow: 0 2rpx 12rpx rgba(61, 90, 92, 0.04);
+  border-radius: 16rpx;
+  box-shadow: 0 2rpx 8rpx rgba(44, 62, 80, 0.04);
 }
 
 .favItem.selected {
-  background: rgba(126, 189, 184, 0.06);
+  background: #E3F2FD;
 }
 
 .selectBox {
   display: flex;
   align-items: center;
-  padding-top: 8rpx;
+  padding-top: 6rpx;
 }
 
 .favContent {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 10rpx;
+  gap: 8rpx;
 }
 
 .favCategory {
   display: inline-block;
   align-self: flex-start;
-  padding: 8rpx 16rpx;
-  font-size: 22rpx;
-  color: #5A8A8D;
-  background: rgba(126, 189, 184, 0.1);
+  padding: 6rpx 14rpx;
+  font-size: 20rpx;
+  color: #5C9BD6;
+  background: rgba(92, 155, 214, 0.1);
   border-radius: 999rpx;
   border: none;
 }
 
 .favText {
-  font-size: 30rpx;
-  color: #3D5A5C;
+  font-size: 28rpx;
+  color: #2C3E50;
   line-height: 1.5;
 }
 
 .favActions {
   display: flex;
   flex-direction: column;
-  gap: 12rpx;
+  gap: 10rpx;
   flex-shrink: 0;
 }
 
 .copyBtn,
 .removeBtn {
-  padding: 12rpx 20rpx;
-  font-size: 24rpx;
+  padding: 10rpx 18rpx;
+  font-size: 22rpx;
   font-weight: 600;
-  border-radius: 12rpx;
+  border-radius: 10rpx;
   border: none;
 }
 
 .copyBtn {
-  background: rgba(126, 189, 184, 0.1);
-  color: #5A8A8D;
+  background: rgba(92, 155, 214, 0.1);
+  color: #5C9BD6;
 }
 
 .removeBtn {
   background: #ffffff;
-  color: #C87070;
-  border: 1rpx solid rgba(200, 112, 112, 0.2);
+  color: #B87070;
+  border: 1rpx solid rgba(184, 112, 112, 0.2);
 }

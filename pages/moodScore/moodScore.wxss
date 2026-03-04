@@ -5,165 +5,165 @@
 
 .page {
   min-height: 100vh;
-  background: linear-gradient(180deg, #FCE4EC 0%, #FFF0F5 30%, #F8FBFB 100%);
+  background: linear-gradient(180deg, #FCE4EC 0%, #FFF5F8 30%, #F5F8FA 100%);
   display: flex;
   flex-direction: column;
-  gap: 20rpx;
+  gap: 16rpx;
 }
 
 /* ==================== 顶部标题 ==================== */
 .header {
-  padding: 40rpx 32rpx;
+  padding: 36rpx 24rpx;
   text-align: center;
 }
 
 .title {
   display: block;
-  font-size: 40rpx;
+  font-size: 38rpx;
   font-weight: 700;
-  color: #3D5A5C;
-  margin-bottom: 12rpx;
+  color: #2C3E50;
+  margin-bottom: 10rpx;
 }
 
 .subtitle {
   font-size: 26rpx;
-  color: #8AA0A2;
+  color: #5D6D7E;
   line-height: 1.5;
 }
 
 /* ==================== 分数区域 ==================== */
 .scoreArea {
-  padding: 32rpx;
+  padding: 28rpx;
   display: flex;
   flex-direction: column;
   align-items: center;
   background: #ffffff;
-  border-radius: 24rpx;
+  border-radius: 20rpx;
   margin: 0 24rpx;
-  box-shadow: 0 4rpx 20rpx rgba(61, 90, 92, 0.05);
+  box-shadow: 0 2rpx 12rpx rgba(44, 62, 80, 0.05);
 }
 
 .scoreDisplay {
   display: flex;
   align-items: baseline;
-  margin-bottom: 32rpx;
+  margin-bottom: 28rpx;
 }
 
 .scoreNum {
-  font-size: 100rpx;
+  font-size: 96rpx;
   font-weight: 700;
-  color: #7EBDB8;
+  color: #5C9BD6;
   line-height: 1;
 }
 
 .scoreLabel {
-  font-size: 30rpx;
-  color: #8AA0A2;
+  font-size: 28rpx;
+  color: #85929E;
   margin-left: 8rpx;
 }
 
 .scoreSlider {
   width: 100%;
-  margin: 16rpx 0;
+  margin: 14rpx 0;
 }
 
 .scoreLabels {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 32rpx;
+  margin-bottom: 28rpx;
 }
 
 .label {
   font-size: 24rpx;
-  color: #8AA0A2;
+  color: #85929E;
 }
 
 /* ==================== 快速选择分数 ==================== */
 .quickScore {
   display: flex;
-  gap: 12rpx;
+  gap: 10rpx;
   flex-wrap: wrap;
   justify-content: center;
 }
 
 .scoreBtn {
-  width: 64rpx;
-  height: 64rpx;
+  width: 60rpx;
+  height: 60rpx;
   border-radius: 50%;
-  background: rgba(126, 189, 184, 0.1);
-  border: 2rpx solid rgba(126, 189, 184, 0.2);
+  background: #F8FAFC;
+  border: 2rpx solid rgba(92, 155, 214, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 26rpx;
   font-weight: 600;
-  color: #5A8A8D;
+  color: #5D6D7E;
 }
 
 .scoreBtn.active {
-  background: #7EBDB8;
-  border-color: #7EBDB8;
+  background: #5C9BD6;
+  border-color: #5C9BD6;
   color: #ffffff;
 }
 
 /* ==================== 操作按钮 ==================== */
 .actions {
-  padding: 0 32rpx;
+  padding: 0 24rpx;
 }
 
 .btn {
   width: 100%;
-  padding: 28rpx;
-  border-radius: 20rpx;
+  padding: 26rpx;
+  border-radius: 16rpx;
   font-size: 30rpx;
   font-weight: 600;
   border: none;
 }
 
 .btn.primary {
-  background: linear-gradient(135deg, #7EBDB8, #8FC4C0);
+  background: linear-gradient(135deg, #5C9BD6, #6BA3DC);
   color: #ffffff;
-  box-shadow: 0 8rpx 24rpx rgba(126, 189, 184, 0.25);
+  box-shadow: 0 6rpx 20rpx rgba(92, 155, 214, 0.25);
 }
 
 .btn.secondary {
-  background: rgba(126, 189, 184, 0.1);
-  color: #5A8A8D;
-  border: 2rpx solid rgba(126, 189, 184, 0.2);
+  background: #F8FAFC;
+  color: #5C9BD6;
+  border: 2rpx solid rgba(92, 155, 214, 0.2);
 }
 
 /* ==================== 疏导文案区域 ==================== */
 .guidance {
   margin: 0 24rpx;
-  padding: 32rpx;
+  padding: 28rpx;
   background: #ffffff;
-  border-radius: 24rpx;
-  box-shadow: 0 4rpx 20rpx rgba(61, 90, 92, 0.05);
+  border-radius: 20rpx;
+  box-shadow: 0 2rpx 12rpx rgba(44, 62, 80, 0.05);
 }
 
 .guidanceTitle {
   display: block;
-  font-size: 28rpx;
+  font-size: 26rpx;
   font-weight: 600;
-  color: #3D5A5C;
-  margin-bottom: 16rpx;
+  color: #2C3E50;
+  margin-bottom: 14rpx;
 }
 
 .guidanceText {
   display: block;
-  font-size: 30rpx;
-  color: #4A6B6E;
+  font-size: 28rpx;
+  color: #34495E;
   line-height: 1.7;
-  margin-bottom: 24rpx;
+  margin-bottom: 20rpx;
 }
 
 .guidanceActions {
-  margin-top: 16rpx;
+  margin-top: 14rpx;
 }
 
 .guidanceActions .btn {
   width: auto;
-  padding: 20rpx 32rpx;
-  font-size: 28rpx;
+  padding: 18rpx 28rpx;
+  font-size: 26rpx;
 }

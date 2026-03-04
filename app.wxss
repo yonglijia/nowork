@@ -1,36 +1,38 @@
 /**
  * 全局设计规范
  * 风格：温暖、治愈、轻幽默、不焦虑、不鸡血
- * 特点：简约、干净、柔和、圆角、透气、低饱和度
+ * 特点：简约、干净、柔和、圆角、透气、清晰
  */
 
 /* ==================== 设计变量 ==================== */
 /* 色彩规范 */
-/* 主色：温柔蓝 #E3F2FD / 治愈青 #E0F2F1 */
+/* 主色：温柔蓝 #E3F2FD */
 /* 辅助色：浅粉 #FCE4EC、浅黄 #FFF8E1、浅灰 #F5F5F5 */
 
 /* ==================== 全局基础 ==================== */
 page {
   padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-  background: #F8FBFB;
-  color: #3D5A5C;
+  background: #F5F8FA;
+  color: #2C3E50;
   font-size: 28rpx;
   line-height: 1.5;
 }
 
-/* 安全区域页面 */
+/* 页面容器 - 不加padding，让各区块自己控制 */
 .safePage {
-  padding: 32rpx;
+  display: flex;
+  flex-direction: column;
+  gap: 16rpx;
+  padding-bottom: 160rpx;
   box-sizing: border-box;
 }
 
 /* ==================== 卡片样式 ==================== */
 .cardSurface {
-  background: rgba(255, 255, 255, 0.95);
-  border: none;
-  border-radius: 24rpx;
-  box-shadow: 0 4rpx 20rpx rgba(61, 90, 92, 0.06);
+  background: #ffffff;
+  border-radius: 20rpx;
+  box-shadow: 0 2rpx 12rpx rgba(44, 62, 80, 0.06);
 }
 
 /* 药丸形状 */
@@ -44,14 +46,14 @@ page {
 }
 
 /* ==================== 主按钮样式 ==================== */
-/* 主按钮：温柔青色 */
+/* 主按钮：温柔蓝色 */
 .btnPrimary {
-  background: linear-gradient(135deg, #7EBDB8, #8FC4C0);
+  background: linear-gradient(135deg, #5C9BD6, #6BA3DC);
   color: #ffffff;
   font-weight: 600;
   letter-spacing: 0.5rpx;
   border-radius: 20rpx;
-  box-shadow: 0 8rpx 24rpx rgba(126, 189, 184, 0.25);
+  box-shadow: 0 6rpx 20rpx rgba(92, 155, 214, 0.25);
   border: none;
   font-size: 30rpx;
   padding: 24rpx 48rpx;
@@ -63,12 +65,11 @@ page {
 
 /* 次要按钮：幽灵样式 */
 .btnGhost {
-  background: rgba(255, 255, 255, 0.9);
-  border: 2rpx solid rgba(126, 189, 184, 0.3);
-  color: #5A8A8D;
+  background: #ffffff;
+  border: 2rpx solid rgba(92, 155, 214, 0.25);
+  color: #5C9BD6;
   font-weight: 600;
   border-radius: 20rpx;
-  box-shadow: none;
   font-size: 30rpx;
   padding: 24rpx 48rpx;
   min-height: 88rpx;
@@ -80,7 +81,7 @@ page {
 /* 文字按钮 */
 .btnText {
   background: transparent;
-  color: #7EBDB8;
+  color: #5C9BD6;
   font-weight: 500;
   font-size: 28rpx;
   padding: 16rpx 24rpx;
@@ -92,7 +93,7 @@ page {
 .titleLarge {
   font-size: 40rpx;
   font-weight: 700;
-  color: #3D5A5C;
+  color: #2C3E50;
   letter-spacing: 0.5rpx;
 }
 
@@ -100,65 +101,65 @@ page {
 .titleMedium {
   font-size: 34rpx;
   font-weight: 600;
-  color: #3D5A5C;
+  color: #2C3E50;
 }
 
 /* 小标题 */
 .titleSmall {
   font-size: 30rpx;
   font-weight: 600;
-  color: #4A6B6E;
+  color: #34495E;
 }
 
 /* 正文 */
 .bodyText {
   font-size: 28rpx;
-  color: #5A7A7D;
+  color: #5D6D7E;
   line-height: 1.6;
 }
 
 /* 辅助文字 */
 .hintText {
   font-size: 24rpx;
-  color: #8AA0A2;
+  color: #85929E;
 }
 
 /* ==================== 标签样式 ==================== */
 .tag {
   padding: 12rpx 24rpx;
   border-radius: 999rpx;
-  background: rgba(126, 189, 184, 0.1);
-  border: 2rpx solid rgba(126, 189, 184, 0.2);
-  color: #5A8A8D;
+  background: rgba(92, 155, 214, 0.1);
+  border: 2rpx solid rgba(92, 155, 214, 0.2);
+  color: #5C9BD6;
   font-size: 24rpx;
   font-weight: 500;
 }
 
 .tag.active {
-  background: #7EBDB8;
-  border-color: #7EBDB8;
+  background: #5C9BD6;
+  border-color: #5C9BD6;
   color: #ffffff;
 }
 
 /* 粉色标签 */
 .tagPink {
-  background: rgba(252, 228, 236, 0.6);
+  background: rgba(252, 228, 236, 0.8);
   border-color: rgba(236, 178, 196, 0.3);
-  color: #B87A8C;
+  color: #C06172;
 }
 
 /* 黄色标签 */
 .tagYellow {
-  background: rgba(255, 248, 225, 0.8);
+  background: rgba(255, 248, 225, 0.9);
   border-color: rgba(255, 213, 79, 0.3);
-  color: #A69050;
+  color: #9A7B4F;
 }
 
 /* 蓝色标签 */
 .tagBlue {
-  background: rgba(227, 242, 253, 0.8);
+  background: rgba(227, 242, 253, 0.9);
   border-color: rgba(144, 202, 249, 0.3);
-  color: #5A8AB5;
+  color: #4A7BA7;
 }
 
 /* ==================== 输入框样式 ==================== */
@@ -167,26 +168,26 @@ page {
   height: 96rpx;
   padding: 24rpx 28rpx;
   font-size: 30rpx;
-  background: rgba(126, 189, 184, 0.06);
-  border-radius: 20rpx;
-  color: #3D5A5C;
+  background: #F8FAFC;
+  border-radius: 16rpx;
+  color: #2C3E50;
   box-sizing: border-box;
   border: 2rpx solid transparent;
 }
 
 .inputField:focus {
-  border-color: rgba(126, 189, 184, 0.3);
-  background: rgba(255, 255, 255, 0.95);
+  border-color: rgba(92, 155, 214, 0.4);
+  background: #ffffff;
 }
 
 .inputField::placeholder {
-  color: #A0B5B7;
+  color: #9AA5B1;
 }
 
 /* ==================== 分割线 ==================== */
 .divider {
   height: 1rpx;
-  background: rgba(126, 189, 184, 0.15);
+  background: rgba(92, 155, 214, 0.12);
   margin: 16rpx 0;
 }
 
@@ -197,7 +198,7 @@ page {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(61, 90, 92, 0.4);
+  background: rgba(44, 62, 80, 0.4);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -207,7 +208,7 @@ page {
 .modalContent {
   width: 600rpx;
   background: #ffffff;
-  border-radius: 28rpx;
+  border-radius: 24rpx;
   padding: 48rpx 32rpx;
   display: flex;
   flex-direction: column;
@@ -219,13 +220,13 @@ page {
 .modalTitle {
   font-size: 36rpx;
   font-weight: 700;
-  color: #3D5A5C;
+  color: #2C3E50;
   text-align: center;
 }
 
 .modalDesc {
   font-size: 26rpx;
-  color: #7A9A9D;
+  color: #5D6D7E;
   text-align: center;
   line-height: 1.5;
 }
@@ -239,7 +240,7 @@ page {
 .modalBtn {
   flex: 1;
   padding: 24rpx 0;
-  border-radius: 20rpx;
+  border-radius: 16rpx;
   font-size: 30rpx;
   font-weight: 600;
   text-align: center;
@@ -248,18 +249,18 @@ page {
 }
 
 .modalBtn.cancel {
-  background: rgba(126, 189, 184, 0.1);
-  color: #5A8A8D;
+  background: #F8FAFC;
+  color: #5D6D7E;
 }
 
 .modalBtn.confirm {
-  background: linear-gradient(135deg, #7EBDB8, #8FC4C0);
+  background: linear-gradient(135deg, #5C9BD6, #6BA3DC);
   color: #ffffff;
 }
 
 .modalBtn.danger {
   background: rgba(235, 160, 160, 0.15);
-  color: #C87070;
+  color: #B87070;
 }
 
 /* ==================== 列表项样式 ==================== */
@@ -268,8 +269,8 @@ page {
   align-items: center;
   padding: 24rpx;
   gap: 20rpx;
-  background: rgba(255, 255, 255, 0.95);
-  border-radius: 20rpx;
+  background: #ffffff;
+  border-radius: 16rpx;
 }
 
 .listItemIcon {
@@ -280,7 +281,7 @@ page {
   align-items: center;
   justify-content: center;
   font-size: 36rpx;
-  background: rgba(126, 189, 184, 0.12);
+  background: rgba(92, 155, 214, 0.1);
 }
 
 .listItemContent {
@@ -293,17 +294,17 @@ page {
 .listItemTitle {
   font-size: 30rpx;
   font-weight: 600;
-  color: #3D5A5C;
+  color: #2C3E50;
 }
 
 .listItemSub {
   font-size: 24rpx;
-  color: #8AA0A2;
+  color: #85929E;
 }
 
 .listItemArrow {
   font-size: 32rpx;
-  color: #A0B5B7;
+  color: #9AA5B1;
 }
 
 /* ==================== 空状态样式 ==================== */
@@ -323,7 +324,7 @@ page {
 
 .emptyText {
   font-size: 28rpx;
-  color: #8AA0A2;
+  color: #85929E;
   text-align: center;
   line-height: 1.6;
 }
@@ -339,7 +340,7 @@ page {
 
 .loadingText {
   font-size: 26rpx;
-  color: #8AA0A2;
+  color: #85929E;
   margin-top: 16rpx;
 }
 
@@ -347,11 +348,6 @@ page {
 /* 温柔蓝渐变 */
 .bgBlue {
   background: linear-gradient(135deg, #E3F2FD 0%, #F0F7FF 100%);
-}
-
-/* 治愈青渐变 */
-.bgMint {
-  background: linear-gradient(135deg, #E0F2F1 0%, #F1F8F7 100%);
 }
 
 /* 浅粉渐变 */
@@ -367,19 +363,19 @@ page {
 /* ==================== 卡片特殊样式 ==================== */
 /* 强调卡片 - 用于重点内容 */
 .cardHighlight {
-  background: linear-gradient(135deg, #7EBDB8, #8FC4C0);
+  background: linear-gradient(135deg, #5C9BD6, #6BA3DC);
   color: #ffffff;
-  border-radius: 24rpx;
+  border-radius: 20rpx;
   padding: 28rpx;
-  box-shadow: 0 8rpx 28rpx rgba(126, 189, 184, 0.3);
+  box-shadow: 0 6rpx 24rpx rgba(92, 155, 214, 0.25);
 }
 
 /* 柔和卡片 */
 .cardSoft {
-  background: rgba(255, 255, 255, 0.8);
-  border-radius: 20rpx;
+  background: #ffffff;
+  border-radius: 16rpx;
   padding: 24rpx;
-  border: 1rpx solid rgba(126, 189, 184, 0.1);
+  border: 1rpx solid rgba(92, 155, 214, 0.1);
 }
 
 /* ==================== 工具类 ==================== */
@@ -411,20 +407,3 @@ page {
 .gap-16 { gap: 16rpx; }
 .gap-20 { gap: 20rpx; }
 .gap-24 { gap: 24rpx; }
-
-.p-16 { padding: 16rpx; }
-.p-20 { padding: 20rpx; }
-.p-24 { padding: 24rpx; }
-.p-32 { padding: 32rpx; }
-
-.mt-8 { margin-top: 8rpx; }
-.mt-12 { margin-top: 12rpx; }
-.mt-16 { margin-top: 16rpx; }
-.mt-20 { margin-top: 20rpx; }
-.mt-24 { margin-top: 24rpx; }
-
-.mb-8 { margin-bottom: 8rpx; }
-.mb-12 { margin-bottom: 12rpx; }
-.mb-16 { margin-bottom: 16rpx; }
-.mb-20 { margin-bottom: 20rpx; }
-.mb-24 { margin-bottom: 24rpx; }

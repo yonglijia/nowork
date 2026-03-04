@@ -5,18 +5,18 @@
 
 .page {
   min-height: 100vh;
-  background: #F8FBFB;
+  background: #F5F8FA;
   display: flex;
   flex-direction: column;
-  gap: 16rpx;
-  padding-bottom: 200rpx;
+  gap: 14rpx;
+  padding-bottom: 180rpx;
 }
 
 /* ==================== 顶部区域 ==================== */
 .header {
-  padding: 24rpx 28rpx;
-  background: linear-gradient(135deg, #E0F2F1 0%, #F1F8F7 100%);
-  border-radius: 0 0 24rpx 24rpx;
+  padding: 20rpx 24rpx;
+  background: linear-gradient(135deg, #E3F2FD 0%, #F5F9FF 100%);
+  border-radius: 0 0 20rpx 20rpx;
 }
 
 .headerRow {
@@ -26,25 +26,25 @@
 }
 
 .title {
-  font-size: 36rpx;
+  font-size: 34rpx;
   font-weight: 700;
-  color: #3D5A5C;
+  color: #2C3E50;
 }
 
 .editBtn {
-  padding: 12rpx 24rpx;
-  font-size: 26rpx;
-  color: #5A8A8D;
-  background: rgba(126, 189, 184, 0.1);
+  padding: 10rpx 20rpx;
+  font-size: 24rpx;
+  color: #5C9BD6;
+  background: rgba(92, 155, 214, 0.1);
   border-radius: 999rpx;
   border: none;
 }
 
 .headerSub {
   display: block;
-  margin-top: 12rpx;
-  font-size: 24rpx;
-  color: #8AA0A2;
+  margin-top: 10rpx;
+  font-size: 22rpx;
+  color: #85929E;
 }
 
 /* ==================== 批量操作栏 ==================== */
@@ -52,28 +52,28 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 16rpx 24rpx;
+  padding: 14rpx 24rpx;
 }
 
 .selectAllBtn {
   display: flex;
   align-items: center;
-  gap: 12rpx;
-  font-size: 26rpx;
-  color: #5A8A8D;
+  gap: 10rpx;
+  font-size: 24rpx;
+  color: #5D6D7E;
 }
 
 .checkbox {
-  width: 40rpx;
-  height: 40rpx;
+  width: 36rpx;
+  height: 36rpx;
   border-radius: 50%;
-  border: 3rpx solid rgba(126, 189, 184, 0.3);
+  border: 2rpx solid rgba(92, 155, 214, 0.3);
   background: #ffffff;
 }
 
 .checkbox.checked {
-  background: #7EBDB8;
-  border-color: #7EBDB8;
+  background: #5C9BD6;
+  border-color: #5C9BD6;
 }
 
 .checkbox.checked::after {
@@ -82,13 +82,13 @@
   justify-content: center;
   align-items: center;
   color: #ffffff;
-  font-size: 22rpx;
+  font-size: 20rpx;
   font-weight: bold;
 }
 
 .deleteBtn {
-  padding: 14rpx 28rpx;
-  font-size: 26rpx;
+  padding: 12rpx 24rpx;
+  font-size: 24rpx;
   font-weight: 600;
   color: #ffffff;
   background: #EBA0A0;
@@ -106,42 +106,42 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 80rpx 0;
-  gap: 12rpx;
+  padding: 60rpx 0;
+  gap: 10rpx;
 }
 
 .loadingText,
 .emptyText {
-  font-size: 28rpx;
-  color: #8AA0A2;
+  font-size: 26rpx;
+  color: #85929E;
 }
 
 .emptySub {
-  font-size: 24rpx;
-  color: #A0B5B7;
+  font-size: 22rpx;
+  color: #9AA5B1;
 }
 
 /* ==================== 音频列表 ==================== */
 .audioList {
   display: flex;
   flex-direction: column;
-  gap: 12rpx;
+  gap: 10rpx;
   padding: 0 24rpx;
 }
 
 .audioItem {
   display: flex;
   align-items: center;
-  padding: 24rpx;
-  gap: 16rpx;
+  padding: 20rpx;
+  gap: 14rpx;
   background: #ffffff;
-  border-radius: 20rpx;
-  box-shadow: 0 2rpx 12rpx rgba(61, 90, 92, 0.04);
+  border-radius: 16rpx;
+  box-shadow: 0 2rpx 8rpx rgba(44, 62, 80, 0.04);
 }
 
 .audioItem.selected {
-  background: rgba(126, 189, 184, 0.08);
-  border: 2rpx solid rgba(126, 189, 184, 0.2);
+  background: #E3F2FD;
+  border: 1rpx solid rgba(92, 155, 214, 0.2);
 }
 
 .selectBox {
@@ -150,39 +150,39 @@
 }
 
 .audioIcon {
-  width: 72rpx;
-  height: 72rpx;
-  border-radius: 16rpx;
-  background: rgba(126, 189, 184, 0.12);
+  width: 64rpx;
+  height: 64rpx;
+  border-radius: 14rpx;
+  background: #F8FAFC;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 28rpx;
-  color: #5A8A8D;
+  font-size: 26rpx;
+  color: #5D6D7E;
 }
 
 .audioContent {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 6rpx;
+  gap: 4rpx;
 }
 
 .audioTitle {
-  font-size: 28rpx;
+  font-size: 26rpx;
   font-weight: 600;
-  color: #3D5A5C;
+  color: #2C3E50;
 }
 
 .audioDesc {
-  font-size: 24rpx;
-  color: #8AA0A2;
+  font-size: 22rpx;
+  color: #85929E;
 }
 
 .audioFav {
-  padding: 12rpx;
-  font-size: 28rpx;
-  color: #C8D8D8;
+  padding: 10rpx;
+  font-size: 26rpx;
+  color: #C8D4DC;
 }
 
 .audioFav.favorited {
@@ -195,13 +195,13 @@
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 20rpx 24rpx;
-  padding-bottom: calc(20rpx + env(safe-area-inset-bottom));
+  padding: 16rpx 20rpx;
+  padding-bottom: calc(16rpx + env(safe-area-inset-bottom));
   display: flex;
   align-items: center;
-  gap: 16rpx;
+  gap: 14rpx;
   background: #ffffff;
-  box-shadow: 0 -4rpx 24rpx rgba(61, 90, 92, 0.08);
+  box-shadow: 0 -4rpx 16rpx rgba(44, 62, 80, 0.06);
 }
 
 .playerInfo {
@@ -209,24 +209,24 @@
 }
 
 .playerTitle {
-  font-size: 26rpx;
+  font-size: 24rpx;
   font-weight: 600;
-  color: #3D5A5C;
+  color: #2C3E50;
 }
 
 .playerControls {
   display: flex;
-  gap: 12rpx;
+  gap: 10rpx;
 }
 
 .playerBtn {
-  width: 72rpx;
-  height: 72rpx;
+  width: 64rpx;
+  height: 64rpx;
   border-radius: 50%;
-  background: rgba(126, 189, 184, 0.12);
+  background: #F8FAFC;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 28rpx;
-  color: #5A8A8D;
+  font-size: 26rpx;
+  color: #5D6D7E;
 }

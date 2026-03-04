@@ -1,35 +1,35 @@
 /**
  * 治愈音频页面样式
- * 柔和、舒适、易操作
+ * 清晰、舒适、易操作
  */
 
 .page {
   min-height: 100vh;
-  background: #F8FBFB;
+  background: #F5F8FA;
   display: flex;
   flex-direction: column;
-  gap: 16rpx;
-  padding-bottom: 200rpx;
+  gap: 14rpx;
+  padding-bottom: 180rpx;
 }
 
 /* ==================== 顶部区域 ==================== */
 .header {
-  padding: 24rpx 28rpx;
-  background: linear-gradient(135deg, #E3F2FD 0%, #F0F7FF 100%);
-  border-radius: 0 0 24rpx 24rpx;
+  padding: 20rpx 24rpx;
+  background: linear-gradient(135deg, #E3F2FD 0%, #F5F9FF 100%);
+  border-radius: 0 0 20rpx 20rpx;
 }
 
 .headerRow {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 20rpx;
+  margin-bottom: 16rpx;
 }
 
 .title {
-  font-size: 36rpx;
+  font-size: 34rpx;
   font-weight: 700;
-  color: #3D5A5C;
+  color: #2C3E50;
 }
 
 .favEntry {
@@ -40,34 +40,34 @@
 
 .favEntryText {
   font-size: 24rpx;
-  color: #8AA0A2;
+  color: #85929E;
 }
 
 .favEntryArrow {
-  font-size: 28rpx;
-  color: #A0B5B7;
+  font-size: 26rpx;
+  color: #9AA5B1;
 }
 
 /* ==================== 搜索栏 ==================== */
 .searchBar {
-  background: rgba(255, 255, 255, 0.8);
+  background: #ffffff;
   border-radius: 999rpx;
-  padding: 16rpx 24rpx;
-  border: 1rpx solid rgba(126, 189, 184, 0.15);
+  padding: 14rpx 20rpx;
+  border: 1rpx solid rgba(92, 155, 214, 0.12);
 }
 
 .searchInput {
-  font-size: 28rpx;
-  color: #4A6B6E;
+  font-size: 26rpx;
+  color: #34495E;
 }
 
 .searchInput::placeholder {
-  color: #A0B5B7;
+  color: #9AA5B1;
 }
 
 /* ==================== 分类栏 ==================== */
 .categoryBar {
-  padding: 20rpx 0;
+  padding: 16rpx 0;
 }
 
 .categoryScroll {
@@ -77,19 +77,19 @@
 
 .categoryItem {
   display: inline-block;
-  padding: 14rpx 28rpx;
-  margin-right: 16rpx;
+  padding: 12rpx 24rpx;
+  margin-right: 12rpx;
   border-radius: 999rpx;
-  font-size: 26rpx;
+  font-size: 24rpx;
   font-weight: 500;
-  color: #5A8A8D;
-  background: rgba(255, 255, 255, 0.9);
-  border: 2rpx solid rgba(126, 189, 184, 0.15);
+  color: #5D6D7E;
+  background: #ffffff;
+  border: 1rpx solid rgba(92, 155, 214, 0.12);
 }
 
 .categoryItem.active {
-  background: #7EBDB8;
-  border-color: #7EBDB8;
+  background: #5C9BD6;
+  border-color: #5C9BD6;
   color: #ffffff;
 }
 
@@ -100,18 +100,18 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 80rpx 0;
+  padding: 60rpx 0;
 }
 
 .loadingText,
 .emptyText {
-  font-size: 28rpx;
-  color: #8AA0A2;
+  font-size: 26rpx;
+  color: #85929E;
 }
 
 .emptyIcon {
-  font-size: 80rpx;
-  margin-bottom: 16rpx;
+  font-size: 72rpx;
+  margin-bottom: 12rpx;
   opacity: 0.5;
 }
 
@@ -119,39 +119,39 @@
 .audioList {
   display: flex;
   flex-direction: column;
-  gap: 12rpx;
+  gap: 10rpx;
   padding: 0 24rpx;
 }
 
 .audioItem {
   display: flex;
   align-items: center;
-  padding: 24rpx;
-  gap: 16rpx;
+  padding: 20rpx;
+  gap: 14rpx;
   background: #ffffff;
-  border-radius: 20rpx;
-  box-shadow: 0 2rpx 12rpx rgba(61, 90, 92, 0.04);
+  border-radius: 16rpx;
+  box-shadow: 0 2rpx 8rpx rgba(44, 62, 80, 0.04);
 }
 
 .audioItem.active {
-  background: rgba(126, 189, 184, 0.08);
-  border: 2rpx solid rgba(126, 189, 184, 0.2);
+  background: #E3F2FD;
+  border: 1rpx solid rgba(92, 155, 214, 0.2);
 }
 
 .audioIcon {
-  width: 72rpx;
-  height: 72rpx;
-  border-radius: 16rpx;
-  background: rgba(126, 189, 184, 0.12);
+  width: 68rpx;
+  height: 68rpx;
+  border-radius: 14rpx;
+  background: #F8FAFC;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 28rpx;
-  color: #5A8A8D;
+  font-size: 26rpx;
+  color: #5D6D7E;
 }
 
 .audioItem.active .audioIcon {
-  background: #7EBDB8;
+  background: #5C9BD6;
   color: #ffffff;
 }
 
@@ -159,29 +159,29 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 6rpx;
+  gap: 4rpx;
 }
 
 .audioTitle {
-  font-size: 28rpx;
+  font-size: 26rpx;
   font-weight: 600;
-  color: #3D5A5C;
+  color: #2C3E50;
 }
 
 .audioDesc {
-  font-size: 24rpx;
-  color: #8AA0A2;
+  font-size: 22rpx;
+  color: #85929E;
 }
 
 .audioDuration {
-  font-size: 22rpx;
-  color: #A0B5B7;
+  font-size: 20rpx;
+  color: #9AA5B1;
 }
 
 .audioFav {
-  padding: 12rpx;
-  font-size: 36rpx;
-  color: #C8D8D8;
+  padding: 10rpx;
+  font-size: 32rpx;
+  color: #C8D4DC;
 }
 
 .audioFav.favorited {
@@ -194,59 +194,59 @@
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 20rpx 24rpx;
-  padding-bottom: calc(20rpx + env(safe-area-inset-bottom));
+  padding: 16rpx 20rpx;
+  padding-bottom: calc(16rpx + env(safe-area-inset-bottom));
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 16rpx;
+  gap: 14rpx;
   background: #ffffff;
-  box-shadow: 0 -4rpx 24rpx rgba(61, 90, 92, 0.08);
+  box-shadow: 0 -4rpx 20rpx rgba(44, 62, 80, 0.06);
 }
 
 .playerInfo {
   flex: 1;
-  min-width: 200rpx;
+  min-width: 180rpx;
 }
 
 .playerTitle {
   display: block;
-  font-size: 26rpx;
+  font-size: 24rpx;
   font-weight: 600;
-  color: #3D5A5C;
+  color: #2C3E50;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
 .playerTime {
-  font-size: 22rpx;
-  color: #8AA0A2;
+  font-size: 20rpx;
+  color: #85929E;
 }
 
 .playerControls {
   display: flex;
-  gap: 12rpx;
+  gap: 10rpx;
 }
 
 .playerBtn {
-  width: 72rpx;
-  height: 72rpx;
+  width: 68rpx;
+  height: 68rpx;
   border-radius: 50%;
-  background: rgba(126, 189, 184, 0.12);
+  background: #F8FAFC;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 28rpx;
-  color: #5A8A8D;
+  font-size: 26rpx;
+  color: #5D6D7E;
 }
 
 .playerBtn.active {
-  background: #7EBDB8;
+  background: #5C9BD6;
   color: #ffffff;
 }
 
 .playerSlider {
   width: 100%;
-  margin-top: 8rpx;
+  margin-top: 6rpx;
 }
