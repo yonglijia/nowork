@@ -344,3 +344,72 @@
   color: #ef4444;
 }
 
+/* 今日治愈模块 */
+.healingSection {
+  padding: 24rpx;
+}
+
+.healingHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16rpx;
+}
+
+.healingAudioEntry {
+  display: flex;
+  align-items: center;
+  gap: 4rpx;
+}
+
+.healingAudioText {
+  font-size: 24rpx;
+  color: rgba(17, 94, 89, 0.7);
+}
+
+.healingAudioArrow {
+  font-size: 32rpx;
+  color: rgba(17, 94, 89, 0.55);
+}
+
+.healingQuote {
+  padding: 24rpx;
+  background: linear-gradient(135deg, rgba(45, 212, 191, 0.1), rgba(16, 185, 129, 0.08));
+  border-radius: 18rpx;
+  margin-bottom: 20rpx;
+}
+
+.quoteText {
+  font-size: 30rpx;
+  color: #064e3b;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+.healingActions {
+  display: flex;
+  gap: 16rpx;
+}
+
+.healingBtn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12rpx;
+  padding: 24rpx;
+  background: rgba(45, 212, 191, 0.12);
+  border-radius: 18rpx;
+  border: 2rpx solid rgba(45, 212, 191, 0.2);
+}
+
+.healingBtnIcon {
+  font-size: 36rpx;
+}
+
+.healingBtnText {
+  font-size: 28rpx;
+  font-weight: 700;
+  color: #064e3b;
+}
+

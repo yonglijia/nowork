@@ -1,0 +1,177 @@
+<view class="safePage page">
+  <!-- 头部 -->
+  <view class="header cardSurface">
+    <text class="title">窝囊费账单</text>
+    <text class="subtitle">辛苦打工，钱钱到手</text>
+  </view>
+
+  <!-- 加载中 -->
+  <view wx:if="{{loading}}" class="loadingWrap">
+    <text class="loadingText">加载中...</text>
+  </view>
+
+  <!-- 未设置时显示引导 -->
+  <view wx:elif="{{!config && !showSetupModal}}" class="emptyWrap cardSurface">
+    <text class="emptyIcon">💰</text>
+    <text class="emptyText">还没设置你的窝囊费参数</text>
+    <button class="btn primary" bindtap="showSetup">立即设置</button>
+  </view>
+
+  <!-- 已设置时显示账单 -->
+  <view wx:else class="content">
+    <!-- 本月概览 -->
+    <view class="overview cardSurface">
+      <view class="overviewHeader">
+        <text class="overviewTitle">{{monthKey || '本月'}}窝囊费</text>
+        <text class="modifyBtn" bindtap="showModifySetup">修改设置</text>
+      </view>
+      <view class="overviewAmount">
+        <text class="currency">¥</text>
+        <text class="amount">{{totalWage}}</text>
+      </view>
+      <view class="overviewStats">
+        <view class="statItem">
+          <text class="statValue">{{workDaysCount}}</text>
+          <text class="statLabel">工作天数</text>
+        </view>
+        <view class="statItem">
+          <text class="statValue">¥{{avgDailyWage}}</text>
+          <text class="statLabel">日均收入</text>
+        </view>
+        <view class="statItem">
+          <text class="statValue">{{totalOvertimeHours}}h</text>
+          <text class="statLabel">加班时长</text>
+        </view>
+        <view class="statItem">
+          <text class="statValue">{{totalPatience}}</text>
+          <text class="statLabel">忍耐值</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 今日日报入口 -->
+    <view class="todayEntry cardSurface" bindtap="goTodayReport">
+      <view class="entryIcon">📊</view>
+      <view class="entryContent">
+        <text class="entryTitle">查看今日窝囊费日报</text>
+        <text class="entrySub">点击查看今日收入明细</text>
+      </view>
+      <text class="entryArrow">›</text>
+    </view>
+
+    <!-- 基础信息 -->
+    <view class="infoSection cardSurface">
+      <text class="sectionTitle">计算基础</text>
+      <view class="infoList">
+        <view class="infoItem">
+          <text class="infoLabel">月薪</text>
+          <text class="infoValue">¥{{monthlySalary}}</text>
+        </view>
+        <view class="infoItem">
+          <text class="infoLabel">日薪</text>
+          <text class="infoValue">¥{{dailyWage}}</text>
+        </view>
+        <view class="infoItem">
+          <text class="infoLabel">加班倍数</text>
+          <text class="infoValue">{{overtimeRate}}倍</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 总结 -->
+    <view class="summary cardSurface">
+      <text class="summaryText">{{summaryText || '本月还没开始记录呢~'}}</text>
+    </view>
+
+    <!-- 历史记录 -->
+    <view class="historySection cardSurface">
+      <view class="historyHeader" bindtap="toggleHistory">
+        <text class="sectionTitle">历史账单</text>
+        <text class="historyToggle">{{showHistory ? '收起' : '展开'}}</text>
+      </view>
+      <view wx:if="{{showHistory}}" class="historyList">
+        <view wx:if="{{history.length === 0}}" class="historyEmpty">
+          <text>暂无历史记录</text>
+        </view>
+        <view 
+          wx:for="{{history}}" 
+          wx:key="monthKey"
+          class="historyItem"
+          bindtap="goToHistoryMonth"
+          data-month="{{item.monthKey}}"
+        >
+          <text class="historyMonth">{{item.monthKey}}</text>
+          <text class="historyWage">¥{{item.totalWage}}</text>
+          <text class="historyArrow">›</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 设置弹窗 -->
+  <view wx:if="{{showSetupModal}}" class="modalMask" bindtap="hideSetupModal">
+    <view class="modalContent" catchtap="">
+      <!-- 步骤1: 月薪 -->
+      <view wx:if="{{setupStep === 1}}" class="stepContent">
+        <text class="modalTitle">设置你的月薪</text>
+        <text class="modalDesc">我们将以此计算你的日薪和时薪</text>
+        <view class="inputWrap">
+          <text class="inputPrefix">¥</text>
+          <input 
+            class="modalInput"
+            type="digit"
+            placeholder="请输入月薪"
+            value="{{monthlySalary}}"
+            bindinput="onSalaryInput"
+          />
+        </view>
+        <button class="btn primary" bindtap="nextStep">下一步</button>
+      </view>
+      
+      <!-- 步骤2: 工作天数 -->
+      <view wx:if="{{setupStep === 2}}" class="stepContent">
+        <text class="modalTitle">每月工作几天？</text>
+        <text class="modalDesc">用于计算日薪</text>
+        <picker 
+          mode="selector" 
+          range="{{workDaysOptions}}" 
+          value="{{workDaysOptions.indexOf(workDays)}}"
+          bindchange="onWorkDaysChange"
+        >
+          <view class="pickerValue">
+            <text>{{workDays}} 天</text>
+            <text class="pickerArrow">▼</text>
+          </view>
+        </picker>
+        <view class="stepBtns">
+          <button class="btn secondary" bindtap="prevStep">上一步</button>
+          <button class="btn primary" bindtap="nextStep">下一步</button>
+        </view>
+      </view>
+      
+      <!-- 步骤3: 加班倍数 -->
+      <view wx:if="{{setupStep === 3}}" class="stepContent">
+        <text class="modalTitle">加班工资倍数</text>
+        <text class="modalDesc">用于计算加班费</text>
+        <picker 
+          mode="selector" 
+          range="{{overtimeRateOptions}}" 
+          value="{{overtimeRateOptions.indexOf(overtimeRate)}}"
+          bindchange="onOvertimeRateChange"
+        >
+          <view class="pickerValue">
+            <text>{{overtimeRate}} 倍</text>
+            <text class="pickerArrow">▼</text>
+          </view>
+        </picker>
+        <view class="stepBtns">
+          <button class="btn secondary" bindtap="prevStep">上一步</button>
+          <button class="btn primary" bindtap="completeSetup">完成设置</button>
+        </view>
+      </view>
+      
+      <!-- 关闭按钮 -->
+      <view wx:if="{{config}}" class="closeBtn" bindtap="hideSetupModal">✕</view>
+    </view>
+  </view>
+</view>

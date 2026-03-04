@@ -9,7 +9,13 @@
     "pages/me/me",
     "pages/medals/medals",
     "pages/refusalScripts/refusalScripts",
-    "pages/favoriteScripts/favoriteScripts"
+    "pages/favoriteScripts/favoriteScripts",
+    "pages/breathing/breathing",
+    "pages/moodScore/moodScore",
+    "pages/healingAudio/healingAudio",
+    "pages/favoriteAudio/favoriteAudio",
+    "pages/wageBill/wageBill",
+    "pages/wageReport/wageReport"
   ],
   "window": {
     "navigationBarTitleText": "今日嘴硬",

@@ -1,0 +1,93 @@
+<view class="safePage page">
+  <view class="header cardSurface">
+    <view class="headerRow">
+      <text class="title">治愈音频</text>
+      <view class="favEntry" bindtap="goFavorites">
+        <text class="favEntryText">我的收藏</text>
+        <text class="favEntryArrow">›</text>
+      </view>
+    </view>
+    
+    <view class="searchBar">
+      <input 
+        class="searchInput"
+        placeholder="搜索音频..."
+        value="{{searchValue}}"
+        bindinput="onSearchInput"
+      />
+    </view>
+  </view>
+
+  <view class="categoryBar cardSurface">
+    <scroll-view scroll-x class="categoryScroll">
+      <view 
+        wx:for="{{categories}}"
+        wx:key="key"
+        class="categoryItem {{activeCategory === item.key ? 'active' : ''}}"
+        bindtap="onCategoryTap"
+        data-category="{{item.key}}"
+      >{{item.name}}</view>
+    </scroll-view>
+  </view>
+
+  <view wx:if="{{loading}}" class="loadingWrap">
+    <text class="loadingText">加载中...</text>
+  </view>
+
+  <view wx:elif="{{filteredAudios.length === 0}}" class="emptyWrap">
+    <text class="emptyText">暂无音频</text>
+  </view>
+
+  <view wx:else class="audioList">
+    <view 
+      wx:for="{{filteredAudios}}" 
+      wx:key="id"
+      class="audioItem cardSurface {{currentAudio && currentAudio.id === item.id ? 'active' : ''}}"
+      bindtap="playAudio"
+      data-audio="{{item}}"
+    >
+      <view class="audioIcon">
+        <text wx:if="{{currentAudio && currentAudio.id === item.id && isPlaying}}">⏸</text>
+        <text wx:else>▶</text>
+      </view>
+      <view class="audioContent">
+        <text class="audioTitle">{{item.title}}</text>
+        <text class="audioDesc">{{item.description || item.categoryName}}</text>
+        <text class="audioDuration">{{item.duration}}秒</text>
+      </view>
+      <view 
+        class="audioFav {{favoritedIds[item.id] ? 'favorited' : ''}}"
+        catchtap="onFavorite"
+        data-audio="{{item}}"
+      >
+        <text>{{favoritedIds[item.id] ? '♥' : '♡'}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 底部播放控制 -->
+  <view wx:if="{{currentAudio}}" class="playerBar cardSurface">
+    <view class="playerInfo">
+      <text class="playerTitle">{{currentAudio.title}}</text>
+      <text class="playerTime">{{currentTime > 0 ? currentTime : 0}} / {{duration}}</text>
+    </view>
+    <view class="playerControls">
+      <view class="playerBtn" bindtap="togglePlay">
+        <text>{{isPlaying ? '⏸' : '▶'}}</text>
+      </view>
+      <view class="playerBtn" bindtap="changeSpeed">
+        <text>{{playSpeed}}x</text>
+      </view>
+    </view>
+    <slider 
+      class="playerSlider"
+      min="0" 
+      max="{{duration || 100}}"
+      value="{{currentTime}}"
+      block-size="12"
+      activeColor="#2dd4bf"
+      backgroundColor="rgba(45, 212, 191, 0.2)"
+      bindchange="onSliderChange"
+    />
+  </view>
+</view>

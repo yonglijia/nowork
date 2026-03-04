@@ -1,11 +1,13 @@
 const { setTabBarIndex } = require("../../utils/tabBar")
 const { listMedals } = require("../../utils/effortService")
 const { listFavorites } = require("../../utils/refusalService")
+const { listAudioFavorites } = require("../../utils/healingService")
 
 Page({
   data: {
     medalCount: 0,
-    favoriteScriptCount: 0
+    favoriteScriptCount: 0,
+    favoriteAudioCount: 0
   },
 
   onShow() {
@@ -23,6 +25,15 @@ Page({
       const favorites = await listFavorites()
       this.setData({ favoriteScriptCount: (favorites || []).length })
     } catch (e) {}
+    
+    try {
+      const audioFavorites = await listAudioFavorites()
+      this.setData({ favoriteAudioCount: (audioFavorites || []).length })
+    } catch (e) {}
+  },
+
+  goWageBill() {
+    wx.navigateTo({ url: "/pages/wageBill/wageBill" })
   },
 
   goMedals() {
@@ -33,8 +44,11 @@ Page({
     wx.navigateTo({ url: "/pages/favoriteScripts/favoriteScripts" })
   },
 
+  goFavoriteAudio() {
+    wx.navigateTo({ url: "/pages/favoriteAudio/favoriteAudio" })
+  },
+
   goVent() {
     wx.switchTab({ url: "/pages/index/index" })
   }
 })
-

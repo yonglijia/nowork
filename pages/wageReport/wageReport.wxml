@@ -1,0 +1,113 @@
+<view class="page">
+  <!-- 加载中 -->
+  <view wx:if="{{loading}}" class="loadingWrap">
+    <text class="loadingText">加载中...</text>
+  </view>
+
+  <!-- 需要设置 -->
+  <view wx:elif="{{needSetup}}" class="emptyWrap">
+    <text class="emptyIcon">💰</text>
+    <text class="emptyText">还没设置窝囊费参数</text>
+    <button class="btn primary" bindtap="goSetup">去设置</button>
+  </view>
+
+  <!-- 今日日报 -->
+  <view wx:elif="{{!isHistory}}" class="content">
+    <!-- 大数字展示 -->
+    <view class="hero cardSurface">
+      <text class="heroTitle">今日窝囊费</text>
+      <view class="heroAmount">
+        <text class="currency">¥</text>
+        <text class="amount">{{todayWage}}</text>
+      </view>
+      <text class="heroSub">{{dailyText}}</text>
+    </view>
+
+    <!-- 明细 -->
+    <view class="detail cardSurface">
+      <text class="sectionTitle">今日明细</text>
+      <view class="detailList">
+        <view class="detailItem">
+          <text class="detailLabel">基础工资</text>
+          <text class="detailValue">¥{{dailyWage}}</text>
+        </view>
+        <view class="detailItem">
+          <text class="detailLabel">加班补贴</text>
+          <text class="detailValue highlight">¥{{overtimePay}}</text>
+        </view>
+        <view class="detailItem">
+          <text class="detailLabel">今日工时</text>
+          <text class="detailValue">{{totalHours}}小时</text>
+        </view>
+        <view class="detailItem">
+          <text class="detailLabel">加班时长</text>
+          <text class="detailValue">{{overtimeHours}}小时</text>
+        </view>
+        <view class="detailItem">
+          <text class="detailLabel">忍耐值</text>
+          <text class="detailValue">+{{todayPatience}}</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 计算基础 -->
+    <view class="info cardSurface">
+      <text class="sectionTitle">计算基础</text>
+      <view class="infoList">
+        <view class="infoItem">
+          <text class="infoLabel">时薪</text>
+          <text class="infoValue">¥{{hourlyWage}}/小时</text>
+        </view>
+        <view class="infoItem">
+          <text class="infoLabel">加班倍数</text>
+          <text class="infoValue">{{overtimeRate}}倍</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 治愈文案 -->
+    <view class="comfort cardSurface">
+      <text class="comfortText">{{comfortText}}</text>
+    </view>
+
+    <!-- 操作按钮 -->
+    <view class="actions">
+      <button class="btn secondary" bindtap="onSaveImage">保存图片</button>
+      <button class="btn primary" open-type="share">分享</button>
+    </view>
+  </view>
+
+  <!-- 历史月份 -->
+  <view wx:elif="{{isHistory && monthlyData}}" class="content">
+    <view class="hero cardSurface">
+      <text class="heroTitle">{{monthKey}} 窝囊费</text>
+      <view class="heroAmount">
+        <text class="currency">¥</text>
+        <text class="amount">{{monthlyData.totalWage}}</text>
+      </view>
+      <text class="heroSub">{{monthlyData.summaryText}}</text>
+    </view>
+
+    <view class="detail cardSurface">
+      <text class="sectionTitle">月度统计</text>
+      <view class="detailList">
+        <view class="detailItem">
+          <text class="detailLabel">工作天数</text>
+          <text class="detailValue">{{monthlyData.workDays}}天</text>
+        </view>
+        <view class="detailItem">
+          <text class="detailLabel">日均收入</text>
+          <text class="detailValue">¥{{monthlyData.avgDailyWage}}</text>
+        </view>
+        <view class="detailItem">
+          <text class="detailLabel">加班时长</text>
+          <text class="detailValue">{{monthlyData.totalOvertimeHours}}小时</text>
+        </view>
+        <view class="detailItem">
+          <text class="detailLabel">累计忍耐值</text>
+          <text class="detailValue">{{monthlyData.totalPatience}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

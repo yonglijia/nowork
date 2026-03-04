@@ -1,0 +1,58 @@
+<view class="safePage page">
+  <view class="header cardSurface">
+    <text class="title">今日情绪打分</text>
+    <text class="subtitle">1分最累，10分最轻松</text>
+  </view>
+
+  <view class="scoreArea cardSurface">
+    <view class="scoreDisplay">
+      <text class="scoreNum">{{score}}</text>
+      <text class="scoreLabel">分</text>
+    </view>
+
+    <slider 
+      class="scoreSlider"
+      min="1" 
+      max="10" 
+      step="1"
+      value="{{score}}"
+      block-size="36"
+      activeColor="#2dd4bf"
+      backgroundColor="rgba(45, 212, 191, 0.2)"
+      bindchange="onScoreChange"
+    />
+
+    <view class="scoreLabels">
+      <text class="label">很累</text>
+      <text class="label">一般</text>
+      <text class="label">很轻松</text>
+    </view>
+
+    <view class="quickScore">
+      <view 
+        wx:for="{{[1,2,3,4,5,6,7,8,9,10]}}" 
+        wx:key="*this"
+        class="scoreBtn {{score === item ? 'active' : ''}}"
+        bindtap="selectScore"
+        data-score="{{item}}"
+      >{{item}}</view>
+    </view>
+  </view>
+
+  <view class="actions">
+    <button 
+      class="btn primary" 
+      bindtap="submitScore"
+      disabled="{{isLoading}}"
+    >{{todayScore !== null ? '更新打分' : '确认打分'}}</button>
+  </view>
+
+  <!-- 疏导文案 -->
+  <view wx:if="{{showGuidance && guidance}}" class="guidance cardSurface">
+    <text class="guidanceTitle">给你的话</text>
+    <text class="guidanceText">{{guidance.text}}</text>
+    <view class="guidanceActions">
+      <button class="btn secondary" bindtap="goToBreathing">再做一次呼吸放松</button>
+    </view>
+  </view>
+</view>

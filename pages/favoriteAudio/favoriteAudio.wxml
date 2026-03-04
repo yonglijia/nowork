@@ -1,0 +1,76 @@
+<view class="safePage page">
+  <view class="header cardSurface">
+    <view class="headerRow">
+      <text class="title">收藏音频</text>
+      <view class="editBtn" bindtap="toggleEditMode">
+        <text>{{editMode ? '取消' : '管理'}}</text>
+      </view>
+    </view>
+    <text class="headerSub">共 {{favorites.length}} 个收藏</text>
+  </view>
+
+  <view wx:if="{{editMode}}" class="batchBar cardSurface">
+    <view class="selectAllBtn" bindtap="onSelectAll">
+      <view class="checkbox {{selectedIds.length === favorites.length ? 'checked' : ''}}"></view>
+      <text>全选</text>
+    </view>
+    <button 
+      class="deleteBtn btnClean" 
+      bindtap="onRemoveBatch"
+      disabled="{{selectedIds.length === 0}}"
+    >删除选中 ({{selectedIds.length}})</button>
+  </view>
+
+  <view wx:if="{{loading}}" class="loadingWrap">
+    <text class="loadingText">加载中...</text>
+  </view>
+
+  <view wx:elif="{{favorites.length === 0}}" class="emptyWrap">
+    <text class="emptyText">暂无收藏的音频</text>
+    <text class="emptySub">去音频列表收藏一些吧</text>
+  </view>
+
+  <view wx:else class="audioList">
+    <view 
+      wx:for="{{favorites}}" 
+      wx:key="_id"
+      class="audioItem cardSurface {{editMode && selectedIds.indexOf(item.audioId) > -1 ? 'selected' : ''}}"
+      bindtap="{{editMode ? 'onSelect' : 'playAudio'}}"
+      data-audio="{{item}}"
+      data-audioid="{{item.audioId}}"
+    >
+      <view wx:if="{{editMode}}" class="selectBox">
+        <view class="checkbox {{selectedIds.indexOf(item.audioId) > -1 ? 'checked' : ''}}"></view>
+      </view>
+      
+      <view class="audioIcon">
+        <text wx:if="{{currentAudio && currentAudio.audioId === item.audioId && isPlaying}}">⏸</text>
+        <text wx:else>▶</text>
+      </view>
+      
+      <view class="audioContent">
+        <text class="audioTitle">{{item.audioTitle}}</text>
+        <text class="audioDesc">{{item.categoryName}}</text>
+      </view>
+      
+      <view wx:if="{{!editMode}}" class="audioFav" catchtap="onRemove" data-audioid="{{item.audioId}}">
+        <text>✕</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 底部播放控制 -->
+  <view wx:if="{{currentAudio && !editMode}}" class="playerBar cardSurface">
+    <view class="playerInfo">
+      <text class="playerTitle">{{currentAudio.audioTitle}}</text>
+    </view>
+    <view class="playerControls">
+      <view class="playerBtn" bindtap="togglePlay">
+        <text>{{isPlaying ? '⏸' : '▶'}}</text>
+      </view>
+      <view class="playerBtn" bindtap="changeSpeed">
+        <text>{{playSpeed}}x</text>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,164 @@
+.page {
+  min-height: 100vh;
+  background: #ecfdf5;
+  display: flex;
+  flex-direction: column;
+}
+
+.loadingWrap,
+.emptyWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  gap: 20rpx;
+}
+
+.loadingText {
+  font-size: 28rpx;
+  color: rgba(17, 94, 89, 0.6);
+}
+
+.emptyIcon {
+  font-size: 80rpx;
+}
+
+.emptyText {
+  font-size: 28rpx;
+  color: rgba(17, 94, 89, 0.7);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 16rpx;
+  padding: 32rpx;
+}
+
+.hero {
+  padding: 48rpx 32rpx;
+  text-align: center;
+  background: linear-gradient(135deg, #0f766e, #115e59);
+  color: #ffffff;
+}
+
+.heroTitle {
+  display: block;
+  font-size: 28rpx;
+  opacity: 0.9;
+  margin-bottom: 16rpx;
+}
+
+.heroAmount {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  margin-bottom: 16rpx;
+}
+
+.currency {
+  font-size: 40rpx;
+  font-weight: 700;
+  margin-right: 8rpx;
+}
+
+.amount {
+  font-size: 72rpx;
+  font-weight: 900;
+}
+
+.heroSub {
+  font-size: 26rpx;
+  opacity: 0.8;
+}
+
+.detail,
+.info {
+  padding: 24rpx;
+}
+
+.sectionTitle {
+  font-size: 28rpx;
+  font-weight: 700;
+  color: #064e3b;
+  margin-bottom: 16rpx;
+  display: block;
+}
+
+.detailList,
+.infoList {
+  display: flex;
+  flex-direction: column;
+  gap: 12rpx;
+}
+
+.detailItem,
+.infoItem {
+  display: flex;
+  justify-content: space-between;
+  padding: 12rpx 0;
+  border-bottom: 1rpx solid rgba(45, 212, 191, 0.1);
+}
+
+.detailItem:last-child,
+.infoItem:last-child {
+  border-bottom: none;
+}
+
+.detailLabel,
+.infoLabel {
+  font-size: 26rpx;
+  color: rgba(17, 94, 89, 0.7);
+}
+
+.detailValue,
+.infoValue {
+  font-size: 26rpx;
+  font-weight: 700;
+  color: #064e3b;
+}
+
+.detailValue.highlight {
+  color: #0f766e;
+}
+
+.comfort {
+  padding: 32rpx;
+  text-align: center;
+  background: linear-gradient(135deg, rgba(45, 212, 191, 0.1), rgba(16, 185, 129, 0.08));
+}
+
+.comfortText {
+  font-size: 30rpx;
+  color: #064e3b;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.actions {
+  display: flex;
+  gap: 16rpx;
+  margin-top: 16rpx;
+}
+
+.btn {
+  flex: 1;
+  padding: 24rpx;
+  border-radius: 16rpx;
+  font-size: 30rpx;
+  font-weight: 700;
+  text-align: center;
+  border: none;
+}
+
+.btn.primary {
+  background: linear-gradient(135deg, #2dd4bf, #34d399);
+  color: #ffffff;
+}
+
+.btn.secondary {
+  background: rgba(255, 255, 255, 0.9);
+  color: #115e59;
+  border: 2rpx solid rgba(45, 212, 191, 0.3);
+}

@@ -33,6 +33,28 @@
     </view>
   </view>
 
+  <!-- 今日治愈模块 -->
+  <view class="healingSection cardSurface">
+    <view class="healingHeader">
+      <text class="sectionTitle">今日治愈</text>
+      <view class="healingAudioEntry" bindtap="goHealingAudio">
+        <text class="healingAudioText">治愈音频</text>
+        <text class="healingAudioArrow">›</text>
+      </view>
+    </view>
+    
+    <view wx:if="{{healingQuote}}" class="healingQuote">
+      <text class="quoteText">{{healingQuote.quote}}</text>
+    </view>
+    
+    <view class="healingActions">
+      <view class="healingBtn" bindtap="goBreathing">
+        <text class="healingBtnIcon">🌬️</text>
+        <text class="healingBtnText">1分钟呼吸放松</text>
+      </view>
+    </view>
+  </view>
+
   <view class="moodBar cardSurface">
     <view class="row">
       <text class="sectionTitle">今日情绪</text>

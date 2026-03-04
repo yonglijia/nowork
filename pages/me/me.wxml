@@ -4,6 +4,16 @@
     <text class="sub">记录自己，也照顾自己</text>
   </view>
 
+  <!-- 窝囊费账单入口（重点展示） -->
+  <view class="wageEntry cardSurface" bindtap="goWageBill">
+    <view class="wageIcon">💰</view>
+    <view class="wageContent">
+      <text class="wageTitle">窝囊费账单</text>
+      <text class="wageSub">查看你的打工收入</text>
+    </view>
+    <text class="entryArrow">›</text>
+  </view>
+
   <view class="entry cardSurface" bindtap="goMedals">
     <view class="entryText">
       <text class="entryTitle">勋章墙</text>
@@ -20,6 +30,14 @@
     <text class="entryArrow">›</text>
   </view>
 
+  <view class="entry cardSurface" bindtap="goFavoriteAudio">
+    <view class="entryText">
+      <text class="entryTitle">收藏音频</text>
+      <text class="entrySub">已收藏 {{favoriteAudioCount}} 个</text>
+    </view>
+    <text class="entryArrow">›</text>
+  </view>
+
   <view class="entry cardSurface" bindtap="goVent">
     <view class="entryText">
       <text class="entryTitle">回到嘴硬</text>
@@ -28,4 +46,3 @@
     <text class="entryArrow">›</text>
   </view>
 </view>
-

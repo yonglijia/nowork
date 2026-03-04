@@ -1,0 +1,62 @@
+<view class="page">
+  <view class="container">
+    <!-- 标题 -->
+    <view class="header">
+      <text class="title">呼吸放松</text>
+      <text class="subtitle">吸气4秒 · 屏息2秒 · 呼气6秒</text>
+    </view>
+
+    <!-- 呼吸动画区域 -->
+    <view class="breathArea">
+      <!-- 外发光效果 -->
+      <view class="glowRing {{phase}}" style="opacity: {{glowOpacity}};"></view>
+      
+      <!-- 粒子容器 -->
+      <view class="particleContainer">
+        <view 
+          wx:for="{{particles}}" 
+          wx:key="id"
+          class="particle"
+          style="transform: translate({{item.x || 0}}rpx, {{item.y || 0}}rpx); opacity: {{item.opacity}}; width: {{item.size}}rpx; height: {{item.size}}rpx;"
+        ></view>
+      </view>
+      
+      <!-- 主圆圈 -->
+      <view class="circleOuter">
+        <view 
+          class="circleInner {{phase}}"
+          style="transform: scale({{circleScale}});"
+        >
+          <text class="breathText">{{breathText}}</text>
+          <text wx:if="{{isRunning && !isPaused}}" class="timeText">{{timeLeft}}s</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 进度条 -->
+    <view class="progressBar">
+      <view class="progressFill" style="width: {{progress}}%;"></view>
+    </view>
+
+    <!-- 控制按钮 -->
+    <view class="controls">
+      <block wx:if="{{!isRunning}}">
+        <button class="btn primary" bindtap="startBreathing">开始</button>
+      </block>
+      <block wx:elif="{{isPaused}}">
+        <button class="btn primary" bindtap="startBreathing">继续</button>
+        <button class="btn secondary" bindtap="stopBreathing">结束</button>
+      </block>
+      <block wx:else>
+        <button class="btn secondary" bindtap="pauseBreathing">暂停</button>
+        <button class="btn secondary" bindtap="stopBreathing">结束</button>
+      </block>
+    </view>
+
+    <!-- 完成后显示情绪打分入口 -->
+    <view wx:if="{{showMoodEntry}}" class="moodEntry cardSurface">
+      <text class="moodEntryTitle">呼吸完成，感觉如何？</text>
+      <button class="btn primary" bindtap="goToMoodScore">给今日情绪打分</button>
+    </view>
+  </view>
+</view>

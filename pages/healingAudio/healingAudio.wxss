@@ -1,0 +1,217 @@
+.page {
+  min-height: 100vh;
+  background: #ecfdf5;
+  display: flex;
+  flex-direction: column;
+  gap: 16rpx;
+  padding-bottom: 200rpx;
+}
+
+.header {
+  padding: 24rpx;
+}
+
+.headerRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20rpx;
+}
+
+.title {
+  font-size: 36rpx;
+  font-weight: 900;
+  color: #064e3b;
+}
+
+.favEntry {
+  display: flex;
+  align-items: center;
+  gap: 4rpx;
+}
+
+.favEntryText {
+  font-size: 24rpx;
+  color: rgba(17, 94, 89, 0.7);
+}
+
+.favEntryArrow {
+  font-size: 32rpx;
+  color: rgba(17, 94, 89, 0.55);
+}
+
+.searchBar {
+  background: rgba(45, 212, 191, 0.08);
+  border-radius: 999rpx;
+  padding: 16rpx 24rpx;
+}
+
+.searchInput {
+  font-size: 28rpx;
+  color: #115e59;
+}
+
+.categoryBar {
+  padding: 16rpx 0;
+}
+
+.categoryScroll {
+  white-space: nowrap;
+  padding: 0 24rpx;
+}
+
+.categoryItem {
+  display: inline-block;
+  padding: 12rpx 28rpx;
+  margin-right: 16rpx;
+  border-radius: 999rpx;
+  font-size: 26rpx;
+  color: #115e59;
+  background: rgba(45, 212, 191, 0.1);
+  border: 2rpx solid rgba(45, 212, 191, 0.2);
+}
+
+.categoryItem.active {
+  background: #2dd4bf;
+  border-color: #2dd4bf;
+  color: #ffffff;
+}
+
+.loadingWrap,
+.emptyWrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80rpx 0;
+}
+
+.loadingText,
+.emptyText {
+  font-size: 28rpx;
+  color: rgba(17, 94, 89, 0.6);
+}
+
+.audioList {
+  display: flex;
+  flex-direction: column;
+  gap: 12rpx;
+  padding: 0 32rpx;
+}
+
+.audioItem {
+  display: flex;
+  align-items: center;
+  padding: 24rpx;
+  gap: 16rpx;
+}
+
+.audioItem.active {
+  background: rgba(45, 212, 191, 0.1);
+}
+
+.audioIcon {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  background: rgba(45, 212, 191, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24rpx;
+  color: #115e59;
+}
+
+.audioItem.active .audioIcon {
+  background: #2dd4bf;
+  color: #ffffff;
+}
+
+.audioContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6rpx;
+}
+
+.audioTitle {
+  font-size: 28rpx;
+  font-weight: 700;
+  color: #064e3b;
+}
+
+.audioDesc {
+  font-size: 24rpx;
+  color: rgba(17, 94, 89, 0.65);
+}
+
+.audioDuration {
+  font-size: 22rpx;
+  color: rgba(17, 94, 89, 0.5);
+}
+
+.audioFav {
+  padding: 12rpx;
+  font-size: 36rpx;
+  color: rgba(17, 94, 89, 0.4);
+}
+
+.audioFav.favorited {
+  color: #ef4444;
+}
+
+.playerBar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20rpx 24rpx;
+  padding-bottom: calc(20rpx + env(safe-area-inset-bottom));
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16rpx;
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 -4rpx 20rpx rgba(0, 0, 0, 0.1);
+}
+
+.playerInfo {
+  flex: 1;
+  min-width: 200rpx;
+}
+
+.playerTitle {
+  display: block;
+  font-size: 26rpx;
+  font-weight: 700;
+  color: #064e3b;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.playerTime {
+  font-size: 22rpx;
+  color: rgba(17, 94, 89, 0.6);
+}
+
+.playerControls {
+  display: flex;
+  gap: 16rpx;
+}
+
+.playerBtn {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  background: rgba(45, 212, 191, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24rpx;
+  color: #115e59;
+}
+
+.playerSlider {
+  width: 100%;
+  margin-top: 8rpx;
+}

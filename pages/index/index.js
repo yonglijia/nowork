@@ -2,6 +2,7 @@ const { getVentConfig, saveMoodTag } = require("../../utils/ventService")
 const { renderShareCard } = require("../../utils/shareCard")
 const { setTabBarIndex } = require("../../utils/tabBar")
 const { getTopTask, setTopTask, deleteTopTask } = require("../../utils/refusalService")
+const { getHealingQuote } = require("../../utils/healingService")
 
 function randomPick(arr) {
   if (!Array.isArray(arr) || arr.length === 0) return null
@@ -30,7 +31,9 @@ Page({
     // 快速减负模块
     topTask: null,
     showTopTaskInput: false,
-    topTaskInputValue: ""
+    topTaskInputValue: "",
+    // 今日治愈模块
+    healingQuote: null
   },
 
   async onLoad() {
@@ -51,6 +54,7 @@ Page({
   onShow() {
     setTabBarIndex(0)
     this.loadTopTask()
+    this.loadHealingQuote()
   },
 
   async onMoodTap(e) {
@@ -122,6 +126,22 @@ Page({
     } catch (e) {
       wx.showToast({ title: "删除失败", icon: "none" })
     }
+  },
+
+  // ========== 今日治愈模块 ==========
+  async loadHealingQuote() {
+    try {
+      const data = await getHealingQuote()
+      this.setData({ healingQuote: data })
+    } catch (e) {}
+  },
+
+  goBreathing() {
+    wx.navigateTo({ url: "/pages/breathing/breathing" })
+  },
+
+  goHealingAudio() {
+    wx.navigateTo({ url: "/pages/healingAudio/healingAudio" })
   },
 
   onPresetTap(e) {

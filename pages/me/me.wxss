@@ -1,8 +1,8 @@
 .page {
   display: flex;
   flex-direction: column;
-  gap: 18rpx;
-  padding-bottom: 170rpx; /* leave for custom tab bar */
+  gap: 16rpx;
+  padding-bottom: 170rpx;
 }
 
 .hero {
@@ -25,8 +25,46 @@
   font-weight: 800;
 }
 
+/* 窝囊费入口（重点样式） */
+.wageEntry {
+  display: flex;
+  align-items: center;
+  padding: 28rpx 24rpx;
+  gap: 16rpx;
+  background: linear-gradient(135deg, #0f766e, #115e59);
+  margin: 0 32rpx;
+  border-radius: 24rpx;
+}
+
+.wageIcon {
+  font-size: 48rpx;
+}
+
+.wageContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6rpx;
+}
+
+.wageTitle {
+  font-size: 32rpx;
+  font-weight: 900;
+  color: #ffffff;
+}
+
+.wageSub {
+  font-size: 24rpx;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.wageEntry .entryArrow {
+  font-size: 44rpx;
+  color: rgba(255, 255, 255, 0.7);
+}
+
 .entry {
-  padding: 22rpx 22rpx;
+  padding: 22rpx 24rpx;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -54,4 +92,3 @@
   font-size: 44rpx;
   color: rgba(17, 94, 89, 0.55);
 }
-
