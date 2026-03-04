@@ -1,40 +1,52 @@
 /**
- * 全局设计规范 - 升级版
- * 风格：温暖治愈系 + 设计感
- * 色彩：柔和蓝、温暖黄、甜蜜粉、薄荷绿
- * 特点：精致渐变、丰富层级、韵律排版、微交互
+ * 全局设计规范 - 小清新版本 v2
+ * 风格：清新、极简、治愈、温柔
+ * 色彩：薄荷绿、奶油白、柔和粉、天空蓝
+ * 特点：有机曲线、大留白、温柔阴影、渐变背景、呼吸感
  */
 
 /* ==================== CSS 变量系统 ==================== */
 :root {
-  /* 主色系 */
-  --color-primary-blue: #5C9BD6;
-  --color-primary-blue-light: #E3F2FD;
-  --color-primary-yellow: #FFD54F;
-  --color-primary-pink: #F48FB1;
-  --color-primary-mint: #80DEEA;
+  /* 主色系 - 小清新 */
+  --color-mint: #B8E6DB;
+  --color-mint-light: #E8F7F3;
+  --color-mint-dark: #7EC8B8;
   
-  /* 中性色 */
-  --color-text-primary: #2C3E50;
-  --color-text-secondary: #5D6D7E;
-  --color-text-tertiary: #85929E;
-  --color-text-light: #9AA5B1;
+  --color-cream: #FEF8F3;
+  --color-cream-light: #FFFBF7;
+  
+  --color-pink-soft: #F4D9E6;
+  --color-pink-light: #FDE9F3;
+  
+  --color-blue-soft: #D4E8F7;
+  --color-blue-light: #E8F3FB;
+  
+  --color-yellow-soft: #FFF5DC;
+  --color-green-soft: #E8F5E9;
+  
+  /* 中性色 - 清爽 */
+  --color-text-primary: #3D3D3D;
+  --color-text-secondary: #6B7280;
+  --color-text-tertiary: #9CA3AF;
+  --color-text-light: #B8C5D6;
   
   /* 背景 */
-  --color-bg-base: #F5F8FA;
+  --color-bg-base: #F9FBFA;
   --color-bg-surface: #FFFFFF;
   
-  /* 渐变 */
-  --gradient-blue: linear-gradient(135deg, #5C9BD6 0%, #6BA3DC 100%);
-  --gradient-yellow: linear-gradient(135deg, #FFE082 0%, #FFD54F 100%);
-  --gradient-pink: linear-gradient(135deg, #F48FB1 0%, #EC407A 100%);
-  --gradient-mint: linear-gradient(135deg, #80DEEA 0%, #4DD0E1 100%);
+  /* 渐变 - 清新 */
+  --gradient-mint: linear-gradient(135deg, #B8E6DB 0%, #9FD9CF 100%);
+  --gradient-pink: linear-gradient(135deg, #F4D9E6 0%, #F0CCD9 100%);
+  --gradient-blue: linear-gradient(135deg, #D4E8F7 0%, #C1DDF3 100%);
+  --gradient-yellow: linear-gradient(135deg, #FFF5DC 0%, #FFF1CC 100%);
+  --gradient-warm: linear-gradient(135deg, #FEF8F3 0%, #FAF4EE 100%);
   
-  /* 圆角 */
-  --radius-sm: 8rpx;
-  --radius-md: 12rpx;
-  --radius-lg: 16rpx;
-  --radius-xl: 20rpx;
+  /* 圆角 - 有机曲线 */
+  --radius-sm: 6rpx;
+  --radius-md: 10rpx;
+  --radius-lg: 14rpx;
+  --radius-xl: 18rpx;
+  --radius-2xl: 24rpx;
   --radius-pill: 999rpx;
   
   /* 间距 */
@@ -44,11 +56,13 @@
   --spacing-lg: 16rpx;
   --spacing-xl: 20rpx;
   --spacing-2xl: 24rpx;
+  --spacing-3xl: 32rpx;
   
-  /* 阴影 */
-  --shadow-sm: 0 2rpx 8rpx rgba(44, 62, 80, 0.04);
-  --shadow-md: 0 4rpx 12rpx rgba(44, 62, 80, 0.08);
-  --shadow-lg: 0 6rpx 20rpx rgba(92, 155, 214, 0.15);
+  /* 阴影 - 温柔 */
+  --shadow-sm: 0 2rpx 6rpx rgba(61, 61, 61, 0.06);
+  --shadow-md: 0 4rpx 12rpx rgba(61, 61, 61, 0.08);
+  --shadow-lg: 0 8rpx 20rpx rgba(184, 230, 219, 0.15);
+  --shadow-xl: 0 12rpx 32rpx rgba(61, 61, 61, 0.1);
 }
 
 /* ==================== 全局基础 ==================== */
@@ -64,8 +78,8 @@ page {
 .safePage {
   display: flex;
   flex-direction: column;
-  gap: 16rpx;
-  padding-bottom: 160rpx;
+  gap: 12rpx;
+  padding-bottom: 140rpx;
   box-sizing: border-box;
 }
 
@@ -74,11 +88,12 @@ page {
   background: var(--color-bg-surface);
   border-radius: var(--radius-xl);
   box-shadow: var(--shadow-md);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  border: 1rpx solid rgba(255, 255, 255, 0.6);
 }
 
 .cardSurface:active {
-  transform: translateY(2rpx);
+  transform: translateY(2rpx) scale(0.99);
   box-shadow: var(--shadow-sm);
 }
 
@@ -94,36 +109,36 @@ page {
 /* 主按钮 */
 .btnPrimary,
 .btnMintPrimary {
-  background: var(--gradient-blue);
-  color: #ffffff;
-  font-weight: 600;
-  letter-spacing: 0.5rpx;
+  background: var(--gradient-mint);
+  color: #FFFFFF;
+  font-weight: 700;
+  letter-spacing: 0.3rpx;
   border-radius: var(--radius-lg);
-  box-shadow: 0 4rpx 16rpx rgba(92, 155, 214, 0.25);
+  box-shadow: 0 4rpx 12rpx rgba(184, 230, 219, 0.3);
   border: none;
   font-size: 28rpx;
-  padding: 16rpx 32rpx;
+  padding: 14rpx 28rpx;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.2s ease;
+  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .btnPrimary:active {
   transform: scale(0.96);
-  box-shadow: 0 2rpx 8rpx rgba(92, 155, 214, 0.15);
+  box-shadow: 0 2rpx 6rpx rgba(184, 230, 219, 0.2);
 }
 
 /* 幽灵按钮 */
 .btnGhost,
 .btnMintGhost {
-  background: rgba(92, 155, 214, 0.08);
-  border: 1.5rpx solid rgba(92, 155, 214, 0.2);
-  color: var(--color-primary-blue);
+  background: rgba(184, 230, 219, 0.1);
+  border: 1.5rpx solid rgba(184, 230, 219, 0.25);
+  color: #7EC8B8;
   font-weight: 600;
   border-radius: var(--radius-lg);
   font-size: 26rpx;
-  padding: 14rpx 28rpx;
+  padding: 12rpx 24rpx;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -131,17 +146,17 @@ page {
 }
 
 .btnGhost:active {
-  background: rgba(92, 155, 214, 0.15);
-  transform: scale(0.97);
+  background: rgba(184, 230, 219, 0.2);
+  transform: scale(0.96);
 }
 
 /* 文字按钮 */
 .btnText {
   background: transparent;
-  color: var(--color-primary-blue);
-  font-weight: 500;
+  color: #7EC8B8;
+  font-weight: 600;
   font-size: 26rpx;
-  padding: 12rpx 16rpx;
+  padding: 10rpx 14rpx;
   border: none;
   transition: opacity 0.2s ease;
 }
@@ -153,23 +168,23 @@ page {
 /* ==================== 排版系统 ==================== */
 .titleLarge {
   font-size: 40rpx;
-  font-weight: 700;
+  font-weight: 800;
   color: var(--color-text-primary);
   letter-spacing: -0.5rpx;
-  line-height: 1.3;
+  line-height: 1.2;
 }
 
 .titleMedium {
   font-size: 36rpx;
-  font-weight: 700;
+  font-weight: 800;
   color: var(--color-text-primary);
-  letter-spacing: -0.5rpx;
+  letter-spacing: -0.3rpx;
   line-height: 1.3;
 }
 
 .titleSmall {
   font-size: 32rpx;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--color-text-primary);
   line-height: 1.4;
 }
@@ -178,7 +193,7 @@ page {
   font-size: 28rpx;
   color: var(--color-text-secondary);
   line-height: 1.6;
-  letter-spacing: 0.2rpx;
+  letter-spacing: 0.1rpx;
 }
 
 .hintText {
@@ -195,58 +210,59 @@ page {
 
 /* ==================== 标签系统 ==================== */
 .tag {
-  padding: 8rpx 16rpx;
+  padding: 8rpx 14rpx;
   border-radius: var(--radius-pill);
-  background: rgba(92, 155, 214, 0.12);
-  border: 1.5rpx solid rgba(92, 155, 214, 0.25);
-  color: var(--color-primary-blue);
+  background: rgba(184, 230, 219, 0.12);
+  border: 1rpx solid rgba(184, 230, 219, 0.3);
+  color: #7EC8B8;
   font-size: 22rpx;
-  font-weight: 500;
+  font-weight: 600;
   transition: all 0.2s ease;
 }
 
 .tag.active {
-  background: var(--color-primary-blue);
-  border-color: var(--color-primary-blue);
-  color: #ffffff;
-  box-shadow: 0 4rpx 12rpx rgba(92, 155, 214, 0.3);
+  background: #B8E6DB;
+  border-color: #B8E6DB;
+  color: #FFFFFF;
+  box-shadow: 0 4rpx 10rpx rgba(184, 230, 219, 0.25);
 }
 
 .tag.pink {
-  background: rgba(244, 143, 177, 0.12);
-  border-color: rgba(244, 143, 177, 0.25);
-  color: var(--color-primary-pink);
+  background: rgba(244, 217, 230, 0.12);
+  border-color: rgba(244, 217, 230, 0.3);
+  color: #E89DB8;
 }
 
 .tag.yellow {
-  background: rgba(255, 208, 79, 0.15);
-  border-color: rgba(255, 208, 79, 0.3);
-  color: #F57F17;
+  background: rgba(255, 245, 220, 0.15);
+  border-color: rgba(255, 235, 180, 0.3);
+  color: #D4A464;
 }
 
-.tag.mint {
-  background: rgba(128, 222, 234, 0.12);
-  border-color: rgba(128, 222, 234, 0.25);
-  color: #00838F;
+.tag.blue {
+  background: rgba(212, 232, 247, 0.12);
+  border-color: rgba(212, 232, 247, 0.3);
+  color: #7BA8D1;
 }
 
 /* ==================== 输入框系统 ==================== */
 .inputField,
 input {
   width: 100%;
-  padding: 14rpx 16rpx;
+  padding: 12rpx 14rpx;
   font-size: 26rpx;
-  background: rgba(92, 155, 214, 0.06);
+  background: rgba(184, 230, 219, 0.08);
   border-radius: var(--radius-md);
   color: var(--color-text-primary);
   box-sizing: border-box;
-  border: 1rpx solid rgba(92, 155, 214, 0.15);
+  border: 1rpx solid rgba(184, 230, 219, 0.2);
   transition: all 0.2s ease;
 }
 
 input:focus {
-  border-color: var(--color-primary-blue);
-  background: rgba(92, 155, 214, 0.1);
+  border-color: #B8E6DB;
+  background: rgba(184, 230, 219, 0.12);
+  box-shadow: 0 0 0 3rpx rgba(184, 230, 219, 0.1);
 }
 
 input::placeholder {
@@ -256,7 +272,7 @@ input::placeholder {
 /* ==================== 分割线 ==================== */
 .divider {
   height: 1rpx;
-  background: linear-gradient(90deg, rgba(92, 155, 214, 0.1), rgba(92, 155, 214, 0.3), rgba(92, 155, 214, 0.1));
+  background: linear-gradient(90deg, rgba(184, 230, 219, 0.1), rgba(184, 230, 219, 0.25), rgba(184, 230, 219, 0.1));
   margin: var(--spacing-lg) 0;
 }
 
@@ -267,29 +283,32 @@ input::placeholder {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(44, 62, 80, 0.5);
+  background: rgba(61, 61, 61, 0.45);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 1000;
-  backdrop-filter: blur(2rpx);
+  backdrop-filter: blur(3rpx);
+  animation: fadeIn 0.2s ease;
 }
 
 .modalContent {
   width: calc(100% - 48rpx);
   max-width: 600rpx;
   background: var(--color-bg-surface);
-  border-radius: var(--radius-xl);
-  padding: 32rpx;
-  box-shadow: 0 20rpx 60rpx rgba(44, 62, 80, 0.15);
+  border-radius: var(--radius-2xl);
+  padding: 28rpx;
+  box-shadow: 0 16rpx 48rpx rgba(61, 61, 61, 0.12);
+  border: 1rpx solid rgba(255, 255, 255, 0.8);
 }
 
 .modalTitle {
   font-size: 32rpx;
-  font-weight: 700;
+  font-weight: 800;
   color: var(--color-text-primary);
   text-align: center;
-  margin-bottom: 16rpx;
+  margin-bottom: 14rpx;
+  letter-spacing: -0.3rpx;
 }
 
 .modalDesc {
@@ -297,42 +316,42 @@ input::placeholder {
   color: var(--color-text-secondary);
   text-align: center;
   line-height: 1.5;
-  margin-bottom: 24rpx;
+  margin-bottom: 20rpx;
 }
 
 .modalActions {
   display: flex;
   gap: var(--spacing-md);
-  margin-top: 24rpx;
+  margin-top: 20rpx;
 }
 
 .modalBtn {
   flex: 1;
-  padding: 16rpx;
+  padding: 14rpx;
   border-radius: var(--radius-md);
   font-size: 26rpx;
-  font-weight: 600;
+  font-weight: 700;
   text-align: center;
   border: none;
   transition: all 0.2s ease;
 }
 
 .modalBtn.confirm {
-  background: var(--gradient-blue);
-  color: #ffffff;
-  box-shadow: 0 4rpx 12rpx rgba(92, 155, 214, 0.25);
+  background: var(--gradient-mint);
+  color: #FFFFFF;
+  box-shadow: 0 4rpx 12rpx rgba(184, 230, 219, 0.25);
 }
 
 .modalBtn.cancel {
-  background: rgba(92, 155, 214, 0.08);
-  color: var(--color-primary-blue);
+  background: rgba(184, 230, 219, 0.1);
+  color: #7EC8B8;
 }
 
 /* ==================== 列表项系统 ==================== */
 .listItem {
   display: flex;
   align-items: center;
-  padding: 16rpx;
+  padding: 14rpx;
   gap: 12rpx;
   background: var(--color-bg-surface);
   border-radius: var(--radius-lg);
@@ -340,18 +359,19 @@ input::placeholder {
 }
 
 .listItem:active {
-  background: rgba(92, 155, 214, 0.08);
+  background: rgba(184, 230, 219, 0.08);
+  transform: scale(0.98);
 }
 
 .listItemIcon {
-  width: 64rpx;
-  height: 64rpx;
-  border-radius: 12rpx;
+  width: 56rpx;
+  height: 56rpx;
+  border-radius: 10rpx;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 28rpx;
-  background: rgba(92, 155, 214, 0.12);
+  font-size: 26rpx;
+  background: rgba(184, 230, 219, 0.1);
   flex-shrink: 0;
 }
 
@@ -359,12 +379,12 @@ input::placeholder {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 4rpx;
+  gap: 3rpx;
 }
 
 .listItemTitle {
   font-size: 28rpx;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--color-text-primary);
 }
 
@@ -374,9 +394,14 @@ input::placeholder {
 }
 
 .listItemArrow {
-  font-size: 28rpx;
+  font-size: 26rpx;
   color: var(--color-text-light);
   flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.listItem:active .listItemArrow {
+  transform: translateX(2rpx);
 }
 
 /* ==================== 空状态样式 ==================== */
@@ -386,15 +411,16 @@ input::placeholder {
   align-items: center;
   justify-content: center;
   padding: 80rpx 40rpx;
-  background: linear-gradient(180deg, rgba(227, 242, 253, 0.5), rgba(255, 224, 178, 0.3));
-  border-radius: var(--radius-xl);
+  background: linear-gradient(135deg, rgba(184, 230, 219, 0.06), rgba(244, 217, 230, 0.06));
+  border-radius: var(--radius-2xl);
+  border: 1rpx dashed rgba(184, 230, 219, 0.2);
 }
 
 .emptyIcon {
-  font-size: 120rpx;
-  margin-bottom: 24rpx;
-  opacity: 0.4;
-  animation: float 3s ease-in-out infinite;
+  font-size: 100rpx;
+  margin-bottom: 20rpx;
+  opacity: 0.3;
+  animation: floatGentle 4s ease-in-out infinite;
 }
 
 .emptyText {
@@ -416,7 +442,7 @@ input::placeholder {
 .loadingText {
   font-size: 24rpx;
   color: var(--color-text-tertiary);
-  margin-top: 16rpx;
+  margin-top: 14rpx;
   animation: pulse 1.5s ease-in-out infinite;
 }
 
@@ -452,29 +478,37 @@ input::placeholder {
 .gap-2xl { gap: var(--spacing-2xl); }
 
 /* ==================== 背景渐变 ==================== */
-.bg-gradient-blue {
-  background: linear-gradient(135deg, rgba(92, 155, 214, 0.08), rgba(107, 163, 220, 0.04));
-}
-
-.bg-gradient-yellow {
-  background: linear-gradient(135deg, rgba(255, 224, 130, 0.12), rgba(255, 208, 79, 0.06));
+.bg-gradient-mint {
+  background: linear-gradient(135deg, rgba(184, 230, 219, 0.1), rgba(184, 230, 219, 0.05));
 }
 
 .bg-gradient-pink {
-  background: linear-gradient(135deg, rgba(244, 143, 177, 0.12), rgba(236, 64, 122, 0.06));
+  background: linear-gradient(135deg, rgba(244, 217, 230, 0.1), rgba(244, 217, 230, 0.05));
 }
 
-.bg-gradient-mint {
-  background: linear-gradient(135deg, rgba(128, 222, 234, 0.12), rgba(77, 208, 225, 0.06));
+.bg-gradient-yellow {
+  background: linear-gradient(135deg, rgba(255, 245, 220, 0.12), rgba(255, 245, 220, 0.06));
+}
+
+.bg-gradient-blue {
+  background: linear-gradient(135deg, rgba(212, 232, 247, 0.1), rgba(212, 232, 247, 0.05));
+}
+
+/* ==================== 装饰圆点 ==================== */
+.dot-decoration {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.3;
+  pointer-events: none;
 }
 
 /* ==================== 动画 ==================== */
-@keyframes float {
+@keyframes floatGentle {
   0%, 100% {
-    transform: translateY(0);
+    transform: translateY(0) rotateZ(0deg);
   }
   50% {
-    transform: translateY(-20rpx);
+    transform: translateY(-12rpx) rotateZ(1deg);
   }
 }
 
@@ -483,14 +517,14 @@ input::placeholder {
     opacity: 1;
   }
   50% {
-    opacity: 0.6;
+    opacity: 0.5;
   }
 }
 
 @keyframes slideIn {
   from {
     opacity: 0;
-    transform: translateY(20rpx);
+    transform: translateY(16rpx);
   }
   to {
     opacity: 1;
@@ -504,5 +538,16 @@ input::placeholder {
   }
   to {
     opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
 }
