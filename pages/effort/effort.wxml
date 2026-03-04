@@ -26,33 +26,33 @@
     </view>
   </view>
 
+  <!-- 紧凑表单 -->
   <view class="form cardSurface">
-    <text class="sectionTitle">点选记录（无需打字）</text>
-
-    <view class="field">
-      <text class="label">工作时长</text>
-      <picker mode="selector" range="{{workHoursOptions}}" value="{{workHoursIndex}}" bindchange="onWorkHoursChange">
-        <view class="picker pill">{{form.workHours}} 小时</view>
-      </picker>
-    </view>
-
-    <view class="field">
-      <text class="label">加班时长</text>
-      <view class="inline">
-        <input class="input pill" type="number" value="{{form.overtimeHours}}" maxlength="2" bindinput="onOvertimeInput" />
-        <text class="unit">小时（0-8）</text>
+    <text class="formTitle">点选记录</text>
+    
+    <!-- 第一行：工作时长 + 加班时长 -->
+    <view class="formRow">
+      <view class="formItem">
+        <text class="formLabel">工作</text>
+        <picker mode="selector" range="{{workHoursOptions}}" value="{{workHoursIndex}}" bindchange="onWorkHoursChange">
+          <view class="formPicker">{{form.workHours}}h</view>
+        </picker>
+      </view>
+      <view class="formItem">
+        <text class="formLabel">加班</text>
+        <input class="formInput" type="number" value="{{form.overtimeHours}}" maxlength="2" bindinput="onOvertimeInput" placeholder="0h" />
+      </view>
+      <view class="formItem">
+        <text class="formLabel">任务</text>
+        <picker mode="selector" range="{{taskCountOptions}}" value="{{taskIndex}}" bindchange="onTaskChange">
+          <view class="formPicker">{{form.tasksDone}}项</view>
+        </picker>
       </view>
     </view>
-
-    <view class="field">
-      <text class="label">完成任务数</text>
-      <picker mode="selector" range="{{taskCountOptions}}" value="{{taskIndex}}" bindchange="onTaskChange">
-        <view class="picker pill">{{form.tasksDone}} 项</view>
-      </picker>
-    </view>
-
-    <view class="field">
-      <text class="label">额外付出（多选）</text>
+    
+    <!-- 第二行：额外付出标签 -->
+    <view class="extraRow">
+      <text class="formLabel">额外付出</text>
       <view class="chips">
         <view
           wx:for="{{extraOptions}}"
@@ -60,13 +60,11 @@
           class="chip {{form.extras.includes(item) ? 'active' : ''}}"
           bindtap="toggleExtra"
           data-item="{{item}}"
-        >
-          {{item}}
-        </view>
+        >{{item}}</view>
       </view>
     </view>
 
-    <button class="submit btnClean btnMintPrimary" bindtap="onSubmit">生成实干卡片</button>
+    <button class="submit" bindtap="onSubmit">生成实干卡片</button>
   </view>
 
   <view wx:if="{{card}}" class="cardWrap cardSurface">
@@ -146,4 +144,3 @@
 
   <canvas type="2d" id="effortCanvas" class="hiddenCanvas"></canvas>
 </view>
-

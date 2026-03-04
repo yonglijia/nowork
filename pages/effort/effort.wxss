@@ -88,76 +88,80 @@
 
 /* ==================== 表单区域 ==================== */
 .form {
-  padding: 24rpx;
+  padding: 16rpx;
   background: #ffffff;
-  border-radius: 20rpx;
+  border-radius: 16rpx;
   box-shadow: 0 2rpx 12rpx rgba(44, 62, 80, 0.05);
 }
 
-.sectionTitle {
-  font-size: 30rpx;
+.formTitle {
+  font-size: 26rpx;
   font-weight: 600;
   color: #2C3E50;
+  margin-bottom: 12rpx;
 }
 
-.field {
-  margin-top: 16rpx;
+.formRow {
   display: flex;
-  flex-direction: column;
   gap: 10rpx;
 }
 
-.label {
-  font-size: 24rpx;
-  color: #5D6D7E;
-  font-weight: 500;
-}
-
-.picker {
-  padding: 18rpx;
-  background: #F8FAFC;
-  border: 1rpx solid rgba(92, 155, 214, 0.12);
-  border-radius: 12rpx;
-  color: #34495E;
-  font-weight: 500;
-}
-
-.inline {
+.formItem {
+  flex: 1;
   display: flex;
-  align-items: center;
-  gap: 12rpx;
+  flex-direction: column;
+  gap: 6rpx;
 }
 
-.input {
-  width: 200rpx;
-  padding: 16rpx;
-  background: #F8FAFC;
-  border: 1rpx solid rgba(92, 155, 214, 0.12);
-  border-radius: 12rpx;
-  color: #34495E;
-  font-weight: 500;
-}
-
-.unit {
-  font-size: 22rpx;
+.formLabel {
+  font-size: 20rpx;
   color: #85929E;
   font-weight: 500;
+}
+
+.formPicker {
+  padding: 12rpx;
+  background: #F8FAFC;
+  border: 1rpx solid rgba(92, 155, 214, 0.12);
+  border-radius: 10rpx;
+  color: #34495E;
+  font-weight: 600;
+  font-size: 26rpx;
+  text-align: center;
+}
+
+.formInput {
+  padding: 12rpx;
+  background: #F8FAFC;
+  border: 1rpx solid rgba(92, 155, 214, 0.12);
+  border-radius: 10rpx;
+  color: #34495E;
+  font-weight: 600;
+  font-size: 26rpx;
+  text-align: center;
+}
+
+.extraRow {
+  margin-top: 12rpx;
+  display: flex;
+  flex-direction: column;
+  gap: 8rpx;
 }
 
 /* ==================== 标签选择 ==================== */
 .chips {
   display: flex;
   flex-wrap: wrap;
-  gap: 10rpx;
+  gap: 8rpx;
 }
 
 .chip {
-  padding: 12rpx 18rpx;
+  padding: 10rpx 14rpx;
   background: #F8FAFC;
-  border: 2rpx solid rgba(92, 155, 214, 0.12);
+  border: 1rpx solid rgba(92, 155, 214, 0.12);
   border-radius: 999rpx;
   color: #5D6D7E;
-  font-size: 24rpx;
+  font-size: 22rpx;
   font-weight: 500;
 }
 
@@ -169,33 +173,34 @@
 
 /* ==================== 提交按钮 ==================== */
 .submit {
-  margin-top: 20rpx;
-  height: 88rpx;
-  border-radius: 16rpx;
+  margin-top: 14rpx;
+  height: 72rpx;
+  border-radius: 14rpx;
   display: flex;
   align-items: center;
   justify-content: center;
   background: linear-gradient(135deg, #5C9BD6, #6BA3DC);
   color: #ffffff;
   font-weight: 600;
-  font-size: 30rpx;
-  box-shadow: 0 6rpx 20rpx rgba(92, 155, 214, 0.25);
+  font-size: 28rpx;
+  box-shadow: 0 4rpx 16rpx rgba(92, 155, 214, 0.2);
+  border: none;
 }
 
 /* ==================== 今日卡片 ==================== */
 .cardWrap {
-  padding: 24rpx;
+  padding: 16rpx;
   background: #ffffff;
-  border-radius: 20rpx;
+  border-radius: 16rpx;
   box-shadow: 0 2rpx 12rpx rgba(44, 62, 80, 0.05);
 }
 
 .card {
-  border-radius: 20rpx;
-  padding: 24rpx;
+  border-radius: 16rpx;
+  padding: 16rpx;
   color: #ffffff;
   background: linear-gradient(135deg, #5C9BD6, #6BA3DC);
-  box-shadow: 0 6rpx 24rpx rgba(92, 155, 214, 0.25);
+  box-shadow: 0 4rpx 16rpx rgba(92, 155, 214, 0.2);
 }
 
 .cardHead {
@@ -206,97 +211,98 @@
 }
 
 .cardTitle {
-  font-size: 30rpx;
+  font-size: 26rpx;
   font-weight: 600;
 }
 
 .cardDate {
-  font-size: 22rpx;
+  font-size: 20rpx;
   opacity: 0.85;
 }
 
 .rows {
-  margin-top: 14rpx;
+  margin-top: 10rpx;
   display: flex;
   flex-direction: column;
-  gap: 10rpx;
+  gap: 6rpx;
 }
 
 .r {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 12rpx 14rpx;
-  border-radius: 12rpx;
+  padding: 8rpx 12rpx;
+  border-radius: 10rpx;
   background: rgba(255, 255, 255, 0.15);
 }
 
 .k {
-  font-size: 24rpx;
+  font-size: 22rpx;
   opacity: 0.9;
   font-weight: 500;
 }
 
 .v {
-  font-size: 26rpx;
+  font-size: 24rpx;
   font-weight: 600;
 }
 
 /* ==================== 勋章区域 ==================== */
 .medals {
-  margin-top: 14rpx;
-  padding-top: 12rpx;
+  margin-top: 10rpx;
+  padding-top: 10rpx;
   border-top: 1rpx solid rgba(255, 255, 255, 0.2);
 }
 
 .medalTitle {
-  font-size: 24rpx;
+  font-size: 22rpx;
   opacity: 0.9;
   font-weight: 600;
 }
 
 .medalRow {
-  margin-top: 8rpx;
+  margin-top: 6rpx;
   display: flex;
   flex-wrap: wrap;
-  gap: 8rpx;
+  gap: 6rpx;
 }
 
 .medal {
-  padding: 8rpx 14rpx;
+  padding: 6rpx 12rpx;
   background: rgba(255, 255, 255, 0.2);
   border-radius: 999rpx;
-  font-size: 22rpx;
+  font-size: 20rpx;
   font-weight: 500;
 }
 
 /* ==================== 操作按钮 ==================== */
 .actions {
-  margin-top: 16rpx;
+  margin-top: 12rpx;
   display: flex;
   align-items: stretch;
-  gap: 12rpx;
+  gap: 10rpx;
 }
 
 .actionBtn {
   flex: 1;
   min-width: 0;
-  height: 80rpx;
-  border-radius: 14rpx;
+  height: 64rpx;
+  border-radius: 12rpx;
   display: flex;
   align-items: center;
   justify-content: center;
   background: #ffffff;
   color: #5C9BD6;
   font-weight: 600;
+  font-size: 24rpx;
   border: 2rpx solid rgba(92, 155, 214, 0.2);
 }
 
 /* ==================== 日历区域 ==================== */
 .calendar {
-  padding: 24rpx;
+  padding: 16rpx;
   background: #ffffff;
-  border-radius: 20rpx;
+  border-radius: 16rpx;
   box-shadow: 0 2rpx 12rpx rgba(44, 62, 80, 0.05);
 }
 
@@ -308,42 +314,42 @@
 }
 
 .calHint {
-  font-size: 22rpx;
+  font-size: 20rpx;
   color: #85929E;
   font-weight: 500;
 }
 
 .weekRow {
-  margin-top: 12rpx;
+  margin-top: 10rpx;
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  gap: 8rpx;
+  gap: 4rpx;
 }
 
 .week {
   text-align: center;
-  font-size: 22rpx;
+  font-size: 20rpx;
   color: #9AA5B1;
   font-weight: 500;
 }
 
 .grid {
-  margin-top: 8rpx;
+  margin-top: 6rpx;
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  gap: 8rpx;
+  gap: 4rpx;
 }
 
 .day {
-  height: 76rpx;
-  border-radius: 12rpx;
+  height: 56rpx;
+  border-radius: 10rpx;
   background: #F8FAFC;
   border: 1rpx solid transparent;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 4rpx;
+  gap: 2rpx;
   color: #85929E;
 }
 
@@ -362,13 +368,13 @@
 }
 
 .d {
-  font-size: 24rpx;
+  font-size: 22rpx;
   font-weight: 600;
 }
 
 .dot {
-  width: 8rpx;
-  height: 8rpx;
+  width: 6rpx;
+  height: 6rpx;
   border-radius: 999rpx;
   background: #5C9BD6;
 }
