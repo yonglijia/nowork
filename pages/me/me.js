@@ -11,7 +11,7 @@ Page({
   },
 
   onShow() {
-    setTabBarIndex(2)
+    setTabBarIndex(3) // Tab4
     this.refresh()
   },
 
@@ -46,6 +46,10 @@ Page({
 
   goFavoriteAudio() {
     wx.navigateTo({ url: "/pages/favoriteAudio/favoriteAudio" })
+  },
+
+  goReport() {
+    wx.navigateTo({ url: "/pages/report/report" })
   },
 
   goVent() {

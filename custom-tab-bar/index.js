@@ -2,8 +2,9 @@ Component({
   data: {
     selected: 0,
     list: [
-      { pagePath: "/pages/index/index", text: "嘴硬", icon: "😤" },
+      { pagePath: "/pages/index/index", text: "首页", icon: "🏠" },
       { pagePath: "/pages/effort/effort", text: "实干", icon: "✅" },
+      { pagePath: "/pages/guide/guide", text: "指南", icon: "📖" },
       { pagePath: "/pages/me/me", text: "我的", icon: "👤" }
     ]
   },
@@ -20,4 +21,3 @@ Component({
     }
   }
 })
-

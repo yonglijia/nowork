@@ -1,29 +1,115 @@
-<view class="safePage page">
-  <view class="hero cardSurface">
-    <view class="heroTop">
-      <view class="heroTitleRow">
-        <text class="heroTitle">今日嘴硬</text>
-        <text class="heroBadge pill">安全发泄区</text>
+<view class="page">
+  <!-- 顶部：Slogan + 日期 + 情绪标签 -->
+  <view class="header">
+    <view class="headerTop">
+      <text class="slogan">嘴上不想上班，身体超能干</text>
+      <text class="todayDate">{{todayDate}}</text>
+    </view>
+    <view class="moodRow">
+      <text class="moodLabel">今日心情：</text>
+      <view class="moodTags">
+        <view
+          wx:for="{{moodTags}}"
+          wx:key="*this"
+          class="moodTag {{selectedMood === item ? 'active' : ''}}"
+          bindtap="onMoodTap"
+          data-tag="{{item}}"
+        >{{item}}</view>
       </view>
-      <text class="heroSub">幽默自嘲一下，心情就松一口气</text>
     </view>
   </view>
 
-  <!-- 快速减负模块 -->
-  <view class="reduceSection cardSurface">
-    <text class="sectionTitle">快速减负</text>
-    <view class="reduceGrid">
-      <!-- 今日最重要1件事 -->
+  <!-- 模块1：今日嘴硬（重新设计） -->
+  <view class="ventSection">
+    <view class="ventHeader">
+      <view class="ventTitle">
+        <text class="ventEmoji">😤</text>
+        <text class="ventTitleText">今日嘴硬</text>
+      </view>
+      <text class="ventLink" bindtap="goWall">嘴硬墙 ›</text>
+    </view>
+    
+    <!-- 吐槽按钮 - 横向滚动 -->
+    <scroll-view class="ventScroll" scroll-x>
+      <view class="ventBtnList">
+        <view
+          wx:for="{{presets}}"
+          wx:key="key"
+          class="ventBtn"
+          bindtap="onPresetTap"
+          data-key="{{item.key}}"
+        >
+          <text class="ventBtnEmoji">{{item.emoji || '💢'}}</text>
+          <text class="ventBtnText">{{item.label}}</text>
+        </view>
+      </view>
+    </scroll-view>
+    
+    <!-- 卡片预览 -->
+    <view wx:if="{{card}}" class="cardPreview">
+      <view class="cardTop">
+        <view class="cardEmojiWrap">
+          <text>{{card.meme.value}}</text>
+        </view>
+        <view class="cardTextWrap">
+          <text class="cardText">{{card.text}}</text>
+        </view>
+      </view>
+      <view class="cardActions">
+        <button class="cardBtn" bindtap="onSaveImage">保存图片</button>
+        <button class="cardBtn primary" open-type="share">分享出去</button>
+      </view>
+    </view>
+  </view>
+
+  <!-- 模块2：今日实干 -->
+  <view class="section">
+    <view class="sectionHeader">
+      <text class="sectionTitle">✅ 今日实干</text>
+      <text class="sectionLink" bindtap="goEffort">去记录 ›</text>
+    </view>
+    <view class="effortEntry" bindtap="goEffort">
+      <text class="effortHint">点击进入实干记录，记录今日付出</text>
+    </view>
+  </view>
+
+  <!-- 模块3：今日治愈 -->
+  <view class="section">
+    <view class="sectionHeader">
+      <text class="sectionTitle">🌸 今日治愈</text>
+      <text class="sectionLink" bindtap="goHealingAudio">治愈音频 ›</text>
+    </view>
+    <view wx:if="{{healingQuote}}" class="quoteBox">
+      <text class="quoteText">{{healingQuote.quote}}</text>
+    </view>
+    <view class="healingActions">
+      <view class="healingBtn" bindtap="goBreathing">
+        <text class="healingIcon">🌬️</text>
+        <text class="healingText">1分钟呼吸放松</text>
+      </view>
+      <view class="healingBtn" bindtap="goMoodScore">
+        <text class="healingIcon">📊</text>
+        <text class="healingText">情绪打分</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 模块4：快速减负 -->
+  <view class="section">
+    <view class="sectionHeader">
+      <text class="sectionTitle">🎯 快速减负</text>
+    </view>
+    <view class="reduceList">
       <view class="reduceItem" bindtap="showTopTaskEdit">
-        <view class="reduceIcon">🎯</view>
+        <text class="reduceIcon">📌</text>
         <view class="reduceContent">
           <text class="reduceTitle">今日最重要1件事</text>
           <text class="reduceDesc">{{topTask ? topTask.text : '点击设置'}}</text>
         </view>
+        <text class="reduceArrow">›</text>
       </view>
-      <!-- 拒绝话术 -->
       <view class="reduceItem" bindtap="goRefusalScripts">
-        <view class="reduceIcon">💬</view>
+        <text class="reduceIcon">💬</text>
         <view class="reduceContent">
           <text class="reduceTitle">拒绝话术</text>
           <text class="reduceDesc">学会说「不」</text>
@@ -33,94 +119,24 @@
     </view>
   </view>
 
-  <!-- 今日治愈模块 -->
-  <view class="healingSection cardSurface">
-    <view class="healingHeader">
-      <text class="sectionTitle">今日治愈</text>
-      <view class="healingAudioEntry" bindtap="goHealingAudio">
-        <text class="healingAudioText">治愈音频</text>
-        <text class="healingAudioArrow">›</text>
+  <!-- 模块5：今日窝囊费 -->
+  <view wx:if="{{hasWageConfig}}" class="section">
+    <view class="sectionHeader">
+      <text class="sectionTitle">💰 今日窝囊费</text>
+      <text class="sectionLink" bindtap="goWageReport">详情 ›</text>
+    </view>
+    <view class="wageCard" bindtap="goWageReport">
+      <view class="wageAmount">
+        <text class="wageCurrency">¥</text>
+        <text class="wageNum">{{todayWage.totalWage || '0.00'}}</text>
       </view>
+      <text class="wageHint">点击查看今日窝囊费日报</text>
     </view>
-    
-    <view wx:if="{{healingQuote}}" class="healingQuote">
-      <text class="quoteText">{{healingQuote.quote}}</text>
-    </view>
-    
-    <view class="healingActions">
-      <view class="healingBtn" bindtap="goBreathing">
-        <text class="healingBtnIcon">🌬️</text>
-        <text class="healingBtnText">1分钟呼吸放松</text>
-      </view>
-    </view>
-  </view>
-
-  <view class="moodBar cardSurface">
-    <view class="row">
-      <text class="sectionTitle">今日情绪</text>
-      <text wx:if="{{selectedMood}}" class="picked">已标记：{{selectedMood}}</text>
-    </view>
-    <view class="tagRow">
-      <view
-        wx:for="{{moodTags}}"
-        wx:key="*this"
-        class="tag {{selectedMood === item ? 'active' : ''}}"
-        bindtap="onMoodTap"
-        data-tag="{{item}}"
-      >
-        {{item}}
-      </view>
-    </view>
-  </view>
-
-  <view class="section cardSurface">
-    <text class="sectionTitle">一键吐槽</text>
-    <view class="presetGrid">
-      <button
-        wx:for="{{presets}}"
-        wx:key="key"
-        class="presetBtn btnClean"
-        bindtap="onPresetTap"
-        data-key="{{item.key}}"
-      >
-        {{item.label}}
-      </button>
-    </view>
-  </view>
-
-  <view wx:if="{{card}}" class="cardWrap cardSurface">
-    <view class="card">
-      <view class="memeBox">
-        <image
-          wx:if="{{card.meme.type === 'image'}}"
-          class="memeImg"
-          src="{{card.meme.url}}"
-          mode="aspectFit"
-        />
-        <text wx:else class="memeEmoji">{{card.meme.value}}</text>
-      </view>
-      <text class="cardText">{{card.text}}</text>
-      <text class="cardFooter">今日嘴硬 · 安全发泄区</text>
-    </view>
-
-    <view class="actions">
-      <button class="actionBtn btnMintGhost btnClean" bindtap="onSaveImage">保存</button>
-      <button class="actionBtn btnMintPrimary btnClean" open-type="share">公开分享</button>
-      <button class="actionBtn btnMintGhost btnClean" bindtap="onPrivateShare">私密</button>
-    </view>
-  </view>
-
-  <view class="wallEntry cardSurface" bindtap="goWall">
-    <view class="wallText">
-      <text class="wallTitle">嘴硬墙</text>
-      <text class="wallSub">匿名吐槽列表 · 仅展示文本</text>
-    </view>
-    <text class="wallArrow">›</text>
   </view>
 
   <canvas type="2d" id="shareCanvas" class="hiddenCanvas"></canvas>
 
-  <!-- 设置今日最重要事项弹窗 -->
+  <!-- 设置弹窗 -->
   <view wx:if="{{showTopTaskInput}}" class="modalMask" bindtap="hideTopTaskEdit">
     <view class="modalContent" catchtap="">
       <text class="modalTitle">今日最重要1件事</text>
@@ -133,11 +149,10 @@
         focus="{{showTopTaskInput}}"
       />
       <view class="modalActions">
-        <button wx:if="{{topTask}}" class="modalBtn deleteBtn btnClean" bindtap="removeTopTask">删除</button>
-        <button class="modalBtn cancelBtn btnClean" bindtap="hideTopTaskEdit">取消</button>
-        <button class="modalBtn confirmBtn btnClean" bindtap="saveTopTask">保存</button>
+        <button wx:if="{{topTask}}" class="modalBtn danger" bindtap="removeTopTask">删除</button>
+        <button class="modalBtn" bindtap="hideTopTaskEdit">取消</button>
+        <button class="modalBtn primary" bindtap="saveTopTask">保存</button>
       </view>
     </view>
   </view>
 </view>
-

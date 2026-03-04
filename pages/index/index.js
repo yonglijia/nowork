@@ -3,6 +3,7 @@ const { renderShareCard } = require("../../utils/shareCard")
 const { setTabBarIndex } = require("../../utils/tabBar")
 const { getTopTask, setTopTask, deleteTopTask } = require("../../utils/refusalService")
 const { getHealingQuote } = require("../../utils/healingService")
+const { getTodayWageReport, getWageConfig } = require("../../utils/wageService")
 
 function randomPick(arr) {
   if (!Array.isArray(arr) || arr.length === 0) return null
@@ -18,22 +19,44 @@ function getDateKey() {
   return `${y}-${m}-${day}`
 }
 
+function getTodayDate() {
+  const d = new Date()
+  const weekDays = ["日", "一", "二", "三", "四", "五", "六"]
+  const m = d.getMonth() + 1
+  const day = d.getDate()
+  const week = weekDays[d.getDay()]
+  return `${m}月${day}日 星期${week}`
+}
+
 function encodeShareParam(v) {
   return encodeURIComponent(typeof v === "string" ? v : JSON.stringify(v))
 }
 
 Page({
   data: {
+    // 顶部
+    todayDate: "",
     moodTags: [],
     selectedMood: "",
+    
+    // 模块1: 今日嘴硬
     presets: [],
     card: null,
-    // 快速减负模块
+    
+    // 模块2: 今日实干简要
+    todayEffort: null,
+    
+    // 模块3: 今日治愈
+    healingQuote: null,
+    
+    // 模块4: 快速减负
     topTask: null,
     showTopTaskInput: false,
     topTaskInputValue: "",
-    // 今日治愈模块
-    healingQuote: null
+    
+    // 模块5: 今日窝囊费
+    todayWage: null,
+    hasWageConfig: false
   },
 
   async onLoad() {
@@ -44,7 +67,8 @@ Page({
     const cfg = await getVentConfig()
     this.setData({
       moodTags: cfg.moodTags || [],
-      presets: cfg.presets || []
+      presets: cfg.presets || [],
+      todayDate: getTodayDate()
     })
 
     const savedMood = wx.getStorageSync(`mood_${getDateKey()}`)
@@ -55,8 +79,10 @@ Page({
     setTabBarIndex(0)
     this.loadTopTask()
     this.loadHealingQuote()
+    this.loadTodayWage()
   },
 
+  // ========== 顶部情绪标签 ==========
   async onMoodTap(e) {
     const tag = e.currentTarget.dataset.tag
     if (!tag) return
@@ -68,7 +94,53 @@ Page({
     } catch (e) {}
   },
 
-  // ========== 快速减负模块 ==========
+  // ========== 模块1: 今日嘴硬 ==========
+  onPresetTap(e) {
+    const key = e.currentTarget.dataset.key
+    const preset = (this.data.presets || []).find((p) => p.key === key)
+    if (!preset) return
+    const text = randomPick(preset.texts) || preset.label
+    const meme = randomPick(preset.memes) || { type: "emoji", value: "😤" }
+    this.setData({
+      card: {
+        presetKey: preset.key,
+        presetLabel: preset.label,
+        text,
+        meme
+      }
+    })
+  },
+
+  goWall() {
+    wx.navigateTo({ url: "/pages/wall/wall" })
+  },
+
+  // ========== 模块2: 今日实干 ==========
+  goEffort() {
+    wx.switchTab({ url: "/pages/effort/effort" })
+  },
+
+  // ========== 模块3: 今日治愈 ==========
+  async loadHealingQuote() {
+    try {
+      const data = await getHealingQuote()
+      this.setData({ healingQuote: data })
+    } catch (e) {}
+  },
+
+  goBreathing() {
+    wx.navigateTo({ url: "/pages/breathing/breathing" })
+  },
+
+  goMoodScore() {
+    wx.navigateTo({ url: "/pages/moodScore/moodScore" })
+  },
+
+  goHealingAudio() {
+    wx.navigateTo({ url: "/pages/healingAudio/healingAudio" })
+  },
+
+  // ========== 模块4: 快速减负 ==========
   async loadTopTask() {
     try {
       const item = await getTopTask()
@@ -128,42 +200,25 @@ Page({
     }
   },
 
-  // ========== 今日治愈模块 ==========
-  async loadHealingQuote() {
+  // ========== 模块5: 今日窝囊费 ==========
+  async loadTodayWage() {
     try {
-      const data = await getHealingQuote()
-      this.setData({ healingQuote: data })
+      const config = await getWageConfig()
+      if (config) {
+        this.setData({ hasWageConfig: true })
+        const report = await getTodayWageReport()
+        if (report) {
+          this.setData({ todayWage: report })
+        }
+      }
     } catch (e) {}
   },
 
-  goBreathing() {
-    wx.navigateTo({ url: "/pages/breathing/breathing" })
+  goWageReport() {
+    wx.navigateTo({ url: "/pages/wageReport/wageReport" })
   },
 
-  goHealingAudio() {
-    wx.navigateTo({ url: "/pages/healingAudio/healingAudio" })
-  },
-
-  onPresetTap(e) {
-    const key = e.currentTarget.dataset.key
-    const preset = (this.data.presets || []).find((p) => p.key === key)
-    if (!preset) return
-    const text = randomPick(preset.texts) || preset.label
-    const meme = randomPick(preset.memes) || { type: "emoji", value: "😤" }
-    this.setData({
-      card: {
-        presetKey: preset.key,
-        presetLabel: preset.label,
-        text,
-        meme
-      }
-    })
-  },
-
-  goWall() {
-    wx.navigateTo({ url: "/pages/wall/wall" })
-  },
-
+  // ========== 分享相关 ==========
   buildSharePayload(mode) {
     const card = this.data.card
     const title = card ? `${card.presetLabel}｜今日嘴硬` : "今日嘴硬｜安全发泄区"
@@ -307,4 +362,3 @@ async function ensureAlbumPermission() {
     return true
   }
 }
-

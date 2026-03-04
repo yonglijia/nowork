@@ -9,12 +9,13 @@
   gap: 16rpx;
   background: #F5F8FA;
   padding: 24rpx;
-  padding-bottom: 160rpx;
+  padding-top: calc(env(safe-area-inset-top) + 80rpx);
+  padding-bottom: calc(env(safe-area-inset-bottom) + 120rpx);
 }
 
 /* ==================== 顶部区域 ==================== */
 .top {
-  padding: 28rpx;
+  padding: 24rpx;
   background: linear-gradient(135deg, #E3F2FD 0%, #F5F9FF 100%);
   border-radius: 20rpx;
 }
@@ -33,7 +34,7 @@
 }
 
 .title {
-  font-size: 42rpx;
+  font-size: 36rpx;
   font-weight: 700;
   color: #2C3E50;
 }

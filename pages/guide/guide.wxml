@@ -1,0 +1,69 @@
+<view class="page">
+  <!-- 顶部区域 -->
+  <view class="header">
+    <text class="title">生存指南</text>
+    <text class="sub">打工人的智慧锦囊</text>
+  </view>
+
+  <!-- 搜索栏 -->
+  <view class="searchBar">
+    <text class="searchIcon">🔍</text>
+    <input
+      class="searchInput"
+      placeholder="搜索指南内容"
+      value="{{searchKeyword}}"
+      bindinput="onSearchInput"
+    />
+    <text wx:if="{{searchKeyword}}" class="clearBtn" bindtap="onClearSearch">✕</text>
+  </view>
+
+  <!-- 分类导航 -->
+  <scroll-view class="categoryBar" scroll-x>
+    <view class="categoryScroll">
+      <view
+        wx:for="{{categories}}"
+        wx:key="key"
+        class="categoryItem {{currentCategory === item.key ? 'active' : ''}}"
+        bindtap="onCategoryTap"
+        data-category="{{item.key}}"
+      >
+        {{item.name}}
+      </view>
+    </view>
+  </scroll-view>
+
+  <!-- 内容列表 -->
+  <view class="contentList">
+    <view
+      wx:for="{{filteredContents}}"
+      wx:key="id"
+      class="contentItem"
+      bindtap="onViewDetail"
+      data-id="{{item.id}}"
+    >
+      <view class="contentHeader">
+        <text class="contentIcon">{{item.icon}}</text>
+        <view class="contentInfo">
+          <text class="contentTitle">{{item.title}}</text>
+          <text class="contentSummary">{{item.summary}}</text>
+        </view>
+      </view>
+      <view class="contentActions" catchtap="">
+        <view class="actionBtn" catchtap="onFavorite" data-id="{{item.id}}">
+          <text class="actionIcon">⭐</text>
+          <text class="actionText">收藏</text>
+        </view>
+        <view class="actionBtn" catchtap="onShare" data-id="{{item.id}}">
+          <text class="actionIcon">📤</text>
+          <text class="actionText">分享</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 空状态 -->
+  <view wx:if="{{filteredContents.length === 0}}" class="emptyState">
+    <text class="emptyIcon">📭</text>
+    <text class="emptyText">暂无相关内容</text>
+  </view>
+</view>

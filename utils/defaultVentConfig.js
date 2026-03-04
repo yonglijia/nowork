@@ -3,7 +3,8 @@ module.exports = {
   presets: [
     {
       key: "noWork",
-      label: "我真不想上班",
+      label: "不想上班",
+      emoji: "😤",
       texts: [
         "我不是不努力，我是在和通勤做斗争。",
         "上班像打副本，但我连新手村都不想出门。",
@@ -18,7 +19,8 @@ module.exports = {
     },
     {
       key: "lieFlat",
-      label: "烦死了想躺平",
+      label: "想躺平",
+      emoji: "🫠",
       texts: [
         "我不是摆烂，我是在进行能量回收。",
         "今天的我：躺着也要把烦恼踢到门外。",
@@ -33,7 +35,8 @@ module.exports = {
     },
     {
       key: "whoCares",
-      label: "谁爱干谁干",
+      label: "摆烂中",
+      emoji: "🤷",
       texts: [
         "我不是不配合，我只是更擅长旁观。",
         "这事谁爱做谁做，我先在精神层面支持一下。",
@@ -48,7 +51,8 @@ module.exports = {
     },
     {
       key: "noOneUnderstands",
-      label: "明明很累却没人懂",
+      label: "没人懂",
+      emoji: "🥲",
       texts: [
         "我没事，我只是把崩溃写在了气质里。",
         "我挺好的，就是心里有点小型龙卷风。",
@@ -63,4 +67,3 @@ module.exports = {
     }
   ]
 }
-

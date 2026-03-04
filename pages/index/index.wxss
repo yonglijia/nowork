@@ -1,6 +1,5 @@
 /**
- * 首页样式 - 今日嘴硬
- * 温暖、治愈、轻幽默
+ * 首页样式 - 重构版
  */
 
 .page {
@@ -9,165 +8,256 @@
   gap: 16rpx;
   background: #F5F8FA;
   padding: 24rpx;
-  padding-bottom: 160rpx;
+  padding-top: calc(env(safe-area-inset-top) + 80rpx);
+  padding-bottom: calc(env(safe-area-inset-bottom) + 120rpx);
 }
 
-/* ==================== 顶部英雄区域 ==================== */
-.hero {
-  padding: 28rpx;
+/* ==================== 顶部区域 ==================== */
+.header {
+  padding: 24rpx;
   background: linear-gradient(135deg, #E3F2FD 0%, #F5F9FF 100%);
   border-radius: 20rpx;
 }
 
-.heroTop {
+.headerTop {
   display: flex;
-  flex-direction: column;
-  gap: 10rpx;
-}
-
-.heroTitleRow {
-  display: flex;
-  align-items: center;
   justify-content: space-between;
-  gap: 16rpx;
+  align-items: center;
+  margin-bottom: 16rpx;
 }
 
-.heroTitle {
-  font-size: 42rpx;
-  font-weight: 700;
-  letter-spacing: 1rpx;
-  color: #2C3E50;
-}
-
-.heroBadge {
-  padding: 8rpx 16rpx;
-  font-size: 22rpx;
-  background: rgba(92, 155, 214, 0.15);
-  color: #5C9BD6;
-  border-radius: 999rpx;
-  border: none;
-}
-
-.heroSub {
-  font-size: 26rpx;
-  color: #5D6D7E;
-  line-height: 1.5;
-}
-
-/* ==================== 区块标题 ==================== */
-.sectionTitle {
+.slogan {
   font-size: 30rpx;
-  font-weight: 600;
+  font-weight: 700;
   color: #2C3E50;
 }
 
-.row {
+.todayDate {
+  font-size: 24rpx;
+  color: #5D6D7E;
+}
+
+.moodRow {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-}
-
-.picked {
-  font-size: 24rpx;
-  color: #85929E;
-}
-
-/* ==================== 快速减负模块 ==================== */
-.reduceSection {
-  padding: 24rpx;
-  background: #ffffff;
-  border-radius: 20rpx;
-  box-shadow: 0 2rpx 12rpx rgba(44, 62, 80, 0.05);
-}
-
-.reduceGrid {
-  margin-top: 16rpx;
-  display: flex;
-  flex-direction: column;
   gap: 12rpx;
 }
 
-.reduceItem {
+.moodLabel {
+  font-size: 24rpx;
+  color: #5D6D7E;
+}
+
+.moodTags {
   display: flex;
-  align-items: center;
+  gap: 10rpx;
+}
+
+.moodTag {
+  padding: 10rpx 18rpx;
+  font-size: 22rpx;
+  color: #5D6D7E;
+  background: #ffffff;
+  border-radius: 999rpx;
+  border: 1rpx solid rgba(92, 155, 214, 0.15);
+}
+
+.moodTag.active {
+  background: #5C9BD6;
+  color: #ffffff;
+  border-color: #5C9BD6;
+}
+
+/* ==================== 通用区块样式 ==================== */
+.section {
   padding: 20rpx;
-  background: #F8FAFC;
-  border-radius: 14rpx;
-  gap: 14rpx;
+  background: #ffffff;
+  border-radius: 16rpx;
+  box-shadow: 0 2rpx 8rpx rgba(44, 62, 80, 0.04);
 }
 
-.reduceIcon {
-  font-size: 32rpx;
-  width: 52rpx;
-  text-align: center;
-}
-
-.reduceContent {
-  flex: 1;
+.sectionHeader {
   display: flex;
-  flex-direction: column;
-  gap: 4rpx;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14rpx;
 }
 
-.reduceTitle {
+.sectionTitle {
   font-size: 28rpx;
   font-weight: 600;
   color: #2C3E50;
 }
 
-.reduceDesc {
+.sectionLink {
   font-size: 24rpx;
-  color: #85929E;
+  color: #5C9BD6;
 }
 
-.reduceArrow {
-  font-size: 30rpx;
-  color: #9AA5B1;
-}
-
-/* ==================== 今日治愈模块 ==================== */
-.healingSection {
+/* ==================== 模块1：今日嘴硬（重新设计） ==================== */
+.ventSection {
   padding: 24rpx;
-  background: #ffffff;
+  background: linear-gradient(135deg, #FFF8E1 0%, #FFFBF0 100%);
   border-radius: 20rpx;
-  box-shadow: 0 2rpx 12rpx rgba(44, 62, 80, 0.05);
+  border: 1rpx solid rgba(255, 193, 7, 0.15);
 }
 
-.healingHeader {
+.ventHeader {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
   margin-bottom: 16rpx;
 }
 
-.healingAudioEntry {
+.ventTitle {
   display: flex;
   align-items: center;
-  gap: 4rpx;
+  gap: 8rpx;
 }
 
-.healingAudioText {
+.ventEmoji {
+  font-size: 32rpx;
+}
+
+.ventTitleText {
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #2C3E50;
+}
+
+.ventLink {
   font-size: 24rpx;
+  color: #B8860B;
+  padding: 8rpx 16rpx;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 999rpx;
+}
+
+/* 吐槽按钮 - 横向滚动列表 */
+.ventScroll {
+  white-space: nowrap;
+  margin-bottom: 16rpx;
+}
+
+.ventBtnList {
+  display: inline-flex;
+  gap: 12rpx;
+}
+
+.ventBtn {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16rpx 20rpx;
+  min-width: 100rpx;
+  background: #ffffff;
+  border-radius: 16rpx;
+  border: 1rpx solid rgba(184, 134, 11, 0.12);
+  box-shadow: 0 2rpx 8rpx rgba(184, 134, 11, 0.06);
+}
+
+.ventBtn:active {
+  transform: scale(0.96);
+  background: rgba(255, 193, 7, 0.1);
+}
+
+.ventBtnEmoji {
+  font-size: 36rpx;
+  margin-bottom: 6rpx;
+}
+
+.ventBtnText {
+  font-size: 22rpx;
+  color: #5D6D7E;
+  font-weight: 500;
+}
+
+/* 卡片预览 - 新设计 */
+.cardPreview {
+  background: #ffffff;
+  border-radius: 16rpx;
+  padding: 20rpx;
+  box-shadow: 0 4rpx 16rpx rgba(184, 134, 11, 0.1);
+}
+
+.cardTop {
+  display: flex;
+  align-items: flex-start;
+  gap: 16rpx;
+  margin-bottom: 16rpx;
+}
+
+.cardEmojiWrap {
+  width: 80rpx;
+  height: 80rpx;
+  background: linear-gradient(135deg, #FFE082, #FFD54F);
+  border-radius: 16rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40rpx;
+  flex-shrink: 0;
+}
+
+.cardTextWrap {
+  flex: 1;
+  padding-top: 4rpx;
+}
+
+.cardText {
+  font-size: 28rpx;
+  color: #2C3E50;
+  line-height: 1.5;
+}
+
+.cardActions {
+  display: flex;
+  gap: 12rpx;
+  padding-top: 16rpx;
+  border-top: 1rpx solid rgba(184, 134, 11, 0.08);
+}
+
+.cardBtn {
+  flex: 1;
+  padding: 16rpx;
+  font-size: 26rpx;
+  font-weight: 500;
+  background: #FFF8E1;
+  color: #B8860B;
+  border-radius: 12rpx;
+  border: none;
+}
+
+.cardBtn.primary {
+  background: linear-gradient(135deg, #FFD54F, #FFCA28);
+  color: #5D4E37;
+}
+
+/* ==================== 模块2：今日实干 ==================== */
+.effortEntry {
+  padding: 24rpx;
+  background: #F8FAFC;
+  border-radius: 12rpx;
+  text-align: center;
+}
+
+.effortHint {
+  font-size: 26rpx;
   color: #85929E;
 }
 
-.healingAudioArrow {
-  font-size: 26rpx;
-  color: #9AA5B1;
-}
-
-.healingQuote {
-  padding: 20rpx;
-  background: linear-gradient(135deg, #E3F2FD 0%, #F5F9FF 100%);
-  border-radius: 14rpx;
-  margin-bottom: 16rpx;
+/* ==================== 模块3：今日治愈 ==================== */
+.quoteBox {
+  padding: 16rpx;
+  background: #F8FAFC;
+  border-radius: 12rpx;
+  margin-bottom: 14rpx;
 }
 
 .quoteText {
-  font-size: 28rpx;
+  font-size: 26rpx;
   color: #34495E;
-  line-height: 1.6;
-  font-weight: 500;
+  line-height: 1.5;
 }
 
 .healingActions {
@@ -178,213 +268,100 @@
 .healingBtn {
   flex: 1;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 10rpx;
-  padding: 20rpx;
+  padding: 16rpx;
   background: #F8FAFC;
-  border-radius: 14rpx;
-  border: none;
+  border-radius: 12rpx;
 }
 
-.healingBtn:active {
-  background: #E3F2FD;
+.healingIcon {
+  font-size: 28rpx;
+  margin-bottom: 6rpx;
 }
 
-.healingBtnIcon {
+.healingText {
+  font-size: 22rpx;
+  color: #34495E;
+}
+
+/* ==================== 模块4：快速减负 ==================== */
+.reduceList {
+  display: flex;
+  flex-direction: column;
+  gap: 10rpx;
+}
+
+.reduceItem {
+  display: flex;
+  align-items: center;
+  padding: 14rpx;
+  background: #F8FAFC;
+  border-radius: 12rpx;
+  gap: 12rpx;
+}
+
+.reduceIcon {
   font-size: 28rpx;
 }
 
-.healingBtnText {
-  font-size: 26rpx;
-  font-weight: 600;
-  color: #34495E;
-}
-
-/* ==================== 心情标签区域 ==================== */
-.moodBar {
-  padding: 24rpx;
-  background: #ffffff;
-  border-radius: 20rpx;
-  box-shadow: 0 2rpx 12rpx rgba(44, 62, 80, 0.05);
-}
-
-.tagRow {
-  display: flex;
-  gap: 12rpx;
-  margin-top: 16rpx;
-  flex-wrap: wrap;
-}
-
-.tag {
-  padding: 12rpx 20rpx;
-  border-radius: 999rpx;
-  background: #F8FAFC;
-  border: 2rpx solid rgba(92, 155, 214, 0.15);
-  color: #5D6D7E;
-  font-size: 26rpx;
-  font-weight: 500;
-}
-
-.tag.active {
-  background: #5C9BD6;
-  border-color: #5C9BD6;
-  color: #ffffff;
-}
-
-/* ==================== 区块容器 ==================== */
-.section {
-  padding: 24rpx;
-  background: #ffffff;
-  border-radius: 20rpx;
-  box-shadow: 0 2rpx 12rpx rgba(44, 62, 80, 0.05);
-}
-
-/* ==================== 预设按钮网格 ==================== */
-.presetGrid {
-  margin-top: 16rpx;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12rpx;
-}
-
-.presetBtn {
-  background: #F8FAFC;
-  border: none;
-  border-radius: 14rpx;
-  padding: 24rpx 16rpx;
-  font-size: 26rpx;
-  color: #34495E;
-  line-height: 1.4;
-  text-align: center;
-  box-shadow: none;
-}
-
-.presetBtn:active {
-  background: #E3F2FD;
-}
-
-/* ==================== 拒绝文案卡片 ==================== */
-.cardWrap {
-  padding: 24rpx;
-  background: #ffffff;
-  border-radius: 20rpx;
-  box-shadow: 0 2rpx 12rpx rgba(44, 62, 80, 0.05);
-}
-
-.card {
-  background: linear-gradient(135deg, #5C9BD6, #6BA3DC);
-  border-radius: 16rpx;
-  padding: 24rpx;
-  color: #ffffff;
-  box-shadow: 0 6rpx 24rpx rgba(92, 155, 214, 0.25);
-}
-
-.memeBox {
-  height: 300rpx;
-  border-radius: 12rpx;
-  background: rgba(255, 255, 255, 0.15);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-
-.memeImg {
-  width: 100%;
-  height: 100%;
-}
-
-.memeEmoji {
-  font-size: 100rpx;
-}
-
-.cardText {
-  display: block;
-  margin-top: 20rpx;
-  font-size: 30rpx;
-  font-weight: 600;
-  line-height: 1.5;
-}
-
-.cardFooter {
-  display: block;
-  margin-top: 14rpx;
-  font-size: 22rpx;
-  opacity: 0.85;
-}
-
-/* ==================== 操作按钮 ==================== */
-.actions {
-  margin-top: 16rpx;
-  display: flex;
-  align-items: stretch;
-  gap: 12rpx;
-}
-
-.actionBtn {
+.reduceContent {
   flex: 1;
-  min-width: 0;
-  background: #ffffff;
-  border-radius: 14rpx;
-  font-size: 26rpx;
-  color: #5C9BD6;
-  padding: 22rpx 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 600;
-  box-shadow: none;
-  border: 2rpx solid rgba(92, 155, 214, 0.2);
-}
-
-.actionBtn:active {
-  background: #F8FAFC;
-}
-
-/* ==================== 吐槽墙入口 ==================== */
-.wallEntry {
-  padding: 24rpx;
-  background: #ffffff;
-  border-radius: 20rpx;
-  box-shadow: 0 2rpx 12rpx rgba(44, 62, 80, 0.05);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.wallText {
   display: flex;
   flex-direction: column;
-  gap: 6rpx;
+  gap: 4rpx;
 }
 
-.wallTitle {
-  font-size: 30rpx;
+.reduceTitle {
+  font-size: 26rpx;
   font-weight: 600;
   color: #2C3E50;
 }
 
-.wallSub {
-  font-size: 24rpx;
+.reduceDesc {
+  font-size: 22rpx;
   color: #85929E;
 }
 
-.wallArrow {
-  font-size: 36rpx;
+.reduceArrow {
+  font-size: 28rpx;
   color: #9AA5B1;
 }
 
-/* ==================== 隐藏画布 ==================== */
-.hiddenCanvas {
-  position: fixed;
-  left: -99999px;
-  top: -99999px;
-  width: 900px;
-  height: 1200px;
+/* ==================== 模块5：今日窝囊费 ==================== */
+.wageCard {
+  padding: 20rpx;
+  background: linear-gradient(135deg, #FFF8E1, #FFFCF0);
+  border-radius: 12rpx;
+  text-align: center;
 }
 
-/* ==================== 弹窗样式 ==================== */
+.wageAmount {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+}
+
+.wageCurrency {
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #9A7B4F;
+}
+
+.wageNum {
+  font-size: 48rpx;
+  font-weight: 700;
+  color: #9A7B4F;
+}
+
+.wageHint {
+  display: block;
+  margin-top: 8rpx;
+  font-size: 22rpx;
+  color: #B5A07A;
+}
+
+/* ==================== 弹窗 ==================== */
 .modalMask {
   position: fixed;
   top: 0;
@@ -399,71 +376,63 @@
 }
 
 .modalContent {
-  width: 600rpx;
+  width: 560rpx;
   background: #ffffff;
-  border-radius: 24rpx;
-  padding: 36rpx 28rpx;
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  gap: 20rpx;
-  flex-shrink: 0;
+  border-radius: 20rpx;
+  padding: 28rpx;
 }
 
 .modalTitle {
-  font-size: 34rpx;
-  font-weight: 700;
+  display: block;
+  font-size: 30rpx;
+  font-weight: 600;
   color: #2C3E50;
   text-align: center;
+  margin-bottom: 20rpx;
 }
 
 .modalInput {
   width: 100%;
-  height: 88rpx;
-  padding: 20rpx 24rpx;
+  padding: 18rpx;
   font-size: 28rpx;
   background: #F8FAFC;
-  border-radius: 14rpx;
+  border-radius: 12rpx;
   color: #2C3E50;
   box-sizing: border-box;
-  border: 2rpx solid transparent;
-}
-
-.modalInput:focus {
-  border-color: rgba(92, 155, 214, 0.4);
-}
-
-.modalInput::placeholder {
-  color: #9AA5B1;
+  border: 1rpx solid rgba(92, 155, 214, 0.15);
 }
 
 .modalActions {
   display: flex;
   gap: 12rpx;
+  margin-top: 20rpx;
 }
 
 .modalBtn {
   flex: 1;
-  padding: 22rpx 0;
-  border-radius: 14rpx;
-  font-size: 28rpx;
-  font-weight: 600;
-  text-align: center;
-  line-height: 1.4;
+  padding: 18rpx;
+  font-size: 26rpx;
+  background: #F8FAFC;
+  color: #5D6D7E;
+  border-radius: 12rpx;
   border: none;
 }
 
-.cancelBtn {
-  background: #F8FAFC;
-  color: #5D6D7E;
-}
-
-.confirmBtn {
-  background: linear-gradient(135deg, #5C9BD6, #6BA3DC);
+.modalBtn.primary {
+  background: #5C9BD6;
   color: #ffffff;
 }
 
-.deleteBtn {
+.modalBtn.danger {
   background: rgba(235, 160, 160, 0.15);
   color: #B87070;
+}
+
+/* ==================== 隐藏画布 ==================== */
+.hiddenCanvas {
+  position: fixed;
+  left: -99999px;
+  top: -99999px;
+  width: 900px;
+  height: 1200px;
 }

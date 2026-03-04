@@ -1,48 +1,70 @@
-<view class="safePage page">
-  <view class="hero cardSurface">
+<view class="page">
+  <!-- 顶部区域 -->
+  <view class="header">
     <text class="title">我的</text>
     <text class="sub">记录自己，也照顾自己</text>
   </view>
 
-  <!-- 窝囊费账单入口（重点展示） -->
-  <view class="wageEntry cardSurface" bindtap="goWageBill">
-    <view class="wageIcon">💰</view>
-    <view class="wageContent">
-      <text class="wageTitle">窝囊费账单</text>
-      <text class="wageSub">查看你的打工收入</text>
+  <!-- 核心入口 -->
+  <view class="entryList">
+    <!-- 窝囊费账单 -->
+    <view class="entry highlight" bindtap="goWageBill">
+      <text class="entryIcon">💰</text>
+      <view class="entryContent">
+        <text class="entryTitle">窝囊费账单</text>
+        <text class="entrySub">查看你的打工收入</text>
+      </view>
+      <text class="entryArrow">›</text>
     </view>
-    <text class="entryArrow">›</text>
-  </view>
 
-  <view class="entry cardSurface" bindtap="goMedals">
-    <view class="entryText">
-      <text class="entryTitle">勋章墙</text>
-      <text class="entrySub">已解锁 {{medalCount}} 枚</text>
+    <!-- 勋章墙 -->
+    <view class="entry" bindtap="goMedals">
+      <text class="entryIcon">🏅</text>
+      <view class="entryContent">
+        <text class="entryTitle">勋章墙</text>
+        <text class="entrySub">已解锁 {{medalCount}} 枚</text>
+      </view>
+      <text class="entryArrow">›</text>
     </view>
-    <text class="entryArrow">›</text>
-  </view>
 
-  <view class="entry cardSurface" bindtap="goFavoriteScripts">
-    <view class="entryText">
-      <text class="entryTitle">收藏话术</text>
-      <text class="entrySub">已收藏 {{favoriteScriptCount}} 条</text>
+    <!-- 收藏话术 -->
+    <view class="entry" bindtap="goFavoriteScripts">
+      <text class="entryIcon">💬</text>
+      <view class="entryContent">
+        <text class="entryTitle">收藏话术</text>
+        <text class="entrySub">已收藏 {{favoriteScriptCount}} 条</text>
+      </view>
+      <text class="entryArrow">›</text>
     </view>
-    <text class="entryArrow">›</text>
-  </view>
 
-  <view class="entry cardSurface" bindtap="goFavoriteAudio">
-    <view class="entryText">
-      <text class="entryTitle">收藏音频</text>
-      <text class="entrySub">已收藏 {{favoriteAudioCount}} 个</text>
+    <!-- 收藏音频 -->
+    <view class="entry" bindtap="goFavoriteAudio">
+      <text class="entryIcon">🎵</text>
+      <view class="entryContent">
+        <text class="entryTitle">收藏音频</text>
+        <text class="entrySub">已收藏 {{favoriteAudioCount}} 个</text>
+      </view>
+      <text class="entryArrow">›</text>
     </view>
-    <text class="entryArrow">›</text>
-  </view>
 
-  <view class="entry cardSurface" bindtap="goVent">
-    <view class="entryText">
-      <text class="entryTitle">回到嘴硬</text>
-      <text class="entrySub">安全发泄区</text>
+    <!-- 周/月报告 -->
+    <view class="entry" bindtap="goReport">
+      <text class="entryIcon">📊</text>
+      <view class="entryContent">
+        <text class="entryTitle">周/月报告</text>
+        <text class="entrySub">查看实干数据统计</text>
+      </view>
+      <text class="entryArrow">›</text>
     </view>
-    <text class="entryArrow">›</text>
+
+    <!-- 回到嘴硬 -->
+    <view class="entry" bindtap="goVent">
+      <text class="entryIcon">😤</text>
+      <view class="entryContent">
+        <text class="entryTitle">回到嘴硬</text>
+        <text class="entrySub">安全发泄区</text>
+      </view>
+      <text class="entryArrow">›</text>
+    </view>
   </view>
 </view>

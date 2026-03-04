@@ -1,6 +1,5 @@
 /**
- * 我的页面样式
- * 温暖、治愈、简洁
+ * 我的页面样式 - Tab4
  */
 
 .page {
@@ -9,18 +8,19 @@
   gap: 16rpx;
   background: #F5F8FA;
   padding: 24rpx;
-  padding-bottom: 160rpx;
+  padding-top: calc(env(safe-area-inset-top) + 80rpx);
+  padding-bottom: calc(env(safe-area-inset-bottom) + 120rpx);
 }
 
-/* ==================== 顶部英雄区域 ==================== */
-.hero {
-  padding: 28rpx;
+/* ==================== 顶部区域 ==================== */
+.header {
+  padding: 24rpx;
   background: linear-gradient(135deg, #E3F2FD 0%, #F5F9FF 100%);
   border-radius: 20rpx;
 }
 
 .title {
-  font-size: 42rpx;
+  font-size: 36rpx;
   font-weight: 700;
   color: #2C3E50;
 }
@@ -30,62 +30,47 @@
   margin-top: 8rpx;
   font-size: 24rpx;
   color: #5D6D7E;
-  font-weight: 500;
 }
 
-/* ==================== 窝囊费入口（重点样式） ==================== */
-.wageEntry {
+/* ==================== 入口列表 ==================== */
+.entryList {
+  display: flex;
+  flex-direction: column;
+  gap: 12rpx;
+}
+
+.entry {
   display: flex;
   align-items: center;
-  padding: 24rpx;
-  gap: 16rpx;
+  padding: 20rpx;
+  background: #ffffff;
+  border-radius: 16rpx;
+  gap: 14rpx;
+  box-shadow: 0 2rpx 8rpx rgba(44, 62, 80, 0.04);
+}
+
+.entry.highlight {
   background: linear-gradient(135deg, #5C9BD6, #6BA3DC);
-  border-radius: 20rpx;
-  box-shadow: 0 6rpx 24rpx rgba(92, 155, 214, 0.25);
+  box-shadow: 0 6rpx 20rpx rgba(92, 155, 214, 0.25);
 }
 
-.wageIcon {
-  font-size: 40rpx;
+.entry.highlight .entryTitle,
+.entry.highlight .entrySub,
+.entry.highlight .entryArrow {
+  color: #ffffff;
 }
 
-.wageContent {
+.entryIcon {
+  font-size: 36rpx;
+  width: 48rpx;
+  text-align: center;
+}
+
+.entryContent {
   flex: 1;
   display: flex;
   flex-direction: column;
   gap: 4rpx;
-}
-
-.wageTitle {
-  font-size: 30rpx;
-  font-weight: 700;
-  color: #ffffff;
-}
-
-.wageSub {
-  font-size: 24rpx;
-  color: rgba(255, 255, 255, 0.85);
-}
-
-.wageEntry .entryArrow {
-  font-size: 36rpx;
-  color: rgba(255, 255, 255, 0.85);
-}
-
-/* ==================== 列表入口 ==================== */
-.entry {
-  padding: 22rpx;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: #ffffff;
-  border-radius: 16rpx;
-  box-shadow: 0 2rpx 12rpx rgba(44, 62, 80, 0.05);
-}
-
-.entryText {
-  display: flex;
-  flex-direction: column;
-  gap: 6rpx;
 }
 
 .entryTitle {
@@ -100,6 +85,6 @@
 }
 
 .entryArrow {
-  font-size: 36rpx;
+  font-size: 32rpx;
   color: #9AA5B1;
 }

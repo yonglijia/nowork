@@ -72,7 +72,7 @@ Page({
   },
 
   onShow() {
-    setTabBarIndex(1)
+    setTabBarIndex(1) // Tab2
   },
 
   async onPullDownRefresh() {
